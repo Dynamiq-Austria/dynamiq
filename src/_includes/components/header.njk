@@ -1,0 +1,18 @@
+<header class="site-header"{% if showNavigation %} data-header{% endif %}>
+  <a class="brand" href="/" aria-label="Dynamiq Startseite">dynamiq<span>.</span></a>
+
+  {% if showNavigation %}
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+      <span class="sr-only" data-menu-label>Menü öffnen</span>
+      <span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation" data-nav>
+      {% for item in site.navigation %}
+        <a href="{% if isHome %}{{ item.href }}{% else %}/{{ item.href }}{% endif %}">{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+
+    <a class="header-cta" href="{% if isHome %}#kontakt{% else %}/#kontakt{% endif %}">{{ site.primaryCta.label }}</a>
+  {% endif %}
+</header>

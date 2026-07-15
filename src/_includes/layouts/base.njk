@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="theme-color" content="#a457e8">
+  {% if robots %}<meta name="robots" content="{{ robots }}">{% endif %}
+  <link rel="canonical" href="{{ siteUrl }}{{ page.url }}">
+
+  {% set socialImage = ogImage or "/assets/og-image.png" %}
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:site_name" content="Dynamiq">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ ogDescription or description or site.description }}">
+  <meta property="og:url" content="{{ siteUrl }}{{ page.url }}">
+  <meta property="og:image" content="{{ siteUrl }}{{ socialImage }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ ogDescription or description or site.description }}">
+  <meta name="twitter:image" content="{{ siteUrl }}{{ socialImage }}">
+
+  <title>{{ title }}</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Dynamiq",
+    "url": "{{ siteUrl }}",
+    "description": "{{ site.description }}",
+    "email": "mailto:{{ site.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ site.location }}",
+      "addressCountry": "AT"
+    },
+    "areaServed": "{{ site.areaServed }}",
+    "founder": {
+      "@type": "Person",
+      "name": "Oliver Jessner",
+      "jobTitle": "Founder"
+    },
+    "knowsAbout": ["Websites", "SaaS", "User Experience", "Web Performance", "Accessibility", "Content-Strategie"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  {% include "components/header.njk" %}
+
+  <main id="main"{% if mainClass %} class="{{ mainClass }}"{% endif %}>
+    {{ content | safe }}
+  </main>
+
+  {% if showFooter != false %}{% include "components/footer.njk" %}{% endif %}
+  {% if showNavigation %}<script src="/script.js" defer></script>{% endif %}
+</body>
+</html>

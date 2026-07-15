@@ -1,0 +1,17 @@
+{
+  "name": "dynamiq-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf _site",
+    "build": "npm run clean && eleventy",
+    "dev": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

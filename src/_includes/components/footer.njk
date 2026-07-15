@@ -1,0 +1,10 @@
+<footer class="site-footer">
+  <a class="brand brand-footer" href="/">dynamiq<span>.</span></a>
+  <p>{{ site.description }}</p>
+  <a class="button button-light footer-cta" href="{% if isHome %}#kontakt{% else %}/#kontakt{% endif %}">{{ site.primaryCta.label }}</a>
+  <nav aria-label="Rechtliche Navigation">
+    <a href="/impressum/">Impressum</a>
+    <a href="/datenschutz/">Datenschutz</a>
+  </nav>
+  <p>© {{ buildYear }} Dynamiq</p>
+</footer>
