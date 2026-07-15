@@ -1,13 +1,15 @@
 {% macro ctaBand(kicker, title, text, secondaryHref, secondaryLabel) %}
-  <aside class="cta-band section-shell" aria-label="{{ kicker }}">
-    <div>
-      <p class="section-kicker">{{ kicker }}</p>
-      <h2>{{ title }}</h2>
-      <p>{{ text }}</p>
-    </div>
-    <div class="cta-band-actions">
-      <a class="button button-light" href="#kontakt">Projekt besprechen</a>
-      {% if secondaryHref and secondaryLabel %}<a class="text-link" href="{{ secondaryHref }}">{{ secondaryLabel }} →</a>{% endif %}
+  <aside class="cta-band" aria-label="{{ kicker }}">
+    <div class="cta-band-inner section-shell">
+      <div>
+        <p class="section-kicker">{{ kicker }}</p>
+        <h2>{{ title }}</h2>
+        <p>{{ text }}</p>
+      </div>
+      <div class="cta-band-actions">
+        <a class="button button-light" href="#kontakt">Projekt besprechen</a>
+        {% if secondaryHref and secondaryLabel %}<a class="text-link" href="{{ secondaryHref }}">{{ secondaryLabel }} →</a>{% endif %}
+      </div>
     </div>
   </aside>
 {% endmacro %}

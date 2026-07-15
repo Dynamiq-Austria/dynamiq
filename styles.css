@@ -325,12 +325,14 @@ button, input, textarea, select { font: inherit; }
 .offer-result { max-width: 230px; text-align: right; color: var(--lilac); font-size: .85rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
 
 .cta-band {
+  color: var(--white);
+  background: var(--purple-deep);
+}
+.cta-band-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr);
   gap: clamp(2rem, 7vw, 7rem);
   align-items: end;
-  color: var(--white);
-  background: var(--purple-deep);
 }
 .cta-band h2 {
   max-width: 980px;
@@ -539,7 +541,7 @@ details p { max-width: 800px; margin: 0; padding: 0 0 1.7rem; font-size: 1.05rem
   .hero-proof { grid-template-columns: repeat(2, 1fr); }
   .hero-proof li:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid rgba(16,16,18,.35); margin-top: 1rem; padding-top: 1rem; }
   .hero-proof li:nth-child(4) { border-top: 1px solid rgba(16,16,18,.35); margin-top: 1rem; padding-top: 1rem; }
-  .attention, .team, .contact, .ai-section, .cta-band { grid-template-columns: 1fr; }
+  .attention, .team, .contact, .ai-section, .cta-band-inner { grid-template-columns: 1fr; }
   .team-intro { position: static; }
   .contact > *:first-child, .contact > *:last-child { margin-left: 0; margin-right: 0; }
   .challenge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
