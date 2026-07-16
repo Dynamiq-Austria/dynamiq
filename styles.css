@@ -412,6 +412,8 @@ button, input, textarea, select { font: inherit; }
 .team-card { min-height: 400px; padding: clamp(1.5rem, 3vw, 3rem); display: flex; flex-direction: column; }
 .team-card-dark { color: var(--white); background: var(--ink); }
 .team-card-purple { background: var(--purple); }
+.team-card-light { background: var(--white); border: 1px solid var(--line); }
+.team-card-accent { background: var(--lilac); }
 .role { margin: 0 0 auto; font-size: .76rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
 .team-card h3 { margin: 5rem 0 1rem; font-size: clamp(2.4rem, 4vw, 5rem); line-height: 1; letter-spacing: -.06em; font-weight: 400; }
 .team-card > p:not(.role) { max-width: 720px; font-size: 1.1rem; }

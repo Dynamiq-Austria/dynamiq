@@ -21,7 +21,7 @@ showNavigation: true
   </div>
 
   <div class="hero-stage">
-    <div class="stage-tag stage-tag-one">20 Jahre digital</div>
+    <div class="stage-tag stage-tag-one">40 Jahre digital</div>
     <div class="stage-tag stage-tag-two">Früh testbar</div>
     <div class="stage-word" aria-hidden="true">BUILD</div>
     <figure class="stage-image">
@@ -153,8 +153,8 @@ showNavigation: true
 <section class="team section-shell" id="team" aria-labelledby="team-title">
   <div class="team-intro">
     <p class="section-kicker">05 · Über Dynamiq</p>
-    <h2 id="team-title">Marketing, Technologie und UX in einem kleinen, erfahrenen Kernteam.</h2>
-    <p>Geschäftsziel, Strategie und Umsetzung liegen bewusst nah beieinander. Das verkürzt Abstimmungswege und sorgt dafür, dass Marketing, Nutzererlebnis und Technologie nicht in getrennten Silos entstehen. Für zusätzliche Spezialdisziplinen kann das Team gezielt erweitert werden.</p>
+    <h2 id="team-title">Ein erfahrenes Kernteam. Ergänzt durch die passenden Spezialist:innen.</h2>
+    <p>Geschäftsziel, Strategie und Umsetzung liegen bewusst nah beieinander. Je nach Projekt ergänzen wir das Kernteam gezielt um erfahrene Webentwickler:innen und SEO-Kompetenz – ohne unnötig große Agenturstruktur.</p>
   </div>
   <div class="team-cards">
     {% for person in home.team %}
@@ -180,6 +180,25 @@ showNavigation: true
     {% endfor %}
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in home.faqs %}
+    {
+      "@type": "Question",
+      "name": {{ faq.question | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ faq.answer | dump | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
 
 <section class="contact section-shell" id="kontakt" aria-labelledby="contact-title">
   <div class="contact-copy">
