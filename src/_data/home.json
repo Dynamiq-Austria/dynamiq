@@ -89,6 +89,8 @@
             "className": "team-card-dark",
             "role": "Gründer · direkter Ansprechpartner",
             "name": "Oliver Jessner",
+            "image": "/assets/persons/oliver.webp",
+            "imageAlt": "Portrait von Oliver Jessner",
             "text": "Oliver verbindet 15 Jahre Erfahrung in Softwareentwicklung, digitalen Produkten und Unternehmertum. Als ehemaliger Gründer, CTO und Geschäftsführer sowie Technologie- und Wirtschaftsjournalist kennt er technische, unternehmerische und redaktionelle Perspektiven.",
             "tags": ["Gründer · CTO · GF", "15 Jahre digital", "500+ Videos", "12 Mio.+ Views"]
         },

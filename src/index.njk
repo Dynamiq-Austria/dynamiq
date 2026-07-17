@@ -151,9 +151,10 @@ showNavigation: true
   </div>
   <div class="team-cards">
     {% for person in home.team %}
-      <article class="team-card {{ person.className }}">
+      <article class="team-card {{ person.className }}{% if person.image %} team-card-has-portrait{% endif %}">
         <p class="role">{{ person.role }}</p>
         <h3>{{ person.name }}</h3>
+        {% if person.image %}<img class="team-portrait" src="{{ person.image }}" alt="{{ person.imageAlt }}" width="1016" height="1568" loading="lazy">{% endif %}
         <p>{{ person.text }}</p>
         <div class="tag-list">{% for tag in person.tags %}<span>{{ tag }}</span>{% endfor %}</div>
       </article>
