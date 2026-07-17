@@ -1,15 +1,16 @@
 {
     "name": "Dynamiq",
-    "email": "oliver.jessner@gmail.com",
+    "email": "hello@dynamiq.agency",
     "location": "Salzburg",
     "areaServed": "DACH-Raum und remote",
-    "description": "Dynamiq entwickelt schnelle, benutzerfreundliche und wartbare Websites und digitale Produkte für SaaS-, Technologie- und B2B-Unternehmen.",
+    "description": "Dynamiq konzipiert und entwickelt schnelle, verständliche B2B-Websites für technologieorientierte Unternehmen und KMU.",
     "primaryCta": {
         "label": "Projekt besprechen",
         "href": "#kontakt"
     },
     "navigation": [
         { "label": "Leistungen", "href": "#leistungen" },
+        { "label": "Website-Check", "href": "#website-check" },
         { "label": "Arbeitsweise", "href": "#arbeitsweise" },
         { "label": "Über Dynamiq", "href": "#team" },
         { "label": "Kontakt", "href": "#kontakt" }

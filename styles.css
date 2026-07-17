@@ -379,10 +379,10 @@ button, input, textarea, select { font: inherit; }
   font-weight: 400;
 }
 .section-heading > p { margin: 0; font-size: 1.1rem; }
-.service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .service-card {
   position: relative;
-  min-height: 610px;
+  min-height: 560px;
   padding: clamp(1.5rem, 3vw, 3rem);
   display: flex;
   flex-direction: column;
@@ -418,6 +418,7 @@ button, input, textarea, select { font: inherit; }
 .offer-row h3 { margin: 0 0 .35rem; font-size: clamp(1.5rem, 2.5vw, 2.8rem); letter-spacing: -.045em; }
 .offer-row p { margin: 0; color: rgba(255,255,255,.72); }
 .offer-result { max-width: 230px; text-align: right; color: var(--lilac); font-size: .85rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+.offer-actions { margin-top: 2rem; }
 
 .cta-band {
   color: var(--white);
@@ -468,7 +469,7 @@ button, input, textarea, select { font: inherit; }
 .principle-grid article + article { border-left: 0; }
 .principle-grid h3 { margin: 0 0 1rem; font-size: 1.3rem; letter-spacing: -.03em; }
 .principle-grid p { margin: 0; }
-.process-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); }
+.process-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
 .process-grid li { min-height: 300px; padding: 1.5rem 1.5rem 0 0; border-right: 1px solid var(--line); }
 .process-grid li + li { padding-left: 1.5rem; }
 .process-grid li:last-child { border-right: 0; }
@@ -638,6 +639,8 @@ details p { max-width: 800px; margin: 0; padding: 0 0 1.7rem; font-size: 1.05rem
   .hero-proof { grid-template-columns: repeat(2, 1fr); }
   .hero-proof li:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid rgba(16,16,18,.35); margin-top: 1rem; padding-top: 1rem; }
   .hero-proof li:nth-child(4) { border-top: 1px solid rgba(16,16,18,.35); margin-top: 1rem; padding-top: 1rem; }
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .service-card:last-child { grid-column: 1 / -1; }
   .attention, .team, .contact, .ai-section, .cta-band-inner { grid-template-columns: 1fr; }
   .team-intro { position: static; }
   .contact > *:first-child, .contact > *:last-child { margin-left: 0; margin-right: 0; }
@@ -675,6 +678,7 @@ details p { max-width: 800px; margin: 0; padding: 0 0 1.7rem; font-size: 1.05rem
   .challenge-grid { grid-template-columns: 1fr; }
   .challenge-grid li, .challenge-grid li:nth-child(2n), .challenge-grid li:nth-child(3n) { min-height: auto; border-right: 0; }
   .service-grid { grid-template-columns: 1fr; }
+  .service-card:last-child { grid-column: auto; }
   .service-card { min-height: 470px; }
   .offer-row { grid-template-columns: 48px 1fr; gap: 1rem; }
   .offer-result { grid-column: 2; text-align: left; }

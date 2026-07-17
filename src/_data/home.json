@@ -1,9 +1,9 @@
 {
     "proofs": [
-        { "value": "45 Jahre+", "label": "digitale Erfahrung" },
-        { "value": "12 Mio.+", "label": "organische Views" },
-        { "value": "UX + Patent", "label": "Kompetenz im Kernteam" },
-        { "value": "Ein System", "label": "für Marketing, Website und Conversion" }
+        { "value": "15 Jahre", "label": "Software und digitale Produkte" },
+        { "value": "UX + Patent", "label": "feste Kompetenz im Kernteam" },
+        { "value": "500+", "label": "veröffentlichte Videos" },
+        { "value": "12 Mio.+", "label": "organische Views" }
     ],
     "problems": [
         "Marketing bringt Besucher, aber zu wenige werden zu qualifizierten Anfragen oder Kunden.",
@@ -16,152 +16,101 @@
     "services": [
         {
             "number": "01",
-            "label": "Experience",
-            "title": "UX und Benutzerfreundlichkeit",
+            "label": "Strategie",
+            "title": "Positionierung und Inhalte",
             "className": "service-purple",
-            "statement": "Wir übersetzen Marketing- und Vertriebsziele in eine klare Customer Journey, die Menschen vom ersten Interesse bis zur gewünschten Handlung führt.",
+            "statement": "Wir schärfen Angebot, Zielgruppe und Botschaft, damit Interessenten schnell verstehen, warum euer Unternehmen die richtige Wahl ist.",
             "items": [
-                "UX- und Conversion-Audits",
-                "Customer Journeys und User Flows",
-                "Informationsarchitektur",
-                "Wireframes und Prototypen",
-                "SaaS-Onboarding",
-                "Accessibility und Usability-Tests"
+                "Positionierung und Nutzenversprechen",
+                "Seiten- und Content-Strategie",
+                "Customer Journey",
+                "Conversion-Ziele"
             ]
         },
         {
             "number": "02",
-            "label": "Build",
-            "title": "Websites und SaaS-Produkte",
+            "label": "UX & Design",
+            "title": "Klare Nutzerführung",
             "className": "service-light",
-            "statement": "Wir entwickeln schnelle, wartbare Websites und Web-Tools, die Kampagnen unterstützen, Daten liefern und Interessenten zuverlässig zum nächsten Schritt führen.",
+            "statement": "Unsere feste UX-Partnerin übersetzt komplexe Leistungen in eine verständliche Struktur und eine Nutzerführung, die Vertrauen schafft und zum nächsten Schritt führt.",
             "items": [
-                "Conversion-orientierte Websites und Landingpages",
-                "Individuelle Konfiguratoren und Web-Tools",
-                "SaaS-Frontends, MVPs und Kundenportale",
-                "CMS-, CRM- und Tracking-Integration",
-                "Technische SEO",
-                "Performance-Optimierung"
+                "Informationsarchitektur",
+                "Wireframes und Prototypen",
+                "Visuelles Webdesign",
+                "Accessibility und Usability"
             ]
         },
         {
             "number": "03",
-            "label": "Attention",
-            "title": "Positionierung und Content",
+            "label": "Entwicklung",
+            "title": "Schnelle B2B-Websites",
             "className": "service-dark",
-            "statement": "Wir schärfen Positionierung, Botschaft und Content, damit die richtigen Menschen auf die Website kommen und dort ein konsistentes Angebot erleben.",
+            "statement": "Wir entwickeln wartbare Websites und Web-Tools, integrieren bestehende Systeme und verbessern sie nach dem Launch anhand realer Daten.",
             "items": [
-                "Positionierung und Nutzenversprechen",
-                "Content- und Kampagnenstrategie",
-                "LinkedIn und Social Media",
-                "Videoformate",
-                "Journalistisches Storytelling",
-                "Launch-Kommunikation und organische Distribution"
-            ]
-        },
-        {
-            "number": "04",
-            "label": "Care & Growth",
-            "title": "Wartung und Weiterentwicklung",
-            "className": "service-accent",
-            "statement": "Nach dem Launch verbessern wir die Website anhand realer Nutzung und Conversion-Daten – statt uns auf Annahmen zu verlassen.",
-            "items": [
-                "Conversion- und Performance-Monitoring",
-                "Tracking und Reporting",
-                "A/B-Tests und Optimierung",
-                "UX- und Content-Updates",
-                "Technische Wartung und Security",
-                "Klare monatliche Priorisierung"
+                "Websites und Landingpages",
+                "CMS-, CRM- und Tracking-Integration",
+                "Performance und technisches SEO",
+                "Wartung und Weiterentwicklung"
             ]
         }
     ],
     "offers": [
         {
-            "index": "A",
-            "title": "Website & Conversion Audit",
-            "text": "Angebot, Zielgruppe, Marketing, UX, Technik, Content, SEO und Conversion werden gemeinsam geprüft und priorisiert.",
-            "result": "Ergebnis: Roadmap mit Business-Fokus"
-        },
-        {
-            "index": "B",
-            "title": "Conversion-orientierter Relaunch",
-            "text": "Positionierung, Customer Journey, Content, UX, technische Umsetzung, Tracking und Launch in klar definierten Sprints.",
-            "result": "Ergebnis: Website als Vertriebskanal"
-        },
-        {
-            "index": "C",
-            "title": "Positioning & Attention Sprint",
-            "text": "Nutzenversprechen, Themen, Formate und Kampagnen für ein Angebot, das verstanden wird und Interesse weckt.",
-            "result": "Ergebnis: klare Botschaft"
-        },
-        {
-            "index": "D",
-            "title": "Conversion Care & Growth",
-            "text": "Laufende Wartung und datenbasierte Weiterentwicklung von UX, Content, Performance und Conversion.",
-            "result": "Ergebnis: messbare Verbesserung"
+            "index": "01",
+            "title": "Website-Check",
+            "text": "Technischer Kurzcheck, UX- und Inhaltsanalyse, priorisierte Handlungsempfehlungen und ein 45-minütiges Auswertungsgespräch.",
+            "result": "Verbindlicher Fixpreis nach kostenlosem Erstgespräch"
         }
     ],
     "process": [
         {
             "number": "01",
-            "title": "Geschäft und Zielgruppe verstehen",
-            "text": "Wir analysieren Angebot, Kunden, Marketing, Vertriebsprozess, Daten und bestehende Systeme."
+            "title": "Analyse",
+            "text": "Ziele, Zielgruppen, bestehende Website und technische Rahmenbedingungen."
         },
         {
             "number": "02",
-            "title": "Botschaft und Conversion-Ziele schärfen",
-            "text": "Wir definieren Nutzenversprechen, Customer Journey, gewünschte Handlungen und messbare Erfolgskennzahlen."
+            "title": "Konzept",
+            "text": "Struktur, Inhalte, Nutzerführung und visuelle Richtung."
         },
         {
             "number": "03",
-            "title": "Customer Journey prototypisieren",
-            "text": "Content, Nutzerführung und Conversion-Pfade werden früh sichtbar und mit echten Menschen testbar."
+            "title": "Umsetzung",
+            "text": "Design, Entwicklung, Qualitätssicherung und Veröffentlichung."
         },
         {
             "number": "04",
-            "title": "Website in Sprints umsetzen",
-            "text": "Design, Entwicklung, Content, Tracking und Qualitätssicherung erfolgen in kleinen, nachvollziehbaren Schritten."
-        },
-        {
-            "number": "05",
-            "title": "Messen und verbessern",
-            "text": "Nach dem Launch optimieren wir anhand realer Nutzung, Conversion- und Performance-Daten."
+            "title": "Weiterentwicklung",
+            "text": "Auswertung, Optimierung und technische Betreuung."
         }
     ],
     "team": [
         {
             "className": "team-card-dark",
-            "role": "Strategie · Technologie · Umsetzung · Attention",
+            "role": "Gründer · direkter Ansprechpartner",
             "name": "Oliver Jessner",
-            "text": "Oliver verbindet 15 Jahre Erfahrung mit digitalen Produkten und Technologien mit Softwareentwicklung, SaaS, Websites und digitalem Marketing. Als Ex-Founder, Ex-CTO sowie Technologie- und Wirtschaftsjournalist kennt er technische, unternehmerische und redaktionelle Perspektiven. Als ehemaliger Creator und Influencer produzierte er mehr als 500 Videos und erreichte über 12 Millionen organische Views.",
-            "tags": ["Ex-Founder & Ex-CTO", "20 Jahre digital", "500+ Videos", "12 Mio.+ Views"]
+            "text": "Oliver verbindet 15 Jahre Erfahrung in Softwareentwicklung, digitalen Produkten und Unternehmertum. Als ehemaliger Gründer, CTO und Geschäftsführer sowie Technologie- und Wirtschaftsjournalist kennt er technische, unternehmerische und redaktionelle Perspektiven.",
+            "tags": ["Gründer · CTO · GF", "15 Jahre digital", "500+ Videos", "12 Mio.+ Views"]
         },
         {
             "className": "team-card-purple",
-            "role": "UX Design · Research · Product",
-            "name": "UX-Designerin im Kernteam",
-            "text": "Eine UX-Designerin und Patentinhaberin ergänzt Dynamiq im Kernteam. Ihre Erfahrung reicht von agilen Start-ups bis zu komplexen Projekten in Großkonzernen. Ihr Fokus liegt auf Nutzerführung, Informationsarchitektur, Research, Prototyping und verständlichen digitalen Produkterlebnissen.",
-            "tags": ["Start-up & Großkonzern", "UX Design", "Patent", "User Research"]
+            "role": "UX Design · Research · digitale Produkte",
+            "name": "Feste UX-Partnerin",
+            "text": "Eine erfahrene UX-Designerin und Patentinhaberin gehört fest zum Kernteam. Ihre Erfahrung reicht von agilen Start-ups bis zu komplexen Projekten in Großkonzernen. Sie verantwortet Nutzerführung, Informationsarchitektur, Research und Prototyping – und sorgt dafür, dass aus Anforderungen verständliche digitale Erlebnisse werden.",
+            "tags": ["Fest im Kernteam", "Patentinhaberin", "UX Research", "Prototyping"]
         },
         {
             "className": "team-card-light",
-            "role": "Frontend · Backend · CMS · Integrationen",
-            "name": "Pool erfahrener Webentwickler:innen",
-            "text": "Je nach technischer Aufgabe stellen wir das passende Entwicklungsteam zusammen. Der Pool deckt moderne Frontends, Backends, CMS-Lösungen, Schnittstellen, individuelle Konfiguratoren und komplexe Webanwendungen ab.",
-            "tags": ["Frontend", "Backend", "CMS", "Web-Tools & APIs"]
-        },
-        {
-            "className": "team-card-accent",
-            "role": "SEO · Search Intent · Content · Tracking",
-            "name": "Ehemaliger Head of SEO im Netzwerk",
-            "text": "Ein ehemaliger Head of SEO bringt strategische und operative Suchmaschinenkompetenz in das Projekt ein. Technische Grundlagen, Suchintention, Informationsarchitektur und Content werden so aufeinander abgestimmt, dass die Website nicht nur überzeugt, sondern auch von den richtigen Menschen gefunden wird.",
-            "tags": ["Ex-Head of SEO", "Technisches SEO", "Keyword-Strategie", "Content-Struktur"]
+            "role": "Projektbezogene Zusammenarbeit",
+            "name": "Spezialisierte Partner:innen",
+            "text": "Je nach Projekt ergänzen weitere Spezialist:innen aus Design, SEO und Entwicklung das Kernteam. Sie werden passend zur Aufgabe eingebunden und nicht als festes Agenturteam dargestellt.",
+            "tags": ["Design", "SEO", "Frontend & Backend", "Klare Zuständigkeiten"]
         }
     ],
     "faqs": [
         {
             "question": "Für welche Unternehmen arbeitet Dynamiq?",
-            "answer": "Der Fokus liegt auf SaaS- und Technologieunternehmen, digitalen Dienstleistern, Start-ups, Scale-ups und mittelständischen Unternehmen, die ihre Website als wirksamen Marketing- und Vertriebskanal einsetzen wollen."
+            "answer": "Der Fokus liegt auf B2B-Unternehmen und technologieorientierten KMU, deren Website nicht mehr zu ihrem Angebot, Vertrieb oder Qualitätsanspruch passt. Dazu gehören auch passende SaaS-Unternehmen."
         },
         {
             "question": "Wie sorgt ihr dafür, dass eine Website verkauft?",
@@ -176,12 +125,8 @@
             "answer": "Kein Problem. Wir entwickeln auch maßgeschneiderte Konfiguratoren, Rechner und andere interaktive Web-Tools – nahtlos in die Website integriert und passend zu euren Prozessen."
         },
         {
-            "question": "Welche Rolle spielt KI in der Zusammenarbeit?",
-            "answer": "KI unterstützt Recherche, Konzeption, Variantenbildung, Content-Arbeit, Entwicklung, Testing und Qualitätssicherung. Strategie, UX-Entscheidungen und finale Qualitätskontrolle bleiben menschlich verantwortet."
-        },
-        {
-            "question": "Ist Social Media eine eigenständige Hauptleistung?",
-            "answer": "Social Media ist Teil einer durchgängigen Customer Journey. Positionierung, Kampagnen, Content und Website werden so aufeinander abgestimmt, dass Aufmerksamkeit nicht nur Reichweite erzeugt, sondern zum Geschäftsziel beiträgt."
+            "question": "Setzt ihr KI ein?",
+            "answer": "Ja, dort, wo sie Recherche, Qualitätssicherung oder technische Arbeit sinnvoll unterstützt. Strategie, Konzeption, Freigaben und Verantwortung bleiben bei uns."
         },
         {
             "question": "Übernimmt Dynamiq auch Wartung und Weiterentwicklung?",

@@ -64,7 +64,7 @@ Das Formular `projektanfrage` wird durch `data-netlify="true"` erkannt, verwende
 
 1. Impressum und Datenschutz rechtlich prüfen und alle Platzhalter vervollständigen.
 2. Netlify Forms und E-Mail-Benachrichtigungen im Netlify-Projekt aktiv prüfen.
-3. E-Mail-Adresse gegebenenfalls auf eine Agentur-Domain umstellen.
+3. Mailbox und Zustellung für `hello@dynamiq.agency` beim E-Mail-Anbieter einrichten und testen.
 4. Finale Domain und Social-Media-Vorschau im produktiven Deployment kontrollieren.
 5. Referenzen, Kundenstimmen und reale Case Studies ergänzen, sobald belastbares Material vorliegt.
-6. Aussagen wie „20 Jahre digitale Erfahrung“, „12 Mio.+ Views“, „500+ Videos“ und „Patentinhaberin“ final freigeben.
+6. Aussagen wie „15 Jahre Erfahrung“, „12 Mio.+ Views“ und „500+ Videos“ final freigeben.
