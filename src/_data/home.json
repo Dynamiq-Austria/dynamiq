@@ -1,17 +1,39 @@
 {
     "proofs": [
-        { "value": "15 Jahre", "label": "Software und digitale Produkte" },
-        { "value": "UX + Patent", "label": "feste Kompetenz im Kernteam" },
+        { "value": "15 Jahre", "label": "Software, SaaS und digitale Produkte" },
+        { "value": "SaaS + B2B", "label": "Product Story trifft Growth" },
         { "value": "500+", "label": "veröffentlichte Videos" },
         { "value": "12 Mio.+", "label": "organische Views" }
     ],
     "problems": [
-        "Marketing bringt Besucher, aber zu wenige werden zu qualifizierten Anfragen oder Kunden.",
-        "Das Angebot und sein konkreter Nutzen werden auf der Website nicht schnell verstanden.",
-        "Content, Kampagnen und Website erzählen keine durchgängige Geschichte.",
-        "Navigation, Seitenstruktur und Calls-to-Action führen nicht klar zum nächsten Schritt.",
-        "Mobile Nutzung, Ladezeit oder Accessibility bremsen potenzielle Kunden aus.",
-        "Es fehlen Daten und klare Conversion-Ziele, um die Website gezielt weiterzuentwickeln."
+        "Traffic ist da, aber zu wenige Besucher buchen eine Demo, starten einen Trial oder werden zum Lead.",
+        "Das Produkt ist leistungsstark, doch sein konkreter Wert wird nicht in wenigen Sekunden verstanden.",
+        "Website, Kampagnen, Sales-Narrativ und In-Product Experience erzählen unterschiedliche Geschichten.",
+        "Use Cases, Integrationen und Features stehen nebeneinander, statt zu einer klaren Product Story zu werden.",
+        "Die Website kann mit neuen Segmenten, Märkten und Launches nicht schnell genug mitwachsen.",
+        "Analytics und Conversion-Ziele fehlen, um den Weg von Aufmerksamkeit zu Aktivierung zu optimieren."
+    ],
+    "saasJourney": [
+        {
+            "title": "Positioning",
+            "text": "ICP, Problem und Produktwert auf einen klaren Nenner bringen.",
+            "signal": "Clarity"
+        },
+        {
+            "title": "Product Story",
+            "text": "Features in Outcomes, Use Cases und verständliche Proof Points übersetzen.",
+            "signal": "Relevance"
+        },
+        {
+            "title": "Conversion UX",
+            "text": "Für Self-serve, Sales-led oder hybride Journeys den richtigen Pfad bauen.",
+            "signal": "Intent"
+        },
+        {
+            "title": "Growth Loop",
+            "text": "Messen, lernen und die Website entlang realer Signale weiterentwickeln.",
+            "signal": "Scale"
+        }
     ],
     "services": [
         {
@@ -19,36 +41,36 @@
             "label": "Strategie",
             "title": "Positionierung und Inhalte",
             "className": "service-purple",
-            "statement": "Wir schärfen Angebot, Zielgruppe und Botschaft, damit Interessenten schnell verstehen, warum euer Unternehmen die richtige Wahl ist.",
+            "statement": "Wir schärfen ICP, Positionierung und Product Story, damit Interessenten schnell verstehen, welches Problem euer Produkt löst und warum es die richtige Wahl ist.",
             "items": [
-                "Positionierung und Nutzenversprechen",
-                "Seiten- und Content-Strategie",
-                "Customer Journey",
-                "Conversion-Ziele"
+                "ICP, Positionierung und Messaging",
+                "Product Story und Use Cases",
+                "Customer Journey und Funnel",
+                "Conversion-Ziele und Analytics"
             ]
         },
         {
             "number": "02",
             "label": "UX & Design",
-            "title": "Klare Nutzerführung",
+            "title": "Conversion UX",
             "className": "service-light",
             "statement": "Unsere feste UX-Partnerin übersetzt komplexe Leistungen in eine verständliche Struktur und eine Nutzerführung, die Vertrauen schafft und zum nächsten Schritt führt.",
             "items": [
                 "Informationsarchitektur",
                 "Wireframes und Prototypen",
-                "Visuelles Webdesign",
+                "SaaS-Webdesign und Designsystem",
                 "Accessibility und Usability"
             ]
         },
         {
             "number": "03",
             "label": "Entwicklung",
-            "title": "Schnelle B2B-Websites",
+            "title": "Websites, die skalieren",
             "className": "service-dark",
-            "statement": "Wir entwickeln wartbare Websites und Web-Tools, integrieren bestehende Systeme und verbessern sie nach dem Launch anhand realer Daten.",
+            "statement": "Wir entwickeln schnelle, wartbare SaaS- und B2B-Websites, integrieren euren Growth-Stack und verbessern sie nach dem Launch anhand realer Daten.",
             "items": [
                 "Websites und Landingpages",
-                "CMS-, CRM- und Tracking-Integration",
+                "CMS-, CRM-, Analytics- und Tool-Integration",
                 "Performance und technisches SEO",
                 "Wartung und Weiterentwicklung"
             ]
@@ -112,7 +134,7 @@
     "faqs": [
         {
             "question": "Für welche Unternehmen arbeitet Dynamiq?",
-            "answer": "Der Fokus liegt auf B2B-Unternehmen und technologieorientierten KMU, deren Website nicht mehr zu ihrem Angebot, Vertrieb oder Qualitätsanspruch passt. Dazu gehören auch passende SaaS-Unternehmen."
+            "answer": "Der Fokus liegt auf SaaS-Teams, Tech-Unternehmen und technologieorientierten B2B-KMU, deren Website nicht mehr zu Produkt, Go-to-Market oder Qualitätsanspruch passt. Besonders gut passen komplexe Produkte, die eine klare Product Story und eine messbare Customer Journey brauchen."
         },
         {
             "question": "Wie sorgt ihr dafür, dass eine Website verkauft?",

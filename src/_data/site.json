@@ -3,12 +3,13 @@
     "email": "hello@dynamiq.agency",
     "location": "Salzburg",
     "areaServed": "DACH-Raum und remote",
-    "description": "Dynamiq konzipiert und entwickelt schnelle, verständliche B2B-Websites für technologieorientierte Unternehmen und KMU.",
+    "description": "Dynamiq konzipiert und entwickelt schnelle SaaS- und B2B-Websites, die komplexe Produkte verständlich machen und Besucher zu qualifizierten Leads führen.",
     "primaryCta": {
         "label": "Projekt besprechen",
         "href": "#kontakt"
     },
     "navigation": [
+        { "label": "SaaS Growth", "href": "#saas-growth" },
         { "label": "Leistungen", "href": "#leistungen" },
         { "label": "Website-Check", "href": "#website-check" },
         { "label": "Arbeitsweise", "href": "#arbeitsweise" },
