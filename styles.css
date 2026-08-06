@@ -692,8 +692,11 @@ details p { max-width: 800px; margin: 0; padding: 0 0 1.7rem; font-size: 1.05rem
 @media (max-width: 1080px) {
   .site-header { grid-template-columns: 1fr auto auto; }
   .main-nav {
-    position: fixed;
-    inset: 78px 0 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: calc(100dvh - 78px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -747,7 +750,7 @@ details p { max-width: 800px; margin: 0; padding: 0 0 1.7rem; font-size: 1.05rem
 @media (max-width: 720px) {
   :root { --pad: 1.15rem; }
   .site-header { min-height: 68px; gap: .7rem; }
-  .main-nav { inset: 68px 0 0; }
+  .main-nav { height: calc(100dvh - 68px); }
   .header-cta { display: none; }
   .hero { min-height: auto; padding-top: 7rem; gap: 2rem; }
   .hero h1 { font-size: clamp(3.15rem, 15vw, 5.2rem); }
