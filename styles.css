@@ -23,6 +23,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 body.menu-open { overflow: hidden; }
+body.menu-open::before {
+  content: "";
+  position: fixed;
+  z-index: 99;
+  inset: 0;
+  background: var(--paper);
+}
 body.menu-open .site-header { background: var(--paper); }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
