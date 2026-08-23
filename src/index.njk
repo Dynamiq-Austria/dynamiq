@@ -9,6 +9,10 @@ showNavigation: true
 ---
 <section class="poster-hero" id="top" data-poster-hero aria-labelledby="poster-title">
   <div class="poster-hero__grid" aria-hidden="true"></div>
+  <div class="poster-hero__draw-surface" data-draw-surface aria-hidden="true">
+    <canvas class="poster-hero__draw-canvas" data-draw-canvas></canvas>
+    <span class="poster-hero__draw-hint" data-draw-hint>Make your mark.</span>
+  </div>
   <p class="poster-hero__eyebrow" data-hero-reveal>SaaS · Agentic AI · UX</p>
 
   <h1 class="poster-title" id="poster-title" aria-label="SCALABLE PRODUCTS. CLEAR STORIES. BETTER EXPERIENCES.">
@@ -30,22 +34,21 @@ showNavigation: true
     <div class="poster-object poster-object--positioning" data-poster-object data-depth="0.9" data-hero-reveal>
       <div class="poster-object__face">
         <span class="poster-object__index">01</span>
-        <strong>AUTOMATE WORK
-</strong>
+        <strong data-sticker-text>AUTOMATE WORK</strong>
         <span class="poster-object__note">NOT JUST TASKS</span>
       </div>
     </div>
     <div class="poster-object poster-object--story" data-poster-object data-depth="1.15" data-hero-reveal>
       <div class="poster-object__face">
         <span class="poster-object__index">02</span>
-        <strong>USER <br>EXPERIENCE</strong>
-        <span class="poster-object__note">BUILT TO WORK</span>
+        <strong data-sticker-text>HUMAN FIRST</strong>
+        <span class="poster-object__note">AI Second</span>
       </div>
     </div>
     <div class="poster-object poster-object--growth" data-poster-object data-depth="0.75" data-hero-reveal>
       <div class="poster-object__face">
         <span class="poster-object__index">03</span>
-        <strong>EXPERIENCE</strong>
+        <strong data-sticker-text>LESS FRICTION</strong>
         <span class="poster-object__note">FROM COMPLEX TO CLEAR</span>
       </div>
     </div>
@@ -66,7 +69,7 @@ showNavigation: true
 
   <div class="ux-stat">
     <div class="ux-stat__core">
-      <strong class="ux-stat__number" aria-label="91 Prozent"><span aria-hidden="true">9</span><span aria-hidden="true">1</span><span aria-hidden="true">%</span></strong>
+      <strong class="ux-stat__number"><span class="sr-only">91 Prozent</span><span class="ux-stat__visual" aria-hidden="true"><span>9</span><span>1</span><span>%</span></span></strong>
       <div class="ux-stat__copy">
         <p>of employees report frustration with inadequate workplace technology.</p>
         <p class="ux-stat__source">Source: KMPG</p>
@@ -79,7 +82,7 @@ showNavigation: true
   </div>
 </section>
 
-<section class="service-offer section-shell" id="leistungen" aria-labelledby="offer-title">
+<section class="service-offer section-shell" id="leistungen" aria-labelledby="offer-title" data-system-playgrounds>
   <header class="service-offer__intro">
     <p class="section-kicker">[ Leistungen ]</p>
     <h2 id="offer-title"><span>Build.</span><span>Integrate.</span><span>Optimize.</span></h2>
@@ -88,10 +91,9 @@ showNavigation: true
 
   <ol class="capability-list">
     {% for service in home.capabilities %}
-      <li class="capability-row">
+      <li class="capability-row" data-system-row>
         <span class="capability-row__number" aria-hidden="true">{{ service.number }}</span>
         <div class="capability-row__title">
-          <p>{{ service.label }}</p>
           <h3>{{ service.title }}</h3>
         </div>
         <div class="capability-row__body">
@@ -99,6 +101,7 @@ showNavigation: true
           <ul class="build-tag-list" aria-label="Leistungsbausteine">
             {% for tag in service.tags %}<li>{{ tag }}</li>{% endfor %}
           </ul>
+          {% include "components/system-playground.njk" %}
         </div>
       </li>
     {% endfor %}

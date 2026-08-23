@@ -39,6 +39,30 @@
     header?.classList.toggle('is-scrolled', window.scrollY > 12);
   }, { passive: true });
 
+  const playgroundSection = document.querySelector('[data-system-playgrounds]');
+  if (playgroundSection) {
+    const systemRows = [...playgroundSection.querySelectorAll('[data-system-row]')];
+
+    const playSystem = (row) => {
+      row.classList.remove('is-system-active');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => row.classList.add('is-system-active'));
+      });
+    };
+
+    systemRows.forEach((row) => {
+      const trigger = row.querySelector('[data-system-playground]');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', () => playSystem(row));
+      trigger.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        playSystem(row);
+      });
+    });
+  }
+
   const posterHero = document.querySelector('[data-poster-hero]');
   if (!posterHero) return;
   posterHero.classList.add('is-enhanced');
@@ -49,6 +73,220 @@
   const titleGroups = [...posterHero.querySelectorAll('.poster-title__group')];
   let pointerFrame = 0;
   let scrollFrame = 0;
+
+  const drawSurface = posterHero.querySelector('[data-draw-surface]');
+  const drawCanvas = posterHero.querySelector('[data-draw-canvas]');
+  const drawHint = posterHero.querySelector('[data-draw-hint]');
+  const drawContext = drawCanvas?.getContext('2d');
+
+  if (drawSurface && drawCanvas && drawContext) {
+    let drawState = null;
+    let drawMetrics = null;
+    let fadeTimer = 0;
+    let clearTimer = 0;
+    let resizeFrame = 0;
+    let hasDrawn = false;
+
+    const clearCanvas = () => {
+      drawContext.save();
+      drawContext.setTransform(1, 0, 0, 1, 0, 0);
+      drawContext.clearRect(0, 0, drawCanvas.width, drawCanvas.height);
+      drawContext.restore();
+    };
+
+    const readDrawMetrics = () => {
+      const heroBounds = posterHero.getBoundingClientRect();
+      const style = getComputedStyle(drawSurface);
+      const [originX = 0, originY = 0] = style.transformOrigin.split(' ').map(Number.parseFloat);
+      const Matrix = window.DOMMatrixReadOnly || window.DOMMatrix;
+      const matrix = style.transform === 'none' ? new Matrix() : new Matrix(style.transform);
+
+      return {
+        left: heroBounds.left + drawSurface.offsetLeft,
+        top: heroBounds.top + drawSurface.offsetTop,
+        width: drawSurface.clientWidth,
+        height: drawSurface.clientHeight,
+        originX,
+        originY,
+        inverse: matrix.inverse(),
+      };
+    };
+
+    const localDrawPoint = (pointer, metrics = drawMetrics) => {
+      if (!metrics) return null;
+      const transformed = new DOMPoint(
+        pointer.clientX - metrics.left - metrics.originX,
+        pointer.clientY - metrics.top - metrics.originY,
+      ).matrixTransform(metrics.inverse);
+      const point = {
+        x: transformed.x + metrics.originX,
+        y: transformed.y + metrics.originY,
+        pressure: pointer.pressure || .5,
+      };
+      point.inside = point.x >= 0 && point.x <= metrics.width && point.y >= 0 && point.y <= metrics.height;
+      return point;
+    };
+
+    const restoreCanvas = ({ clearFaded = false } = {}) => {
+      window.clearTimeout(fadeTimer);
+      window.clearTimeout(clearTimer);
+      const wasFading = drawCanvas.classList.contains('is-fading');
+      drawCanvas.classList.add('is-resetting');
+      drawCanvas.classList.remove('is-fading');
+      if (clearFaded && wasFading) clearCanvas();
+      requestAnimationFrame(() => drawCanvas.classList.remove('is-resetting'));
+    };
+
+    const scheduleFade = () => {
+      const visibleDuration = reducedMotion.matches ? 200 : 1800;
+      const fadeDuration = reducedMotion.matches ? 30 : 1400;
+      window.clearTimeout(fadeTimer);
+      window.clearTimeout(clearTimer);
+      fadeTimer = window.setTimeout(() => drawCanvas.classList.add('is-fading'), visibleDuration);
+      clearTimer = window.setTimeout(() => {
+        clearCanvas();
+        drawCanvas.classList.add('is-resetting');
+        drawCanvas.classList.remove('is-fading');
+        requestAnimationFrame(() => drawCanvas.classList.remove('is-resetting'));
+      }, visibleDuration + fadeDuration);
+    };
+
+    const resizeCanvas = () => {
+      if (drawState?.active) {
+        try { posterHero.releasePointerCapture(drawState.pointerId); } catch (_) {}
+      }
+      const width = drawSurface.clientWidth;
+      const height = drawSurface.clientHeight;
+      const dpr = Math.max(1, window.devicePixelRatio || 1);
+      drawCanvas.width = Math.round(width * dpr);
+      drawCanvas.height = Math.round(height * dpr);
+      drawContext.setTransform(dpr, 0, 0, dpr, 0, 0);
+      drawContext.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#101012';
+      drawContext.lineCap = 'round';
+      drawContext.lineJoin = 'round';
+      drawContext.globalAlpha = .84;
+      drawMetrics = readDrawMetrics();
+      restoreCanvas();
+      drawState = null;
+      posterHero.classList.remove('is-drawing');
+    };
+
+    const scheduleResize = () => {
+      if (resizeFrame) cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(() => {
+        resizeFrame = 0;
+        resizeCanvas();
+      });
+    };
+
+    const isProtectedHeroTarget = (target) => target instanceof Element
+      && Boolean(target.closest('a, button, input, [data-poster-object], [data-poster-letter]'));
+
+    const beginDrawing = (event) => {
+      restoreCanvas({ clearFaded: true });
+      drawState.active = true;
+      posterHero.classList.add('is-drawing');
+      posterHero.classList.remove('is-draw-ready');
+      try { posterHero.setPointerCapture(event.pointerId); } catch (_) {}
+    };
+
+    const drawToPoint = (pointer) => {
+      const point = localDrawPoint(pointer, drawState.metrics);
+      if (!point?.inside) {
+        drawState.lastPoint = null;
+        return;
+      }
+      if (!drawState.lastPoint) {
+        drawState.lastPoint = point;
+        return;
+      }
+
+      const baseWidth = window.innerWidth <= 720 ? 3 : 4;
+      const pressureScale = pointer.pointerType === 'pen' ? .82 + point.pressure * .38 : 1;
+      drawContext.lineWidth = baseWidth * pressureScale;
+      drawContext.beginPath();
+      drawContext.moveTo(drawState.lastPoint.x, drawState.lastPoint.y);
+      drawContext.lineTo(point.x, point.y);
+      drawContext.stroke();
+      drawState.lastPoint = point;
+      drawState.hasMarks = true;
+
+      if (!hasDrawn) {
+        hasDrawn = true;
+        drawHint?.classList.add('is-hidden');
+      }
+    };
+
+    const finishDrawing = (event) => {
+      if (!drawState || event.pointerId !== drawState.pointerId) return;
+      if (drawState.active) {
+        try { posterHero.releasePointerCapture(event.pointerId); } catch (_) {}
+        if (drawState.hasMarks) scheduleFade();
+      }
+      drawState = null;
+      posterHero.classList.remove('is-drawing');
+    };
+
+    resizeCanvas();
+    if ('ResizeObserver' in window) new ResizeObserver(scheduleResize).observe(drawSurface);
+    window.addEventListener('resize', scheduleResize, { passive: true });
+
+    posterHero.addEventListener('pointerdown', (event) => {
+      if (!event.isPrimary || event.button !== 0 || isProtectedHeroTarget(event.target)) return;
+      const metrics = readDrawMetrics();
+      const point = localDrawPoint(event, metrics);
+      if (!point?.inside) return;
+
+      drawMetrics = metrics;
+      drawState = {
+        pointerId: event.pointerId,
+        pointerType: event.pointerType,
+        startX: event.clientX,
+        startY: event.clientY,
+        lastPoint: point,
+        metrics,
+        active: false,
+        hasMarks: false,
+      };
+
+      if (event.pointerType !== 'touch') {
+        event.preventDefault();
+        beginDrawing(event);
+      }
+    });
+
+    posterHero.addEventListener('pointermove', (event) => {
+      if (!drawState || event.pointerId !== drawState.pointerId) {
+        if (event.pointerType === 'mouse') {
+          const point = localDrawPoint(event);
+          posterHero.classList.toggle('is-draw-ready', Boolean(point?.inside) && !isProtectedHeroTarget(event.target));
+        }
+        return;
+      }
+
+      if (!drawState.active && drawState.pointerType === 'touch') {
+        const deltaX = event.clientX - drawState.startX;
+        const deltaY = event.clientY - drawState.startY;
+        if (Math.hypot(deltaX, deltaY) < 10) return;
+        if (Math.abs(deltaY) > Math.abs(deltaX) * 1.15) {
+          drawState = null;
+          return;
+        }
+        beginDrawing(event);
+      }
+
+      if (!drawState?.active) return;
+      event.preventDefault();
+      const points = typeof event.getCoalescedEvents === 'function' ? event.getCoalescedEvents() : [event];
+      points.forEach(drawToPoint);
+    });
+
+    posterHero.addEventListener('pointerup', finishDrawing);
+    posterHero.addEventListener('pointercancel', finishDrawing);
+    posterHero.addEventListener('pointerleave', () => {
+      if (!drawState) posterHero.classList.remove('is-draw-ready');
+    });
+  }
 
   titleGroups.forEach((group) => {
     [...group.children].forEach((word) => {
@@ -95,7 +333,7 @@
   };
 
   const updatePointer = (event) => {
-    if (reducedMotion.matches || !precisePointer.matches) return;
+    if (reducedMotion.matches || !precisePointer.matches || posterHero.classList.contains('is-drawing')) return;
     if (pointerFrame) cancelAnimationFrame(pointerFrame);
     pointerFrame = requestAnimationFrame(() => {
       const bounds = posterHero.getBoundingClientRect();
@@ -158,6 +396,96 @@
     });
   }
 
+  const stickerRestoreTimers = new WeakMap();
+
+  const enableStickerEditing = (object) => {
+    const editable = object.querySelector('[data-sticker-text]');
+    if (!editable) return;
+    const originalText = editable.textContent.trim();
+
+    const clearRestoreTimer = () => {
+      const timer = stickerRestoreTimers.get(object);
+      if (timer) window.clearTimeout(timer);
+      stickerRestoreTimers.delete(object);
+    };
+
+    const restoreOriginal = ({ immediate = false } = {}) => {
+      clearRestoreTimer();
+      object.classList.add('is-restoring');
+      object.classList.remove('is-editing');
+      editable.setAttribute('contenteditable', 'false');
+      editable.blur();
+
+      const swapText = () => {
+        editable.textContent = originalText;
+        object.classList.remove('is-restoring');
+      };
+
+      if (immediate || reducedMotion.matches) swapText();
+      else window.setTimeout(swapText, 160);
+    };
+
+    const scheduleRestore = () => {
+      clearRestoreTimer();
+      stickerRestoreTimers.set(object, window.setTimeout(restoreOriginal, 4000));
+    };
+
+    const placeCaretAtEnd = () => {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(editable);
+      range.collapse(false);
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+    };
+
+    object.addEventListener('dblclick', (event) => {
+      if (!precisePointer.matches) return;
+      event.preventDefault();
+      event.stopPropagation();
+      clearRestoreTimer();
+      object.classList.remove('is-restoring');
+      object.classList.add('is-editing');
+      editable.setAttribute('contenteditable', 'plaintext-only');
+      editable.setAttribute('spellcheck', 'false');
+      editable.focus();
+
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(editable);
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+    });
+
+    editable.addEventListener('input', () => {
+      const singleLineText = editable.textContent.replace(/\s+/g, ' ').trimStart();
+      if (singleLineText !== editable.textContent) {
+        editable.textContent = singleLineText;
+        placeCaretAtEnd();
+      }
+      if (singleLineText) scheduleRestore();
+    });
+
+    editable.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        editable.blur();
+      }
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        restoreOriginal({ immediate: true });
+      }
+    });
+
+    editable.addEventListener('blur', () => {
+      if (object.classList.contains('is-restoring')) return;
+      object.classList.remove('is-editing');
+      editable.setAttribute('contenteditable', 'false');
+      if (editable.textContent.trim() && editable.textContent.trim() !== originalText) scheduleRestore();
+      else restoreOriginal({ immediate: true });
+    });
+  };
+
   const activeInertia = new WeakMap();
 
   const stopInertia = (object) => {
@@ -211,7 +539,7 @@
     };
 
     object.addEventListener('pointerdown', (event) => {
-      if (!precisePointer.matches || reducedMotion.matches || event.button !== 0) return;
+      if (!precisePointer.matches || reducedMotion.matches || event.button !== 0 || object.classList.contains('is-editing')) return;
       event.preventDefault();
       stopInertia(object);
       const heroBounds = posterHero.getBoundingClientRect();
@@ -263,7 +591,10 @@
     object.addEventListener('pointercancel', release);
   };
 
-  heroObjects.forEach(enableDrag);
+  heroObjects.forEach((object) => {
+    enableStickerEditing(object);
+    enableDrag(object);
+  });
   reducedMotion.addEventListener?.('change', (event) => {
     if (event.matches) {
       resetPointer();

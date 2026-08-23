@@ -1,0 +1,102 @@
+<div class="system-playground system-playground--{{ service.visual }}" data-system-playground role="button" tabindex="0" aria-label="Animation für {{ service.title }} abspielen">
+  {% if service.visual == "saas" %}
+    <svg viewBox="0 0 520 210" focusable="false" aria-hidden="true">
+      <g class="system-connections">
+        <path class="system-path system-path--draw system-delay-1" pathLength="1" d="M87 59 L205 59 L260 105" />
+        <path class="system-path system-path--draw system-delay-2" pathLength="1" d="M260 105 L346 55 L444 55" />
+        <path class="system-path system-path--draw system-delay-2" pathLength="1" d="M260 105 L358 157 L444 157" />
+        <path class="system-path system-path--draw system-delay-3" pathLength="1" d="M87 157 L190 157 L260 105" />
+      </g>
+      <g class="system-unit system-delay-1" style="--start-x: 28px; --start-y: 30px;">
+        <rect class="system-node" x="35" y="42" width="52" height="34" />
+        <text class="system-label" x="61" y="63" text-anchor="middle">DATA</text>
+      </g>
+      <g class="system-unit system-delay-2" style="--start-x: 6px; --start-y: -28px;">
+        <circle class="system-node system-node--active" cx="260" cy="105" r="30" />
+        <text class="system-label" x="260" y="109" text-anchor="middle">CORE</text>
+      </g>
+      <g class="system-unit system-delay-1" style="--start-x: -18px; --start-y: 34px;">
+        <rect class="system-node" x="444" y="38" width="42" height="34" />
+        <text class="system-label" x="465" y="59" text-anchor="middle">API</text>
+      </g>
+      <g class="system-unit system-delay-3" style="--start-x: -36px; --start-y: -18px;">
+        <circle class="system-node" cx="61" cy="157" r="22" />
+        <text class="system-label" x="61" y="161" text-anchor="middle">UX</text>
+      </g>
+      <g class="system-unit system-delay-2" style="--start-x: 24px; --start-y: -26px;">
+        <rect class="system-node" x="444" y="140" width="42" height="34" />
+        <text class="system-label" x="465" y="161" text-anchor="middle">OPS</text>
+      </g>
+    </svg>
+  {% elseif service.visual == "agent" %}
+    <svg viewBox="0 0 520 210" focusable="false" aria-hidden="true">
+      <path class="system-path system-path--draw system-delay-1" pathLength="1" d="M91 105 H168" />
+      <path class="system-path system-path--draw system-delay-2" pathLength="1" d="M212 105 C250 105 252 49 299 49" />
+      <path class="system-path system-path--draw system-delay-2" pathLength="1" d="M212 105 H299" />
+      <path class="system-path system-path--draw system-delay-2" pathLength="1" d="M212 105 C250 105 252 161 299 161" />
+      <path class="system-path system-path--draw system-delay-3" pathLength="1" d="M341 49 C383 49 375 105 421 105" />
+      <path class="system-path system-path--draw system-delay-3" pathLength="1" d="M341 105 H421" />
+      <path class="system-path system-path--draw system-delay-3" pathLength="1" d="M341 161 C383 161 375 105 421 105" />
+
+      <rect class="system-node" x="25" y="87" width="66" height="36" />
+      <text class="system-label" x="58" y="109" text-anchor="middle">TASK</text>
+      <circle class="system-node system-node--active system-agent" cx="190" cy="105" r="22" />
+      <text class="system-label" x="190" y="109" text-anchor="middle">AGENT</text>
+      <g class="system-tools system-delay-2">
+        <rect class="system-node" x="299" y="35" width="42" height="28" />
+        <rect class="system-node" x="299" y="91" width="42" height="28" />
+        <rect class="system-node" x="299" y="147" width="42" height="28" />
+        <text class="system-label" x="320" y="53" text-anchor="middle">API</text>
+        <text class="system-label" x="320" y="109" text-anchor="middle">DB</text>
+        <text class="system-label" x="320" y="165" text-anchor="middle">TOOL</text>
+      </g>
+      <rect class="system-node system-node--result" x="421" y="84" width="74" height="42" />
+      <text class="system-label" x="458" y="109" text-anchor="middle">RESULT</text>
+      <circle class="system-signal" cx="91" cy="105" r="4" />
+    </svg>
+  {% elseif service.visual == "ux" %}
+    <svg viewBox="0 0 520 210" focusable="false" aria-hidden="true">
+      <path class="system-path system-path--friction" pathLength="1" d="M55 105 C105 35 145 177 198 105 S290 35 338 105 S413 180 470 105" />
+      <path class="system-path system-path--direct system-delay-2" pathLength="1" d="M55 105 C165 105 352 105 470 105" />
+      <circle class="system-node" cx="55" cy="105" r="18" />
+      <text class="system-label" x="55" y="109" text-anchor="middle">IN</text>
+      <circle class="system-node system-node--active" cx="470" cy="105" r="18" />
+      <text class="system-label" x="470" y="109" text-anchor="middle">OUT</text>
+      <g class="system-friction-node system-friction-node--one">
+        <rect class="system-node" x="148" y="74" width="28" height="28" />
+      </g>
+      <g class="system-friction-node system-friction-node--two">
+        <circle class="system-node" cx="260" cy="132" r="15" />
+      </g>
+      <g class="system-friction-node system-friction-node--three">
+        <rect class="system-node" x="357" y="69" width="30" height="30" />
+      </g>
+      <text class="system-caption system-caption--friction" x="190" y="31">FRICTION / DETOURS</text>
+      <text class="system-caption system-caption--flow" x="210" y="91">CLEAR USER FLOW</text>
+    </svg>
+  {% else %}
+    <svg viewBox="0 0 520 210" focusable="false" aria-hidden="true">
+      <g class="system-noise">
+        <circle cx="37" cy="44" r="3" /><circle cx="84" cy="76" r="4" /><circle cx="126" cy="37" r="2.5" />
+        <circle cx="165" cy="81" r="3" /><circle cx="53" cy="151" r="2.5" /><circle cx="113" cy="178" r="4" />
+        <circle cx="195" cy="155" r="2.5" /><circle cx="248" cy="42" r="3" /><circle cx="292" cy="179" r="3" />
+        <circle cx="360" cy="34" r="2.5" /><circle cx="410" cy="173" r="4" /><circle cx="484" cy="53" r="3" />
+        <circle cx="474" cy="149" r="2.5" /><circle cx="325" cy="82" r="3" /><circle cx="220" cy="112" r="3" />
+      </g>
+      <g class="system-signal-graph">
+        <path class="system-path system-path--draw system-delay-1" pathLength="1" d="M187 120 L264 72 L333 113 L405 75" />
+        <path class="system-path system-path--draw system-delay-2" pathLength="1" d="M264 72 L298 151 L333 113 L405 143" />
+        <path class="system-path system-path--draw system-delay-3" pathLength="1" d="M405 75 L405 143" />
+        <circle class="system-node system-signal-node" cx="187" cy="120" r="8" />
+        <circle class="system-node system-signal-node" cx="264" cy="72" r="10" />
+        <circle class="system-node system-signal-node" cx="298" cy="151" r="7" />
+        <circle class="system-node system-signal-node" cx="333" cy="113" r="14" />
+        <circle class="system-node system-signal-node" cx="405" cy="75" r="8" />
+        <circle class="system-node system-signal-node" cx="405" cy="143" r="10" />
+        <text class="system-label system-insight-label" x="333" y="117" text-anchor="middle">SIGNAL</text>
+      </g>
+      <text class="system-caption system-caption--noise" x="28" y="198">PLATFORM NOISE</text>
+      <text class="system-caption system-caption--insight" x="365" y="198">INSIGHT</text>
+    </svg>
+  {% endif %}
+</div>

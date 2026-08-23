@@ -42,29 +42,33 @@
     "capabilities": [
         {
             "number": "01",
+            "visual": "saas",
             "label": "SaaS & Product Development",
-            "title": "Neue digitale Produkte von der Idee bis zum produktiven System.",
+            "title": "Neue SaaS-Produkte bauen.",
             "text": "Product Strategy, UX, Architektur und Engineering für neue SaaS- und B2B-Produkte.",
             "tags": ["Product Strategy", "UX", "Architecture", "Engineering"]
         },
         {
             "number": "02",
+            "visual": "agent",
             "label": "Agentic AI Integration",
-            "title": "AI dort einsetzen, wo sie Arbeit wirklich verändert.",
+            "title": "Agentic AI integrieren.",
             "text": "Bestehende Produkte und Prozesse um Agents, AI-Workflows und intelligente Automatisierung erweitern.",
             "tags": ["AI Agents", "LLM Integration", "Automation", "Workflows"]
         },
         {
             "number": "03",
+            "visual": "ux",
             "label": "Product & UX Optimization",
-            "title": "Bestehende Produkte verständlicher und leichter nutzbar machen.",
+            "title": "Bestehende Produkte verbessern.",
             "text": "Research, Informationsarchitektur, User Flows und Prototyping für digitale Produkte, die bereits existieren, aber besser funktionieren müssen.",
             "tags": ["UX Research", "User Flows", "Information Architecture", "Prototyping"]
         },
         {
             "number": "04",
+            "visual": "signals",
             "label": "Platform Intelligence",
-            "title": "Plattformen verstehen. Produkte und Distribution gezielt optimieren.",
+            "title": "Plattformen verstehen und optimieren.",
             "text": "Daten, Plattformmechaniken und Nutzerverhalten analysieren, um Produkt, Distribution und Performance systematisch zu verbessern.",
             "tags": ["Data Analysis", "Platform Signals", "Optimization", "Strategy"]
         }
@@ -88,7 +92,7 @@
             "number": "03",
             "name": "Partner:innen",
             "disciplines": "Development · SEO · Ops",
-            "proof": "LONG-TERM",
+            "proof": "TRUSTED NETWORK",
             "text": "Je nach Projekt ergänzen langjährige, ausgewählte Partner:innen unser Kernteam mit spezialisierter Expertise und klar definierten Aufgaben."
         }
     ]

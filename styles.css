@@ -220,6 +220,9 @@ select {
     --title-opacity: 1;
     --objects-opacity: 1;
     --stripe-scale: 1;
+    --hero-stripe-right: clamp(5rem, 14vw, 14rem);
+    --hero-stripe-width: clamp(8rem, 15vw, 15rem);
+    --hero-stripe-skew: -4deg;
     position: relative;
     isolation: isolate;
     min-height: max(720px, 100svh);
@@ -233,12 +236,70 @@ select {
     position: absolute;
     z-index: -2;
     top: 0;
-    right: clamp(5rem, 14vw, 14rem);
-    width: clamp(8rem, 15vw, 15rem);
+    right: var(--hero-stripe-right);
+    width: var(--hero-stripe-width);
     height: 100%;
     background: var(--purple);
-    transform: skewX(-4deg) scaleY(var(--stripe-scale));
+    transform: skewX(var(--hero-stripe-skew)) scaleY(var(--stripe-scale));
     transform-origin: top;
+}
+.poster-hero__draw-surface {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: var(--hero-stripe-right);
+    width: var(--hero-stripe-width);
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    transform: skewX(var(--hero-stripe-skew)) scaleY(var(--stripe-scale));
+    transform-origin: top;
+}
+.poster-hero__draw-canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 1.4s ease;
+}
+.poster-hero__draw-canvas.is-fading {
+    opacity: 0;
+}
+.poster-hero__draw-canvas.is-resetting {
+    transition: none;
+}
+.poster-hero__draw-hint {
+    position: absolute;
+    right: 14%;
+    bottom: 22%;
+    padding: 0.3rem 0.4rem;
+    color: rgba(16, 16, 18, 0.62);
+    background: rgba(244, 240, 233, 0.74);
+    border: 1px solid rgba(16, 16, 18, 0.24);
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+.poster-hero__draw-hint.is-hidden {
+    opacity: 0;
+    transform: translateY(3px) rotate(-2deg);
+}
+.poster-hero.is-draw-ready,
+.poster-hero.is-drawing {
+    cursor: url('/assets/pointer.png') 3 22, crosshair;
+}
+@media (pointer: coarse) {
+    .poster-hero {
+        touch-action: pan-y;
+    }
 }
 .poster-hero__grid {
     position: absolute;
@@ -429,10 +490,32 @@ select {
     text-transform: uppercase;
 }
 .poster-object strong {
+    display: inline-block;
+    min-width: 1ch;
     font-size: clamp(1.2rem, 1.7vw, 1.75rem);
     line-height: 0.88;
     letter-spacing: -0.055em;
     text-transform: uppercase;
+    transition:
+        opacity 0.16s ease,
+        transform 0.16s ease;
+}
+.poster-object.is-editing {
+    z-index: 11;
+    cursor: text;
+}
+.poster-object.is-editing .poster-object__face {
+    transform: translateY(-4px) scale(1.015) rotate(0deg);
+}
+.poster-object.is-editing [data-sticker-text] {
+    cursor: text;
+    user-select: text;
+    outline: 1px dashed currentColor;
+    outline-offset: 0.18em;
+}
+.poster-object.is-restoring [data-sticker-text] {
+    opacity: 0;
+    transform: scale(0.94);
 }
 .poster-object__note {
     align-self: flex-end;
@@ -618,7 +701,11 @@ select {
     letter-spacing: -0.1em;
     white-space: nowrap;
 }
-.ux-stat__number span {
+.ux-stat__visual {
+    display: flex;
+    align-items: baseline;
+}
+.ux-stat__visual > span {
     display: inline-block;
     transform-origin: 50% 72%;
     transition:
@@ -639,16 +726,16 @@ select {
     transition: transform 0.52s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 @media (hover: hover) {
-    .ux-stat__number:hover span {
+    .ux-stat__number:hover .ux-stat__visual > span {
         text-shadow: 0.025em 0.025em 0 var(--lilac);
     }
-    .ux-stat__number:hover span:nth-child(1) {
+    .ux-stat__number:hover .ux-stat__visual > span:nth-child(1) {
         transform: translate(-0.015em, -0.045em) rotate(-3deg);
     }
-    .ux-stat__number:hover span:nth-child(2) {
+    .ux-stat__number:hover .ux-stat__visual > span:nth-child(2) {
         transform: translate(0.01em, 0.025em) rotate(2deg);
     }
-    .ux-stat__number:hover span:nth-child(3) {
+    .ux-stat__number:hover .ux-stat__visual > span:nth-child(3) {
         transform: translate(0.06em, -0.09em) rotate(7deg) scale(0.92);
     }
     .ux-stat__number:hover::after {
@@ -926,10 +1013,52 @@ select {
 }
 .service-offer .capability-row__title h3 {
     margin: 0;
-    font-size: clamp(2.2rem, 4vw, 4.8rem);
+    font-size: clamp(2.4rem, 4.2vw, 5rem);
     font-weight: 400;
     line-height: 0.92;
     letter-spacing: -0.06em;
+}
+.service-offer .capability-row {
+    grid-template-columns: 64px minmax(0, 0.95fr) minmax(320px, 1.05fr);
+    gap: clamp(1.5rem, 3.5vw, 3.75rem);
+    padding: clamp(2.5rem, 3.8vw, 3.75rem) 0;
+}
+.service-offer .capability-row:hover {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    background: rgba(164, 87, 232, 0.06);
+}
+.service-offer .capability-row__number {
+    display: block;
+    width: auto;
+    height: auto;
+    padding-top: 0.35rem;
+    color: var(--purple-deep);
+    border: 0;
+    border-radius: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.13em;
+}
+.service-offer .capability-row__number::before {
+    content: '[ ';
+}
+.service-offer .capability-row__number::after {
+    content: ' ]';
+}
+.service-offer .build-tag-list {
+    gap: 0.35rem 0.65rem;
+}
+.service-offer .build-tag-list li {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    color: rgba(16, 16, 18, 0.68);
+    border: 0;
+}
+.service-offer .build-tag-list li:not(:last-child)::after {
+    content: '·';
+    margin-left: 0.65rem;
+    color: var(--purple-deep);
 }
 .capability-row__body > p {
     max-width: 720px;
@@ -938,6 +1067,206 @@ select {
 }
 .capability-row__body .build-tag-list {
     margin-top: 0;
+}
+.system-playground {
+    width: 100%;
+    max-width: 640px;
+    margin-top: clamp(2.5rem, 4vw, 4rem);
+    padding-top: 0.75rem;
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    cursor: pointer;
+}
+.system-playground:focus-visible {
+    outline: 2px solid var(--purple-deep);
+    outline-offset: 0.35rem;
+}
+.system-playground svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    color: var(--ink);
+}
+.system-path {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+}
+.system-path--draw,
+.system-path--direct {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 0.9s cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+.system-node {
+    fill: var(--paper);
+    stroke: currentColor;
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+    transition:
+        fill 0.28s ease,
+        stroke 0.28s ease;
+}
+.system-label,
+.system-caption {
+    fill: currentColor;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+.system-caption {
+    opacity: 0.55;
+    font-size: 7px;
+    transition:
+        opacity 0.35s ease,
+        fill 0.35s ease;
+}
+.system-unit {
+    opacity: 0.72;
+    transform: translate(var(--start-x), var(--start-y));
+    transform-origin: center;
+    transform-box: fill-box;
+    transition:
+        opacity 0.55s ease,
+        transform 0.85s cubic-bezier(0.16, 0.82, 0.24, 1);
+}
+.system-delay-1 {
+    transition-delay: 0.08s;
+}
+.system-delay-2 {
+    transition-delay: 0.2s;
+}
+.system-delay-3 {
+    transition-delay: 0.34s;
+}
+.is-system-active .system-path--draw,
+.is-system-active .system-path--direct {
+    stroke-dashoffset: 0;
+}
+.is-system-active .system-unit {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+.is-system-active .system-node--active,
+.is-system-active .system-node--result,
+.is-system-active .system-signal-node {
+    fill: var(--purple);
+    stroke: var(--purple-deep);
+}
+.is-system-active .system-node--active + .system-label,
+.is-system-active .system-node--result + .system-label,
+.is-system-active .system-insight-label {
+    fill: var(--white);
+}
+.system-agent {
+    transform: scale(0.72);
+    transform-origin: center;
+    transform-box: fill-box;
+    transition:
+        fill 0.28s ease,
+        stroke 0.28s ease,
+        transform 0.72s cubic-bezier(0.16, 0.82, 0.24, 1);
+}
+.is-system-active .system-agent {
+    transform: scale(1);
+}
+.system-tools {
+    opacity: 0.28;
+    transform: translateX(-12px);
+    transition:
+        opacity 0.55s ease,
+        transform 0.75s cubic-bezier(0.16, 0.82, 0.24, 1);
+}
+.is-system-active .system-tools {
+    opacity: 1;
+    transform: translateX(0);
+}
+.system-signal {
+    fill: var(--purple-deep);
+    opacity: 0;
+}
+.is-system-active .system-signal {
+    animation: system-signal-travel 0.95s 0.12s ease-in-out both;
+}
+@keyframes system-signal-travel {
+    0% { opacity: 0; transform: translateX(0); }
+    12% { opacity: 1; }
+    88% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(367px); }
+}
+.system-path--friction {
+    opacity: 0.9;
+    stroke-dasharray: 4 5;
+    transition: opacity 0.45s ease;
+}
+.system-path--direct {
+    color: var(--purple-deep);
+    stroke-width: 2;
+}
+.system-friction-node {
+    transform-origin: center;
+    transform-box: fill-box;
+    transition:
+        opacity 0.6s ease,
+        transform 0.8s cubic-bezier(0.16, 0.82, 0.24, 1);
+}
+.is-system-active .system-path--friction,
+.is-system-active .system-caption--friction {
+    opacity: 0.16;
+}
+.is-system-active .system-friction-node {
+    opacity: 0.28;
+}
+.is-system-active .system-friction-node--one {
+    transform: translateY(-32px);
+}
+.is-system-active .system-friction-node--two {
+    transform: translateY(31px);
+}
+.is-system-active .system-friction-node--three {
+    transform: translateY(-34px);
+}
+.system-caption--flow {
+    fill: var(--purple-deep);
+    opacity: 0;
+}
+.is-system-active .system-caption--flow {
+    opacity: 1;
+}
+.system-noise {
+    fill: var(--ink);
+    opacity: 0.72;
+    transition: opacity 0.6s ease;
+}
+.system-signal-graph {
+    opacity: 0.28;
+    transition: opacity 0.6s ease;
+}
+.system-signal-node {
+    transition:
+        fill 0.35s ease,
+        stroke 0.35s ease;
+}
+.system-insight-label {
+    font-size: 6px;
+}
+.system-caption--insight {
+    fill: var(--purple-deep);
+    opacity: 0;
+}
+.is-system-active .system-noise {
+    opacity: 0.16;
+}
+.is-system-active .system-signal-graph,
+.is-system-active .system-caption--insight {
+    opacity: 1;
+}
+.is-system-active .system-caption--noise {
+    opacity: 0.2;
 }
 .cta-band {
     color: var(--white);
@@ -1396,6 +1725,10 @@ select {
         grid-template-columns: 60px minmax(190px, 0.45fr) minmax(0, 1fr);
         gap: 1.5rem;
     }
+    .service-offer .capability-row {
+        grid-template-columns: 52px minmax(0, 0.95fr) minmax(280px, 1.05fr);
+        gap: 1.5rem;
+    }
     .cta-band-inner {
         grid-template-columns: 1fr;
     }
@@ -1436,13 +1769,14 @@ select {
         display: none;
     }
     .poster-hero {
+        --hero-stripe-right: 12%;
+        --hero-stripe-width: 23%;
+        --hero-stripe-skew: -3deg;
         min-height: max(790px, 100svh);
         padding: 6.25rem var(--pad) 1rem;
     }
-    .poster-hero::before {
-        right: 12%;
-        width: 23%;
-        transform: skewX(-3deg);
+    .poster-hero__draw-hint {
+        display: none;
     }
     .poster-hero__grid {
         inset-block-start: 68px;
@@ -1594,6 +1928,24 @@ select {
         grid-template-columns: 48px 1fr;
         gap: 1rem;
     }
+    .service-offer .capability-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 2.75rem 0;
+    }
+    .service-offer .capability-row__number,
+    .service-offer .capability-row__title,
+    .service-offer .capability-row__body {
+        grid-column: 1;
+    }
+    .service-offer .capability-row__title h3 {
+        font-size: clamp(2.4rem, 11vw, 3.8rem);
+    }
+    .system-playground {
+        max-width: none;
+        margin-top: 2.5rem;
+        padding-top: 0.5rem;
+    }
     .capability-row__number {
         width: 40px;
         height: 40px;
@@ -1677,14 +2029,27 @@ select {
     .poster-object {
         will-change: auto;
     }
-    .ux-stat__number span {
+    .poster-hero__draw-canvas {
+        transition-duration: 0.01ms;
+    }
+    .ux-stat__visual > span {
         will-change: auto;
     }
-    .ux-stat__number:hover span {
+    .ux-stat__number:hover .ux-stat__visual > span {
         transform: none;
         text-shadow: none;
     }
     .ux-stat__number:hover::after {
         transform: scaleX(0);
+    }
+    .system-unit,
+    .system-tools,
+    .system-friction-node,
+    .system-path,
+    .system-node,
+    .system-caption,
+    .system-noise,
+    .system-signal-graph {
+        transition: none;
     }
 }
