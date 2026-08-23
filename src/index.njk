@@ -2,181 +2,86 @@
 layout: layouts/base.njk
 title: Dynamiq – SaaS- und B2B-Websites aus Salzburg
 description: Dynamiq konzipiert und entwickelt schnelle SaaS- und B2B-Websites, die komplexe Produkte verständlich machen und Besucher zu qualifizierten Leads führen.
-ogDescription: SaaS- und B2B-Websites, die Produkt, Marke und Growth zusammenbringen.
+ogDescription: Dynamiq entwickelt Agentic-AI-Lösungen, skalierbare SaaS-Produkte und UX, die komplexe digitale Produkte einfacher und erfolgreicher macht.
 ogImage: /assets/og-image.png
 isHome: true
 showNavigation: true
 ---
-<section class="hero" id="top">
-  <div class="hero-copy">
-    <p class="eyebrow">SaaS · Tech · B2B</p>
-    <h1>Websites, die komplexe Produkte <em>einfach verkaufen.</em></h1>
-    <p class="hero-text">Wir verbinden Positionierung, Product Story, UX und Webentwicklung zu SaaS- und B2B-Websites, die verstanden werden – und aus Aufmerksamkeit qualifizierte Demos, Trials und Anfragen machen.</p>
-    <div class="hero-actions">
-      <a class="button button-dark" href="#kontakt">Projekt besprechen</a>
-      <a class="button button-ghost" href="#website-check">Website prüfen lassen</a>
-    </div>
-  </div>
+<section class="poster-hero" id="top" data-poster-hero aria-labelledby="poster-title">
+  <div class="poster-hero__grid" aria-hidden="true"></div>
+  <p class="poster-hero__eyebrow" data-hero-reveal>SaaS · Agentic AI · UX</p>
 
-  <div class="hero-stage">
-    <div class="stage-tag stage-tag-one"><span class="status-dot"></span> Growth-ready</div>
-    <div class="stage-tag stage-tag-two">Messbar optimiert</div>
-    <div class="stage-word" aria-hidden="true">SCALE</div>
-    <figure class="conversion-machine">
-      <div class="machine-visual" aria-hidden="true">
-        <div class="machine-toolbar">
-          <span class="machine-dots"><i></i><i></i><i></i></span>
-          <span class="machine-url">dynamiq.agency / saas-growth</span>
-        </div>
-        <div class="machine-screen">
-          <div class="machine-page">
-            <span class="machine-label">Product Story</span>
-            <strong>Vom Klick<br>zum Aha.</strong>
-            <span class="machine-copy">Eine klare Journey vom Problem über den Produktwert bis zum nächsten Schritt.</span>
-            <span class="machine-cta">Demo buchen <b>→</b></span>
-          </div>
-          <div class="machine-path">
-            <div class="machine-step machine-step-attention"><span>01</span><strong>Value</strong></div>
-            <div class="machine-step machine-step-trust"><span>02</span><strong>Proof</strong></div>
-            <div class="machine-step machine-step-action"><span>03</span><strong>Action</strong></div>
-          </div>
-          <div class="machine-output"><span>Conversion-Ziel</span><strong>Demo · Trial · Lead</strong></div>
-        </div>
+  <h1 class="poster-title" id="poster-title" aria-label="SCALABLE PRODUCTS. CLEAR STORIES. BETTER EXPERIENCES.">
+    <span class="poster-title__group poster-title__group--complex" data-hero-reveal data-depth="0.35">
+      <span>SCALABLE </span>
+      <span class="poster-title__outline">PRODUCTS.</span>
+    </span>
+    <span class="poster-title__group poster-title__group--clear" data-hero-reveal data-depth="0.62">
+      <span>Clear</span>
+      <span class="poster-title__serif">Stories.</span>
+    </span>
+    <span class="poster-title__group poster-title__group--better" data-hero-reveal data-depth="0.45">
+      <span>Better</span>
+      <span>EXPERIENCES.</span>
+    </span>
+  </h1>
+
+  <div class="poster-objects" aria-label="Was Dynamiq verbindet">
+    <div class="poster-object poster-object--positioning" data-poster-object data-depth="0.9" data-hero-reveal>
+      <div class="poster-object__face">
+        <span class="poster-object__index">01</span>
+        <strong>AUTOMATE WORK
+</strong>
+        <span class="poster-object__note">NOT JUST TASKS</span>
       </div>
-      <figcaption>Positioning × Product × Proof × Growth</figcaption>
-    </figure>
-    <div class="stage-ring stage-ring-one" aria-hidden="true"></div>
-    <div class="stage-ring stage-ring-two" aria-hidden="true"></div>
-  </div>
-
-  <ul class="hero-proof" aria-label="Erfahrung und Kompetenzen">
-    {% for proof in home.proofs %}
-      <li><strong>{{ proof.value }}</strong><span>{{ proof.label }}</span></li>
-    {% endfor %}
-  </ul>
-</section>
-
-<section class="challenges section-shell" aria-labelledby="challenges-title">
-  <div class="section-heading">
-    <div>
-      <p class="section-kicker">Für SaaS, Tech und komplexe B2B-Angebote</p>
-      <h2 id="challenges-title">Wenn das Produkt stärker ist als seine Website.</h2>
     </div>
-    <p>Wir arbeiten mit SaaS-Teams und technologieorientierten B2B-Unternehmen, deren Website Produktwert, Go-to-Market oder Qualitätsanspruch nicht mehr angemessen abbildet.</p>
-  </div>
-  <ul class="challenge-grid">
-    {% for problem in home.problems %}<li>{{ problem }}</li>{% endfor %}
-  </ul>
-</section>
-
-<section class="saas-system section-shell" id="saas-growth" aria-labelledby="saas-title">
-  <div class="saas-system-copy">
-    <p class="section-kicker">SaaS Growth System</p>
-    <h2 id="saas-title">Nicht nur Landingpage. Ein klarer Weg zum Produkt.</h2>
-    <p>Eine SaaS-Website muss mehrere Jobs gleichzeitig erledigen: das Problem zuspitzen, den Produktwert greifbar machen, Vertrauen aufbauen und den richtigen nächsten Schritt anbieten. Wir denken diese Journey als zusammenhängendes System.</p>
-    <div class="saas-signal-row" aria-label="Typische SaaS-Ziele">
-      <span>Demo Requests</span><span>Trial Sign-ups</span><span>Activation</span>
+    <div class="poster-object poster-object--story" data-poster-object data-depth="1.15" data-hero-reveal>
+      <div class="poster-object__face">
+        <span class="poster-object__index">02</span>
+        <strong>USER <br>EXPERIENCE</strong>
+        <span class="poster-object__note">BUILT TO WORK</span>
+      </div>
+    </div>
+    <div class="poster-object poster-object--growth" data-poster-object data-depth="0.75" data-hero-reveal>
+      <div class="poster-object__face">
+        <span class="poster-object__index">03</span>
+        <strong>EXPERIENCE</strong>
+        <span class="poster-object__note">FROM COMPLEX TO CLEAR</span>
+      </div>
     </div>
   </div>
 
-  <div class="saas-console">
-    <div class="console-toolbar">
-      <span class="console-title">Growth journey</span>
-      <span class="console-status"><i></i> Live system</span>
-    </div>
-    <ol class="journey-list">
-      {% for stage in home.saasJourney %}
-        <li>
-          <span class="journey-number">0{{ loop.index }}</span>
-          <div><strong>{{ stage.title }}</strong><span>{{ stage.text }}</span></div>
-          <span class="journey-signal">{{ stage.signal }}</span>
-        </li>
-      {% endfor %}
-    </ol>
-    <div class="console-footer">
-      <span>One connected customer journey</span>
-      <strong>Attention → Activation</strong>
-    </div>
+  <div class="poster-hero__footer" data-hero-reveal>
+    <a class="poster-hero__cta" href="#kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <a class="poster-hero__scroll" href="#how-we-build">Scroll zu How we build <span aria-hidden="true">↓</span></a>
   </div>
 </section>
 
-<section class="services section-shell" id="leistungen" aria-labelledby="services-title">
-  <div class="section-heading">
-    <div>
-      <p class="section-kicker">01 · Leistungen</p>
-      <h2 id="services-title">Drei Disziplinen für mehr SaaS-Growth.</h2>
+<section class="build-services section-shell" id="how-we-build" aria-labelledby="services-title">
+  <header class="build-services__intro">
+    <p class="section-kicker">[ How we build ]</p>
+    <h2 id="services-title"><span>AI baut schneller.</span><span>Menschen entscheiden, was sich zu bauen lohnt.</span></h2>
+    <p>Bevor wir irgendetwas bauen, beginnt jedes Produkt mit unserer UX-Designerin. Sie klärt Nutzerbedürfnisse, Abläufe und Interaktionen – damit wir nicht schneller Software entwickeln, die am Ende niemand nutzen will. Erst wenn die Produkterfahrung trägt, setzen wir AI ein, um Entwicklung und Umsetzung gezielt zu beschleunigen.</p>
+  </header>
+
+  <div class="ux-stat">
+    <div class="ux-stat__core">
+      <strong class="ux-stat__number" aria-label="91 Prozent"><span aria-hidden="true">9</span><span aria-hidden="true">1</span><span aria-hidden="true">%</span></strong>
+      <div class="ux-stat__copy">
+        <p>of employees report frustration with inadequate workplace technology.</p>
+        <p class="ux-stat__source">Source: KMPG</p>
+      </div>
     </div>
-    <p>Positionierung, Nutzerführung und technische Umsetzung greifen ineinander – vom ersten Touchpoint bis zur Demo, Trial oder qualifizierten Anfrage.</p>
-  </div>
-
-  <div class="service-grid">
-    {% for service in home.services %}
-      <article class="service-card {{ service.className }}">
-        <div class="service-number">{{ service.number }}</div>
-        <p class="service-label">{{ service.label }}</p>
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.statement }}</p>
-        <ul>{% for item in service.items %}<li>{{ item }}</li>{% endfor %}</ul>
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="offers section-shell" id="website-check" aria-labelledby="offers-title">
-  <div class="section-heading section-heading-invert">
-    <div>
-      <p class="section-kicker">02 · Klarer Einstieg</p>
-      <h2 id="offers-title">Erst prüfen. Dann sinnvoll priorisieren.</h2>
-    </div>
-    <p>Der Website-Check zeigt, was zuerst verbessert werden sollte. Nach einem kostenlosen Erstgespräch erhältst du ein verbindliches Fixpreisangebot.</p>
-  </div>
-  <div class="offer-list">
-    {% for offer in home.offers %}
-      <article class="offer-row">
-        <div class="offer-index">{{ offer.index }}</div>
-        <div><h3>{{ offer.title }}</h3><p>{{ offer.text }}</p></div>
-        <span class="offer-result">{{ offer.result }}</span>
-      </article>
-    {% endfor %}
-  </div>
-  <div class="offer-actions"><a class="button button-light" href="#kontakt">Website prüfen lassen</a></div>
-</section>
-
-<section class="attention section-shell" aria-labelledby="attention-title">
-  <div class="attention-visual" aria-hidden="true">
-    <span class="attention-small">Content- und Distributionspraxis</span>
-    <span class="attention-big">12M+</span>
-    <span class="attention-outline">ATTENTION</span>
-  </div>
-  <div class="attention-copy">
-    <p class="section-kicker">03 · Erfahrung statt erfundener Referenzen</p>
-    <h2 id="attention-title">15 Jahre Software, digitale Produkte und Unternehmertum.</h2>
-    <p>Oliver bringt Erfahrung als Gründer, CTO und Geschäftsführer sowie in der Entwicklung digitaler Produkte und SaaS-Systeme mit. Als ehemaliger Creator veröffentlichte er mehr als 500 Videos und erreichte über 12 Millionen organische Views. Veröffentlichungen in Fach- und Technikmedien ergänzen diese Content- und Distributionskompetenz.</p>
-    <p>Die Reichweite belegt Erfahrung mit Inhalten und organischer Distribution – nicht die Conversion-Leistung von B2B-Websites.</p>
-    <div class="attention-facts">
-      <span>Softwareentwicklung</span><span>Digitale Produkte</span><span>Unternehmertum</span><span>Content & Distribution</span>
+    <div class="ux-first">
+      <h3>Deshalb kommt UX zuerst.</h3>
+      <ul aria-label="Unsere Haltung"><li>Nicht AI zuerst.</li><li>Nicht Code zuerst.</li><li>Menschen zuerst.</li></ul>
     </div>
   </div>
-</section>
-
-<section class="workflow section-shell" id="arbeitsweise" aria-labelledby="workflow-title">
-  <div class="section-heading">
-    <div>
-      <p class="section-kicker">04 · Arbeitsweise</p>
-      <h2 id="workflow-title">In vier klaren Schritten zur neuen Website.</h2>
-    </div>
-    <p>Vom gemeinsamen Verständnis über Konzept und Umsetzung bis zur Weiterentwicklung bleiben Ziele, Zuständigkeiten und nächste Schritte nachvollziehbar.</p>
-  </div>
-  <ol class="process-grid">
-    {% for step in home.process %}
-      <li><span>{{ step.number }}</span><h3>{{ step.title }}</h3><p>{{ step.text }}</p></li>
-    {% endfor %}
-  </ol>
 </section>
 
 <section class="team section-shell" id="team" aria-labelledby="team-title">
   <div class="team-intro">
-    <p class="section-kicker">05 · Über Dynamiq</p>
+    <p class="section-kicker">02 · Über Dynamiq</p>
     <h2 id="team-title">Die Agentur ist neu. Die Erfahrung dahinter nicht.</h2>
     <p>Dynamiq ist eine inhabergeführte Digitalagentur aus Salzburg. Oliver Jessner und eine feste UX-Partnerin bilden das Kernteam. Dein direkter Ansprechpartner bleibt Oliver; je nach Projekt kommen spezialisierte Partner:innen aus Design, SEO und Entwicklung dazu.</p>
   </div>
@@ -193,39 +98,9 @@ showNavigation: true
   </div>
 </section>
 
-<section class="faq section-shell" aria-labelledby="faq-title">
-  <div class="section-heading">
-    <div><p class="section-kicker">06 · Häufige Fragen</p><h2 id="faq-title">Passt Dynamiq zum Projekt?</h2></div>
-  </div>
-  <div class="faq-list">
-    {% for faq in home.faqs %}
-      <details><summary>{{ faq.question }}</summary><p>{{ faq.answer }}</p></details>
-    {% endfor %}
-  </div>
-</section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {% for faq in home.faqs %}
-    {
-      "@type": "Question",
-      "name": {{ faq.question | dump | safe }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ faq.answer | dump | safe }}
-      }
-    }{% if not loop.last %},{% endif %}
-    {% endfor %}
-  ]
-}
-</script>
-
 <section class="contact section-shell" id="kontakt" aria-labelledby="contact-title">
   <div class="contact-copy">
-    <p class="section-kicker">07 · Kontakt</p>
+    <p class="section-kicker">03 · Kontakt</p>
     <h2 id="contact-title">Was soll eure Website für das Geschäft erreichen?</h2>
     <p>Schreib kurz, wo ihr steht und welches Ergebnis ihr erreichen wollt. Nach Eingang melden wir uns mit einem Terminvorschlag. Im ersten Gespräch klären wir Ziel, Umfang und ob Dynamiq für das Projekt die richtige Besetzung ist.</p>
     <p class="contact-direct">Lieber direkt per E-Mail? <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>

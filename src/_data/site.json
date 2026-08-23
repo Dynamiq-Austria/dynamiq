@@ -9,10 +9,7 @@
         "href": "#kontakt"
     },
     "navigation": [
-        { "label": "SaaS Growth", "href": "#saas-growth" },
-        { "label": "Leistungen", "href": "#leistungen" },
-        { "label": "Website-Check", "href": "#website-check" },
-        { "label": "Arbeitsweise", "href": "#arbeitsweise" },
+        { "label": "How we build", "href": "#how-we-build" },
         { "label": "Über Dynamiq", "href": "#team" },
         { "label": "Kontakt", "href": "#kontakt" }
     ]
