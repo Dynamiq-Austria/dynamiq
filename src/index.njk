@@ -59,7 +59,7 @@ showNavigation: true
 
 <section class="build-services section-shell" id="how-we-build" aria-labelledby="services-title">
   <header class="build-services__intro">
-    <p class="section-kicker">[ How we build ]</p>
+    <p class="section-kicker">[ 02 · How we build ]</p>
     <h2 id="services-title"><span>AI baut schneller.</span><span>Menschen entscheiden, was sich zu bauen lohnt.</span></h2>
     <p>Bevor wir irgendetwas bauen, beginnt jedes Produkt mit unserer UX-Designerin. Sie klärt Nutzerbedürfnisse, Abläufe und Interaktionen – damit wir nicht schneller Software entwickeln, die am Ende niemand nutzen will. Erst wenn die Produkterfahrung trägt, setzen wir AI ein, um Entwicklung und Umsetzung gezielt zu beschleunigen.</p>
   </header>
@@ -79,9 +79,35 @@ showNavigation: true
   </div>
 </section>
 
+<section class="service-offer section-shell" id="leistungen" aria-labelledby="offer-title">
+  <header class="service-offer__intro">
+    <p class="section-kicker">[ 03 · Leistungen ]</p>
+    <h2 id="offer-title"><span>Build.</span><span>Integrate.</span><span>Optimize.</span></h2>
+    <p>Von neuen SaaS-Produkten bis zur Optimierung bestehender Systeme.</p>
+  </header>
+
+  <ol class="capability-list">
+    {% for service in home.capabilities %}
+      <li class="capability-row">
+        <span class="capability-row__number" aria-hidden="true">{{ service.number }}</span>
+        <div class="capability-row__title">
+          <p>{{ service.label }}</p>
+          <h3>{{ service.title }}</h3>
+        </div>
+        <div class="capability-row__body">
+          <p>{{ service.text }}</p>
+          <ul class="build-tag-list" aria-label="Leistungsbausteine">
+            {% for tag in service.tags %}<li>{{ tag }}</li>{% endfor %}
+          </ul>
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+</section>
+
 <section class="about-team section-shell" id="team" aria-labelledby="team-title">
   <header class="about-team__intro">
-    <p class="section-kicker">[ Über Dynamiq ]</p>
+    <p class="section-kicker">[ 04 · Über Dynamiq ]</p>
     <h2 id="team-title"><span>Senior expertise.</span><span>Direkt im Projekt.</span></h2>
     <p>Dynamiq ist ein Senior-Team für digitale Produkte.<br>Strategie, UX, Agentic AI und Engineering liegen direkt bei den Menschen, die am Projekt arbeiten.</p>
   </header>
@@ -101,48 +127,63 @@ showNavigation: true
 </section>
 
 <section class="contact section-shell" id="kontakt" aria-labelledby="contact-title">
-  <div class="contact-copy">
-    <p class="section-kicker">03 · Kontakt</p>
-    <h2 id="contact-title">Was soll eure Website für das Geschäft erreichen?</h2>
-    <p>Schreib kurz, wo ihr steht und welches Ergebnis ihr erreichen wollt. Nach Eingang melden wir uns mit einem Terminvorschlag. Im ersten Gespräch klären wir Ziel, Umfang und ob Dynamiq für das Projekt die richtige Besetzung ist.</p>
-    <p class="contact-direct">Lieber direkt per E-Mail? <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-    <span class="contact-note">Aus {{ site.location }}. Zusammenarbeit im {{ site.areaServed }}.</span>
+  <header class="contact-intro">
+    <p class="section-kicker">[ 05 · Kontakt ]</p>
+    <h2 id="contact-title"><span>Was wollt ihr bauen,</span><span>verbessern oder skalieren?</span></h2>
+  </header>
+  <div class="contact-body">
+    <div class="contact-summary">
+      <p>Schreibt uns kurz, wo ihr steht, was ihr lösen wollt und welches Ergebnis ihr erreichen möchtet.</p>
+      <p>Im ersten Gespräch klären wir Ziel, Scope und ob wir zusammenpassen.</p>
+      <div class="contact-meta">
+        <p class="contact-direct"><span>Lieber direkt per E-Mail?</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <span class="contact-note">Aus {{ site.location }}. Zusammenarbeit im {{ site.areaServed }}.</span>
+      </div>
+    </div>
+
+    <form class="contact-form" name="projektanfrage" method="post" action="/danke/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="projektanfrage">
+      <p class="form-honeypot" hidden><label>Nicht ausfüllen: <input name="bot-field" type="text"></label></p>
+
+      <div class="form-grid">
+        <div class="field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="email">E-Mail <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="unternehmen">Unternehmen</label><input id="unternehmen" name="unternehmen" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="website">Bestehendes Produkt / Website</label><input id="website" name="website" type="url" autocomplete="url" inputmode="url"></div>
+        <div class="field field-full">
+          <label for="leistung">Wobei können wir helfen? <span aria-hidden="true">*</span></label>
+          <select id="leistung" name="leistung" required>
+            <option value="">Bitte auswählen</option>
+            <option value="Product &amp; Strategy">Product &amp; Strategy</option>
+            <option value="UX &amp; Product Design">UX &amp; Product Design</option>
+            <option value="SaaS Development">SaaS Development</option>
+            <option value="Agentic AI">Agentic AI</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Noch nicht sicher">Noch nicht sicher</option>
+          </select>
+        </div>
+        <div class="field field-full"><label for="projekt">Worum geht es? <span aria-hidden="true">*</span></label><textarea id="projekt" name="projekt" rows="6" required aria-describedby="projekt-hilfe"></textarea><span class="form-help" id="projekt-hilfe">Ausgangslage, Problem und gewünschtes Ergebnis genügen für den Anfang.</span></div>
+        <div class="field">
+          <label for="start">Wann möchtet ihr starten?</label>
+          <select id="start" name="start"><option value="">Bitte auswählen</option><option>So bald wie sinnvoll</option><option>In 1–3 Monaten</option><option>In 3–6 Monaten</option><option>Später oder noch offen</option></select>
+        </div>
+        <div class="field">
+          <label for="budget">Budgetrahmen (optional)</label>
+          <select id="budget" name="budget">
+          <option value="">Keine Angabe</option>
+          <option>10.000–20.000 €</option>
+          <option>20.000–40.000 €</option>
+          <option>40.000–75.000 €</option>
+          <option>75.000 € oder mehr</option></select>
+        </div>
+      </div>
+
+      <div class="consent-field">
+        <input id="datenschutz-zustimmung" name="datenschutz-zustimmung" type="checkbox" value="zugestimmt" required>
+        <label for="datenschutz-zustimmung">Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Weitere Informationen stehen in der <a href="/datenschutz/">Datenschutzerklärung</a>. <span aria-hidden="true">*</span></label>
+      </div>
+      <p class="required-note"><span aria-hidden="true">*</span> Pflichtfeld</p>
+      <button class="button button-dark" type="submit">Projekt besprechen</button>
+    </form>
   </div>
-
-  <form class="contact-form" name="projektanfrage" method="post" action="/danke/" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="projektanfrage">
-    <p class="form-honeypot" hidden><label>Nicht ausfüllen: <input name="bot-field" type="text"></label></p>
-
-    <div class="form-grid">
-      <div class="field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
-      <div class="field"><label for="email">E-Mail <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
-      <div class="field"><label for="unternehmen">Unternehmen</label><input id="unternehmen" name="unternehmen" type="text" autocomplete="organization"></div>
-      <div class="field"><label for="website">Bestehende Website</label><input id="website" name="website" type="url" autocomplete="url" inputmode="url"></div>
-      <div class="field field-full">
-        <label for="leistung">Gewünschte Leistung <span aria-hidden="true">*</span></label>
-        <select id="leistung" name="leistung" required>
-          <option value="">Bitte auswählen</option>
-          <option value="Website-Check">Website-Check</option>
-          {% for service in home.services %}<option value="{{ service.label }}">{{ service.label }} – {{ service.title }}</option>{% endfor %}
-          <option value="Noch unklar">Noch unklar</option>
-        </select>
-      </div>
-      <div class="field field-full"><label for="projekt">Kurze Projektbeschreibung <span aria-hidden="true">*</span></label><textarea id="projekt" name="projekt" rows="6" required aria-describedby="projekt-hilfe"></textarea><span class="form-help" id="projekt-hilfe">Ausgangslage, aktuelles Problem und gewünschtes Ergebnis genügen für den Anfang.</span></div>
-      <div class="field">
-        <label for="start">Gewünschter Startzeitpunkt</label>
-        <select id="start" name="start"><option value="">Bitte auswählen</option><option>So bald wie sinnvoll</option><option>In 1–3 Monaten</option><option>In 3–6 Monaten</option><option>Später oder noch offen</option></select>
-      </div>
-      <div class="field">
-        <label for="budget">Optionaler Budgetrahmen</label>
-        <select id="budget" name="budget"><option value="">Keine Angabe</option><option>Bis 5.000 €</option><option>5.000–15.000 €</option><option>15.000–30.000 €</option><option>30.000 € oder mehr</option><option>Noch offen</option></select>
-      </div>
-    </div>
-
-    <div class="consent-field">
-      <input id="datenschutz-zustimmung" name="datenschutz-zustimmung" type="checkbox" value="zugestimmt" required>
-      <label for="datenschutz-zustimmung">Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Weitere Informationen stehen in der <a href="/datenschutz/">Datenschutzerklärung</a>. <span aria-hidden="true">*</span></label>
-    </div>
-    <p class="required-note"><span aria-hidden="true">*</span> Pflichtfeld</p>
-    <button class="button button-light" type="submit">Projekt besprechen</button>
-  </form>
 </section>

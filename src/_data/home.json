@@ -42,24 +42,31 @@
     "capabilities": [
         {
             "number": "01",
-            "label": "Agentic AI",
-            "title": "AI that acts.",
-            "text": "Wir entwickeln AI-Systeme, die nicht nur Inhalte generieren, sondern Aufgaben übernehmen, bestehende Tools verwenden und reale Workflows automatisieren.",
-            "tags": ["Agents", "Workflows", "RAG", "Integrations", "Automation"]
+            "label": "SaaS & Product Development",
+            "title": "Neue digitale Produkte von der Idee bis zum produktiven System.",
+            "text": "Product Strategy, UX, Architektur und Engineering für neue SaaS- und B2B-Produkte.",
+            "tags": ["Product Strategy", "UX", "Architecture", "Engineering"]
         },
         {
             "number": "02",
-            "label": "SaaS",
-            "title": "SaaS that scales.",
-            "text": "Von der Produktidee bis zur skalierbaren Plattform entwickeln wir SaaS-Produkte mit belastbarer Architektur und klarem Produktfokus.",
-            "tags": ["Product", "Architecture", "Engineering", "APIs", "Scaling"]
+            "label": "Agentic AI Integration",
+            "title": "AI dort einsetzen, wo sie Arbeit wirklich verändert.",
+            "text": "Bestehende Produkte und Prozesse um Agents, AI-Workflows und intelligente Automatisierung erweitern.",
+            "tags": ["AI Agents", "LLM Integration", "Automation", "Workflows"]
         },
         {
             "number": "03",
-            "label": "UX",
-            "title": "UX that works.",
-            "text": "Wir reduzieren Komplexität und gestalten Produkte, die Nutzer verstehen, effizient bedienen und tatsächlich gerne verwenden.",
-            "tags": ["Research", "UX", "UI", "Prototyping", "Testing"]
+            "label": "Product & UX Optimization",
+            "title": "Bestehende Produkte verständlicher und leichter nutzbar machen.",
+            "text": "Research, Informationsarchitektur, User Flows und Prototyping für digitale Produkte, die bereits existieren, aber besser funktionieren müssen.",
+            "tags": ["UX Research", "User Flows", "Information Architecture", "Prototyping"]
+        },
+        {
+            "number": "04",
+            "label": "Platform Intelligence",
+            "title": "Plattformen verstehen. Produkte und Distribution gezielt optimieren.",
+            "text": "Daten, Plattformmechaniken und Nutzerverhalten analysieren, um Produkt, Distribution und Performance systematisch zu verbessern.",
+            "tags": ["Data Analysis", "Platform Signals", "Optimization", "Strategy"]
         }
     ],
     "team": [
@@ -73,15 +80,15 @@
         {
             "number": "02",
             "name": "UX Designerin",
-            "disciplines": "Research · UX · Ops",
+            "disciplines": "Research · UX · Product",
             "proof": "UX PATENT",
             "text": "Patentinhaberin im Bereich UX. Erfahrung aus Start-ups und Konzernprojekten. Verantwortet Nutzerführung, Informationsarchitektur, Wireframes und Prototyping."
         },
         {
             "number": "03",
-            "name": "Spezialisierte Partner:innen",
-            "disciplines": "Development · SEO · Security",
-            "proof": "PARTNERS",
+            "name": "Partner:innen",
+            "disciplines": "Development · SEO · Ops",
+            "proof": "LONG-TERM",
             "text": "Je nach Projekt ergänzen langjährige, ausgewählte Partner:innen unser Kernteam mit spezialisierter Expertise und klar definierten Aufgaben."
         }
     ]

@@ -10,6 +10,7 @@
     },
     "navigation": [
         { "label": "How we build", "href": "#how-we-build" },
+        { "label": "Leistungen", "href": "#leistungen" },
         { "label": "Über Dynamiq", "href": "#team" },
         { "label": "Kontakt", "href": "#kontakt" }
     ]
