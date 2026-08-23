@@ -1,109 +1,65 @@
 {
-    "proofs": [
-        { "value": "15 Jahre", "label": "Software, SaaS und digitale Produkte" },
-        { "value": "SaaS + B2B", "label": "Product Story trifft Growth" },
-        { "value": "500+", "label": "veröffentlichte Videos" },
-        { "value": "12 Mio.+", "label": "organische Views" }
-    ],
-    "problems": [
-        "Traffic ist da, aber zu wenige Besucher buchen eine Demo, starten einen Trial oder werden zum Lead.",
-        "Das Produkt ist leistungsstark, doch sein konkreter Wert wird nicht in wenigen Sekunden verstanden.",
-        "Website, Kampagnen, Sales-Narrativ und In-Product Experience erzählen unterschiedliche Geschichten.",
-        "Use Cases, Integrationen und Features stehen nebeneinander, statt zu einer klaren Product Story zu werden.",
-        "Die Website kann mit neuen Segmenten, Märkten und Launches nicht schnell genug mitwachsen.",
-        "Analytics und Conversion-Ziele fehlen, um den Weg von Aufmerksamkeit zu Aktivierung zu optimieren."
-    ],
-    "saasJourney": [
-        {
-            "title": "Positioning",
-            "text": "ICP, Problem und Produktwert auf einen klaren Nenner bringen.",
-            "signal": "Clarity"
-        },
-        {
-            "title": "Product Story",
-            "text": "Features in Outcomes, Use Cases und verständliche Proof Points übersetzen.",
-            "signal": "Relevance"
-        },
-        {
-            "title": "Conversion UX",
-            "text": "Für Self-serve, Sales-led oder hybride Journeys den richtigen Pfad bauen.",
-            "signal": "Intent"
-        },
-        {
-            "title": "Growth Loop",
-            "text": "Messen, lernen und die Website entlang realer Signale weiterentwickeln.",
-            "signal": "Scale"
-        }
-    ],
     "services": [
         {
-            "number": "01",
             "label": "Strategie",
-            "title": "Positionierung und Inhalte",
-            "className": "service-purple",
-            "statement": "Wir schärfen ICP, Positionierung und Product Story, damit Interessenten schnell verstehen, welches Problem euer Produkt löst und warum es die richtige Wahl ist.",
-            "items": [
-                "ICP, Positionierung und Messaging",
-                "Product Story und Use Cases",
-                "Customer Journey und Funnel",
-                "Conversion-Ziele und Analytics"
-            ]
+            "title": "Positionierung und Inhalte"
         },
         {
-            "number": "02",
             "label": "UX & Design",
-            "title": "Conversion UX",
-            "className": "service-light",
-            "statement": "Unsere feste UX-Partnerin übersetzt komplexe Leistungen in eine verständliche Struktur und eine Nutzerführung, die Vertrauen schafft und zum nächsten Schritt führt.",
-            "items": [
-                "Informationsarchitektur",
-                "Wireframes und Prototypen",
-                "SaaS-Webdesign und Designsystem",
-                "Accessibility und Usability"
-            ]
+            "title": "Conversion UX"
         },
         {
-            "number": "03",
             "label": "Entwicklung",
-            "title": "Websites, die skalieren",
-            "className": "service-dark",
-            "statement": "Wir entwickeln schnelle, wartbare SaaS- und B2B-Websites, integrieren euren Growth-Stack und verbessern sie nach dem Launch anhand realer Daten.",
-            "items": [
-                "Websites und Landingpages",
-                "CMS-, CRM-, Analytics- und Tool-Integration",
-                "Performance und technisches SEO",
-                "Wartung und Weiterentwicklung"
-            ]
+            "title": "Websites, die skalieren"
         }
     ],
-    "offers": [
-        {
-            "index": "01",
-            "title": "Website-Check",
-            "text": "Technischer Kurzcheck, UX- und Inhaltsanalyse, priorisierte Handlungsempfehlungen und ein 45-minütiges Auswertungsgespräch.",
-            "result": "Verbindlicher Fixpreis nach kostenlosem Erstgespräch"
-        }
-    ],
-    "process": [
+    "buildProcess": [
         {
             "number": "01",
-            "title": "Analyse",
-            "text": "Ziele, Zielgruppen, bestehende Website und technische Rahmenbedingungen."
+            "label": "Human UX",
+            "title": "Design the experience.",
+            "flow": "Understand → Design → Validate",
+            "text": "Wir verstehen zuerst Nutzer, Prozesse und Probleme und entwickeln daraus User Flows, Informationsarchitektur, Wireframes und Interaktionen.",
+            "tags": ["Research", "User Flows", "Wireframes", "Prototyping", "UI"]
         },
         {
             "number": "02",
-            "title": "Konzept",
-            "text": "Struktur, Inhalte, Nutzerführung und visuelle Richtung."
+            "label": "AI-accelerated build",
+            "title": "Build it faster.",
+            "flow": "Develop → Automate → Integrate",
+            "text": "Sobald die Produkterfahrung definiert ist, nutzen wir AI gezielt, um Entwicklung, Prototyping, Automatisierung und Integrationen zu beschleunigen.",
+            "tags": ["AI Coding", "Agents", "Automation", "Integrations", "APIs"]
         },
         {
             "number": "03",
-            "title": "Umsetzung",
-            "text": "Design, Entwicklung, Qualitätssicherung und Veröffentlichung."
+            "label": "Real users",
+            "title": "Learn and improve.",
+            "flow": "Measure → Learn → Improve",
+            "text": "Nach dem Launch endet Produktentwicklung nicht. Reale Nutzung und Feedback fließen zurück in UX und Produkt.",
+            "tags": ["Analytics", "Feedback", "Testing", "Iteration", "Optimization"]
+        }
+    ],
+    "capabilities": [
+        {
+            "number": "01",
+            "label": "Agentic AI",
+            "title": "AI that acts.",
+            "text": "Wir entwickeln AI-Systeme, die nicht nur Inhalte generieren, sondern Aufgaben übernehmen, bestehende Tools verwenden und reale Workflows automatisieren.",
+            "tags": ["Agents", "Workflows", "RAG", "Integrations", "Automation"]
         },
         {
-            "number": "04",
-            "title": "Weiterentwicklung",
-            "text": "Auswertung, Optimierung und technische Betreuung."
+            "number": "02",
+            "label": "SaaS",
+            "title": "SaaS that scales.",
+            "text": "Von der Produktidee bis zur skalierbaren Plattform entwickeln wir SaaS-Produkte mit belastbarer Architektur und klarem Produktfokus.",
+            "tags": ["Product", "Architecture", "Engineering", "APIs", "Scaling"]
+        },
+        {
+            "number": "03",
+            "label": "UX",
+            "title": "UX that works.",
+            "text": "Wir reduzieren Komplexität und gestalten Produkte, die Nutzer verstehen, effizient bedienen und tatsächlich gerne verwenden.",
+            "tags": ["Research", "UX", "UI", "Prototyping", "Testing"]
         }
     ],
     "team": [
@@ -129,32 +85,6 @@
             "name": "Spezialisierte Partner:innen",
             "text": "Je nach Projekt ergänzen weitere Spezialist:innen aus Design, SEO und Entwicklung das Kernteam. Sie werden passend zur Aufgabe eingebunden und nicht als festes Agenturteam dargestellt.",
             "tags": ["Design", "SEO", "Frontend & Backend", "Klare Zuständigkeiten"]
-        }
-    ],
-    "faqs": [
-        {
-            "question": "Für welche Unternehmen arbeitet Dynamiq?",
-            "answer": "Der Fokus liegt auf SaaS-Teams, Tech-Unternehmen und technologieorientierten B2B-KMU, deren Website nicht mehr zu Produkt, Go-to-Market oder Qualitätsanspruch passt. Besonders gut passen komplexe Produkte, die eine klare Product Story und eine messbare Customer Journey brauchen."
-        },
-        {
-            "question": "Wie sorgt ihr dafür, dass eine Website verkauft?",
-            "answer": "Wir starten beim Geschäftsziel statt beim Layout. Gemeinsam verbinden wir Zielgruppe, Angebot, Positionierung, Marketing, Content und Vertriebsprozess mit einer klaren Customer Journey. Tracking und definierte Conversion-Ziele zeigen anschließend, wo die Website wirkt und wo wir sie weiter verbessern."
-        },
-        {
-            "question": "Wie schnell gibt es erste sichtbare Ergebnisse?",
-            "answer": "Das hängt vom Projektumfang ab. Wir planen jedoch bewusst frühe testbare Prototypen und klar definierte Sprints ein, damit Richtung und Fortschritt nicht erst am Ende sichtbar werden."
-        },
-        {
-            "question": "Ihr braucht neben der Website einen individuellen Konfigurator?",
-            "answer": "Kein Problem. Wir entwickeln auch maßgeschneiderte Konfiguratoren, Rechner und andere interaktive Web-Tools – nahtlos in die Website integriert und passend zu euren Prozessen."
-        },
-        {
-            "question": "Setzt ihr KI ein?",
-            "answer": "Ja, dort, wo sie Recherche, Qualitätssicherung oder technische Arbeit sinnvoll unterstützt. Strategie, Konzeption, Freigaben und Verantwortung bleiben bei uns."
-        },
-        {
-            "question": "Übernimmt Dynamiq auch Wartung und Weiterentwicklung?",
-            "answer": "Ja. Care & Growth verbindet technische Wartung mit laufender Optimierung von UX, Content, Performance und Conversion auf Basis realer Daten."
         }
     ]
 }
