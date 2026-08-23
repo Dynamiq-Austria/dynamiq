@@ -73,29 +73,31 @@ showNavigation: true
       </div>
     </div>
     <div class="ux-first">
-      <h3>Deshalb kommt UX zuerst.</h3>
+      <h3>Deshalb kommt <span>UX</span> zuerst.</h3>
       <ul aria-label="Unsere Haltung"><li>Nicht AI zuerst.</li><li>Nicht Code zuerst.</li><li>Menschen zuerst.</li></ul>
     </div>
   </div>
 </section>
 
-<section class="team section-shell" id="team" aria-labelledby="team-title">
-  <div class="team-intro">
-    <p class="section-kicker">02 · Über Dynamiq</p>
-    <h2 id="team-title">Die Agentur ist neu. Die Erfahrung dahinter nicht.</h2>
-    <p>Dynamiq ist eine inhabergeführte Digitalagentur aus Salzburg. Oliver Jessner und eine feste UX-Partnerin bilden das Kernteam. Dein direkter Ansprechpartner bleibt Oliver; je nach Projekt kommen spezialisierte Partner:innen aus Design, SEO und Entwicklung dazu.</p>
-  </div>
-  <div class="team-cards">
+<section class="about-team section-shell" id="team" aria-labelledby="team-title">
+  <header class="about-team__intro">
+    <p class="section-kicker">[ Über Dynamiq ]</p>
+    <h2 id="team-title"><span>Senior expertise.</span><span>Direkt im Projekt.</span></h2>
+    <p>Dynamiq ist ein Senior-Team für digitale Produkte.<br>Strategie, UX, Agentic AI und Engineering liegen direkt bei den Menschen, die am Projekt arbeiten.</p>
+  </header>
+  <ol class="about-team__profiles">
     {% for person in home.team %}
-      <article class="team-card {{ person.className }}{% if person.image %} team-card-has-portrait{% endif %}">
-        <p class="role">{{ person.role }}</p>
-        <h3>{{ person.name }}</h3>
-        {% if person.image %}<img class="team-portrait" src="{{ person.image }}" alt="{{ person.imageAlt }}" width="1016" height="1568" loading="lazy">{% endif %}
-        <p>{{ person.text }}</p>
-        <div class="tag-list">{% for tag in person.tags %}<span>{{ tag }}</span>{% endfor %}</div>
-      </article>
+      <li class="about-profile">
+        <span class="about-profile__number" aria-hidden="true">{{ person.number }}</span>
+        <header class="about-profile__identity">
+          <h3>{{ person.name }}</h3>
+          <p>{{ person.disciplines }}</p>
+        </header>
+        <strong class="about-profile__proof">{{ person.proof }}</strong>
+        <p class="about-profile__description">{{ person.text }}</p>
+      </li>
     {% endfor %}
-  </div>
+  </ol>
 </section>
 
 <section class="contact section-shell" id="kontakt" aria-labelledby="contact-title">

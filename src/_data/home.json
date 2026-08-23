@@ -64,27 +64,25 @@
     ],
     "team": [
         {
-            "className": "team-card-dark",
-            "role": "Gründer · direkter Ansprechpartner",
+            "number": "01",
             "name": "Oliver Jessner",
-            "image": "/assets/persons/oliver.webp",
-            "imageAlt": "Portrait von Oliver Jessner",
-            "text": "Oliver verbindet 15 Jahre Erfahrung in Softwareentwicklung, digitalen Produkten und Unternehmertum. Als ehemaliger Gründer, CTO und Geschäftsführer sowie Technologie- und Wirtschaftsjournalist kennt er technische, unternehmerische und redaktionelle Perspektiven.",
-            "tags": ["Gründer · CTO · GF", "15 Jahre digital", "500+ Videos", "12 Mio.+ Views"]
+            "disciplines": "Engineering · Product · Strategy",
+            "proof": "15+ YEARS",
+            "text": "15+ Jahre Softwareentwicklung, exFounder und exCTO. 6+ Jahre Erfahrung in Platform Intelligence. Verantwortet Product Strategy, Engineering und technische Architektur."
         },
         {
-            "className": "team-card-purple",
-            "role": "UX Design · Research · digitale Produkte",
-            "name": "Feste UX-Partnerin",
-            "text": "Eine erfahrene UX-Designerin und Patentinhaberin gehört fest zum Kernteam. Ihre Erfahrung reicht von agilen Start-ups bis zu komplexen Projekten in Großkonzernen. Sie verantwortet Nutzerführung, Informationsarchitektur, Research und Prototyping – und sorgt dafür, dass aus Anforderungen verständliche digitale Erlebnisse werden.",
-            "tags": ["Fest im Kernteam", "Patentinhaberin", "UX Research", "Prototyping"]
+            "number": "02",
+            "name": "UX Designerin",
+            "disciplines": "Research · UX · Ops",
+            "proof": "UX PATENT",
+            "text": "Patentinhaberin im Bereich UX. Erfahrung aus Start-ups und Konzernprojekten. Verantwortet Nutzerführung, Informationsarchitektur, Wireframes und Prototyping."
         },
         {
-            "className": "team-card-light",
-            "role": "Projektbezogene Zusammenarbeit",
+            "number": "03",
             "name": "Spezialisierte Partner:innen",
-            "text": "Je nach Projekt ergänzen weitere Spezialist:innen aus Design, SEO und Entwicklung das Kernteam. Sie werden passend zur Aufgabe eingebunden und nicht als festes Agenturteam dargestellt.",
-            "tags": ["Design", "SEO", "Frontend & Backend", "Klare Zuständigkeiten"]
+            "disciplines": "Development · SEO · Security",
+            "proof": "PARTNERS",
+            "text": "Je nach Projekt ergänzen langjährige, ausgewählte Partner:innen unser Kernteam mit spezialisierter Expertise und klar definierten Aufgaben."
         }
     ]
 }
