@@ -51,15 +51,7 @@
     };
 
     systemRows.forEach((row) => {
-      const trigger = row.querySelector('[data-system-playground]');
-      if (!trigger) return;
-
-      trigger.addEventListener('click', () => playSystem(row));
-      trigger.addEventListener('keydown', (event) => {
-        if (event.key !== 'Enter' && event.key !== ' ') return;
-        event.preventDefault();
-        playSystem(row);
-      });
+      row.addEventListener('pointerenter', () => playSystem(row));
     });
   }
 
