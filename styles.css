@@ -294,7 +294,7 @@ select {
 }
 .poster-hero.is-draw-ready,
 .poster-hero.is-drawing {
-    cursor: url('/assets/pointer.png') 3 22, crosshair;
+    cursor: url('/assets/pointer.png') 10 46, crosshair;
 }
 @media (pointer: coarse) {
     .poster-hero {
