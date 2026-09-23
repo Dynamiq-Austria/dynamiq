@@ -66,25 +66,31 @@ showNavigation: true
     <h2 id="services-title"><span>Die Frage kommt zuerst.</span><span>Dann die Daten.</span></h2>
     <p>Wir beginnen nicht mit einem bestehenden Tool, Dashboard oder einer vordefinierten Datenquelle. Wir definieren die Fragestellung, identifizieren relevante Quellen und bauen die Collection- und Analyse-Pipeline, die dafür notwendig ist.</p>
   </header>
+</section>
 
-  <div class="ux-stat">
-    <div class="ux-stat__core">
-      <strong class="ux-stat__number"><span class="sr-only">Acht Schritte zur Intelligence</span><span class="ux-stat__visual" aria-hidden="true"><span>0</span><span>8</span></span></strong>
-      <div class="ux-stat__copy">
-        <p>Wenn die analysierbare Datengrundlage noch nicht existiert, bauen wir sie – quellenübergreifend und passend zur Frage.</p>
-        <p class="ux-stat__source">Collect → Archive → Transcribe → Extract → Normalize → Enrich → Connect → Analyze &amp; Monitor</p>
+<section class="data-sources" aria-labelledby="data-sources-title">
+  <div class="data-sources__inner section-shell">
+    <div class="ux-stat">
+      <div class="ux-stat__core">
+        <strong class="ux-stat__number"><span class="sr-only">Acht Schritte zur Intelligence</span><span class="ux-stat__visual" aria-hidden="true"><span>0</span><span>8</span></span></strong>
+        <div class="ux-stat__copy">
+          <p>Wenn die analysierbare Datengrundlage noch nicht existiert, bauen wir sie – quellenübergreifend und passend zur Frage.</p>
+          <p class="ux-stat__source">Collect → Archive → Transcribe → Extract → Normalize → Enrich → Connect → Analyze &amp; Monitor</p>
+        </div>
+      </div>
+      <div class="ux-first source-formats">
+        <h3 id="data-sources-title">Data is <span>not one format.</span></h3>
+        <ul aria-label="Datenquellen"><li>TikTok · YouTube · Instagram</li><li>Reddit · X · LinkedIn</li><li>Forums · Imageboards · Public Channels</li><li>Video · Audio · Comments</li><li>Websites · Documents · Internal Data</li></ul>
       </div>
     </div>
-    <div class="ux-first source-formats">
-      <h3>Data is <span>not one format.</span></h3>
-      <ul aria-label="Datenquellen"><li>TikTok · YouTube · Instagram</li><li>Reddit · X · LinkedIn</li><li>Forums · Imageboards · Public Channels</li><li>Video · Audio · Comments</li><li>Websites · Documents · Internal Data</li></ul>
-    </div>
   </div>
+</section>
 
+<section class="pipeline section-shell" aria-labelledby="pipeline-title">
   <div class="build-process">
     <header class="build-services__subhead">
       <p class="section-kicker">[ Intelligence Pipeline ]</p>
-      <h3>From raw content to structured intelligence.</h3>
+      <h3 id="pipeline-title">From raw content to structured intelligence.</h3>
     </header>
     <ol class="build-process__steps">
       {% for step in home.buildProcess %}
@@ -125,36 +131,41 @@ showNavigation: true
     {% endfor %}
   </ol>
 
-  <div class="ux-first monitoring-models">
-    <h3>Managed. <span>Internal.</span> Hybrid.</h3>
-    <ul aria-label="Betriebsmodelle"><li>Managed by Dynamiq</li><li>Run internally</li><li>Shared operation</li></ul>
+</section>
+
+<section class="references" id="referenzen" aria-labelledby="references-title">
+  <div class="references__inner section-shell">
+    <header class="references__intro">
+      <p class="section-kicker">[ Referenzen ]</p>
+      <h2 id="references-title"><span>Die Quelle ändert sich.</span><span>Die Pipeline bleibt.</span></h2>
+      <p>Dokumente, Social Video und Marktdaten brauchen unterschiedliche Collection-Methoden – aber dieselbe Sorgfalt beim Strukturieren, Verbinden, Analysieren und Verifizieren.</p>
+    </header>
+    <ol class="reference-list">
+      {% for reference in home.references %}
+        <li class="reference-row">
+          <span class="reference-row__number" aria-hidden="true">{{ reference.number }}</span>
+          <div class="reference-row__source">
+            <p>{{ reference.source }}</p>
+            <strong>{{ reference.metric }}</strong>
+          </div>
+          <div class="reference-row__body">
+            <h3>{{ reference.title }}</h3>
+            <p>{{ reference.text }}</p>
+            {% if reference.detail %}<p class="reference-row__detail">{{ reference.detail }}</p>{% endif %}
+            <ul class="build-tag-list" aria-label="Eingesetzte Fähigkeiten">{% for tag in reference.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+            <a class="reference-row__link" href="{{ reference.url }}" target="_blank" rel="noopener noreferrer">Golem-Artikel lesen <span aria-hidden="true">↗</span></a>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
   </div>
 </section>
 
-<section class="references section-shell" id="referenzen" aria-labelledby="references-title">
-  <header class="references__intro">
-    <p class="section-kicker">[ Referenzen ]</p>
-    <h2 id="references-title"><span>Die Quelle ändert sich.</span><span>Die Pipeline bleibt.</span></h2>
-    <p>Dokumente, Social Video und Marktdaten brauchen unterschiedliche Collection-Methoden – aber dieselbe Sorgfalt beim Strukturieren, Verbinden, Analysieren und Verifizieren.</p>
-  </header>
-  <ol class="reference-list">
-    {% for reference in home.references %}
-      <li class="reference-row">
-        <span class="reference-row__number" aria-hidden="true">{{ reference.number }}</span>
-        <div class="reference-row__source">
-          <p>{{ reference.source }}</p>
-          <strong>{{ reference.metric }}</strong>
-        </div>
-        <div class="reference-row__body">
-          <h3>{{ reference.title }}</h3>
-          <p>{{ reference.text }}</p>
-          {% if reference.detail %}<p class="reference-row__detail">{{ reference.detail }}</p>{% endif %}
-          <ul class="build-tag-list" aria-label="Eingesetzte Fähigkeiten">{% for tag in reference.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
-          <a class="reference-row__link" href="{{ reference.url }}" target="_blank" rel="noopener noreferrer">Golem-Artikel lesen <span aria-hidden="true">↗</span></a>
-        </div>
-      </li>
-    {% endfor %}
-  </ol>
+<section class="operating-models section-shell" aria-labelledby="operating-models-title">
+  <div class="ux-first monitoring-models">
+    <h3 id="operating-models-title">Managed. <span>Internal.</span> Hybrid.</h3>
+    <ul aria-label="Betriebsmodelle"><li>Managed by Dynamiq</li><li>Run internally</li><li>Shared operation</li></ul>
+  </div>
 </section>
 
 <section class="about-team section-shell" id="team" aria-labelledby="team-title">
@@ -192,58 +203,60 @@ showNavigation: true
   </div>
 </section>
 
-<section class="contact section-shell" id="kontakt" aria-labelledby="contact-title">
-  <header class="contact-intro">
-    <p class="section-kicker">[ Kontakt ]</p>
-    <h2 id="contact-title"><span>Was möchtet ihr</span><span>herausfinden?</span></h2>
-  </header>
-  <div class="contact-body">
-    <div class="contact-summary">
-      <p>Beschreibt uns die Frage, die Datenquelle oder das Signal, das ihr verstehen oder dauerhaft beobachten möchtet.</p>
-      <p>Im ersten Gespräch klären wir Ziel, Quellen, vorhandene Daten und den passenden Scope.</p>
-      <div class="contact-meta">
-        <p class="contact-direct"><span>Lieber direkt per E-Mail?</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-        <span class="contact-note">Aus {{ site.location }}. Zusammenarbeit im {{ site.areaServed }}.</span>
+<section class="contact" id="kontakt" aria-labelledby="contact-title">
+  <div class="contact__inner section-shell">
+    <header class="contact-intro">
+      <p class="section-kicker">[ Kontakt ]</p>
+      <h2 id="contact-title"><span>Was möchtet ihr</span><span>herausfinden?</span></h2>
+    </header>
+    <div class="contact-body">
+      <div class="contact-summary">
+        <p>Beschreibt uns die Frage, die Datenquelle oder das Signal, das ihr verstehen oder dauerhaft beobachten möchtet.</p>
+        <p>Im ersten Gespräch klären wir Ziel, Quellen, vorhandene Daten und den passenden Scope.</p>
+        <div class="contact-meta">
+          <p class="contact-direct"><span>Lieber direkt per E-Mail?</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+          <span class="contact-note">Aus {{ site.location }}. Zusammenarbeit im {{ site.areaServed }}.</span>
+        </div>
       </div>
+
+      <form class="contact-form" name="projektanfrage" method="post" action="/danke/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="projektanfrage">
+        <p class="form-honeypot" hidden><label>Nicht ausfüllen: <input name="bot-field" type="text"></label></p>
+
+        <div class="form-grid">
+          <div class="field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="email">E-Mail <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field field-full"><label for="unternehmen">Unternehmen</label><input id="unternehmen" name="unternehmen" type="text" autocomplete="organization"></div>
+          <div class="field">
+            <label for="leistung">Welche Unterstützung sucht ihr? <span aria-hidden="true">*</span></label>
+            <select id="leistung" name="leistung" required>
+              <option value="">Bitte auswählen</option>
+              <option value="Data Collection &amp; OSINT">Data Collection &amp; OSINT</option>
+              <option value="Social &amp; Platform Intelligence">Social &amp; Platform Intelligence</option>
+              <option value="Data Analysis &amp; Monitoring">Data Analysis &amp; Monitoring</option>
+              <option value="Custom Intelligence Systems">Custom Intelligence Systems</option>
+              <option value="Noch nicht sicher">Noch nicht sicher</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget">Budgetrahmen (optional)</label>
+            <select id="budget" name="budget">
+            <option value="">Keine Angabe</option>
+            <option>10.000–20.000 €</option>
+            <option>20.000–40.000 €</option>
+            <option>40.000–75.000 €</option>
+            <option>75.000 € oder mehr</option></select>
+          </div>
+          <div class="field field-full"><label for="projekt">Worum geht es? <span aria-hidden="true">*</span></label><textarea id="projekt" name="projekt" rows="6" required aria-describedby="projekt-hilfe"></textarea><span class="form-help" id="projekt-hilfe">Fragestellung, vorhandene Daten, relevante Quellen und gewünschtes Ergebnis genügen für den Anfang.</span></div>
+        </div>
+
+        <div class="consent-field">
+          <input id="datenschutz-zustimmung" name="datenschutz-zustimmung" type="checkbox" value="zugestimmt" required>
+          <label for="datenschutz-zustimmung">Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Weitere Informationen stehen in der <a href="/datenschutz/">Datenschutzerklärung</a>. <span aria-hidden="true">*</span></label>
+        </div>
+        <p class="required-note"><span aria-hidden="true">*</span> Pflichtfeld</p>
+        <button class="button button-dark" type="submit">Analyse besprechen</button>
+      </form>
     </div>
-
-    <form class="contact-form" name="projektanfrage" method="post" action="/danke/" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="projektanfrage">
-      <p class="form-honeypot" hidden><label>Nicht ausfüllen: <input name="bot-field" type="text"></label></p>
-
-      <div class="form-grid">
-        <div class="field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="email">E-Mail <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field field-full"><label for="unternehmen">Unternehmen</label><input id="unternehmen" name="unternehmen" type="text" autocomplete="organization"></div>
-        <div class="field">
-          <label for="leistung">Welche Unterstützung sucht ihr? <span aria-hidden="true">*</span></label>
-          <select id="leistung" name="leistung" required>
-            <option value="">Bitte auswählen</option>
-            <option value="Data Collection &amp; OSINT">Data Collection &amp; OSINT</option>
-            <option value="Social &amp; Platform Intelligence">Social &amp; Platform Intelligence</option>
-            <option value="Data Analysis &amp; Monitoring">Data Analysis &amp; Monitoring</option>
-            <option value="Custom Intelligence Systems">Custom Intelligence Systems</option>
-            <option value="Noch nicht sicher">Noch nicht sicher</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="budget">Budgetrahmen (optional)</label>
-          <select id="budget" name="budget">
-          <option value="">Keine Angabe</option>
-          <option>10.000–20.000 €</option>
-          <option>20.000–40.000 €</option>
-          <option>40.000–75.000 €</option>
-          <option>75.000 € oder mehr</option></select>
-        </div>
-        <div class="field field-full"><label for="projekt">Worum geht es? <span aria-hidden="true">*</span></label><textarea id="projekt" name="projekt" rows="6" required aria-describedby="projekt-hilfe"></textarea><span class="form-help" id="projekt-hilfe">Fragestellung, vorhandene Daten, relevante Quellen und gewünschtes Ergebnis genügen für den Anfang.</span></div>
-      </div>
-
-      <div class="consent-field">
-        <input id="datenschutz-zustimmung" name="datenschutz-zustimmung" type="checkbox" value="zugestimmt" required>
-        <label for="datenschutz-zustimmung">Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Weitere Informationen stehen in der <a href="/datenschutz/">Datenschutzerklärung</a>. <span aria-hidden="true">*</span></label>
-      </div>
-      <p class="required-note"><span aria-hidden="true">*</span> Pflichtfeld</p>
-      <button class="button button-dark" type="submit">Analyse besprechen</button>
-    </form>
   </div>
 </section>

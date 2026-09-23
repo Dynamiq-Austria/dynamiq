@@ -645,6 +645,7 @@ select {
 }
 .build-services {
     padding-top: clamp(5rem, 9vw, 9rem);
+    padding-bottom: clamp(4rem, 6vw, 6rem);
     overflow: clip;
 }
 .build-services__intro {
@@ -677,6 +678,29 @@ select {
     max-width: 600px;
     margin: 0;
     font-size: 1.08rem;
+}
+.data-sources {
+    color: var(--ink);
+    background: var(--purple);
+}
+.data-sources__inner {
+    padding-top: clamp(4rem, 6vw, 6rem);
+    padding-bottom: clamp(4rem, 6vw, 6rem);
+}
+.data-sources .ux-stat {
+    margin-top: 0;
+}
+.data-sources .ux-stat__number,
+.data-sources .ux-first h3 span,
+.data-sources .ux-first li:last-child {
+    color: var(--ink);
+}
+.data-sources .ux-first,
+.data-sources .ux-first li {
+    border-color: rgba(16, 16, 18, 0.42);
+}
+.pipeline .build-process {
+    margin-top: 0;
 }
 .ux-stat {
     margin-top: clamp(7rem, 13vw, 13rem);
@@ -1426,6 +1450,29 @@ select {
 .reference-row__link:hover span {
     transform: translate(3px, -3px);
 }
+.references {
+    color: var(--white);
+    background: var(--ink);
+}
+.references__intro h2 span:last-child,
+.references .reference-row__number,
+.references .reference-row__source strong,
+.references .reference-row__detail {
+    color: var(--lilac);
+}
+.references .reference-list,
+.references .reference-row {
+    border-color: rgba(255, 255, 255, 0.46);
+}
+.references .build-tag-list li {
+    border-color: rgba(255, 255, 255, 0.72);
+}
+.references .reference-row__link {
+    color: var(--white);
+}
+.references :focus-visible {
+    outline-color: var(--white);
+}
 
 .about-team__intro {
     display: grid;
@@ -1656,9 +1703,13 @@ select {
 }
 
 .contact {
+    color: var(--ink);
+    background: var(--purple);
+    border-top: 1px solid var(--ink);
+}
+.contact__inner {
     padding-top: clamp(5rem, 8vw, 8rem);
     padding-bottom: clamp(5rem, 8vw, 8rem);
-    border-top: 1px solid var(--ink);
 }
 .contact-intro {
     display: grid;
@@ -1681,7 +1732,7 @@ select {
     display: block;
 }
 .contact-intro h2 span:last-child {
-    color: var(--purple-deep);
+    color: var(--ink);
     font-family: Georgia, 'Times New Roman', serif;
     font-style: italic;
     font-weight: 400;
@@ -1807,6 +1858,9 @@ select {
     margin: 0.75rem 0 1.5rem;
     color: rgba(16, 16, 18, 0.68);
     font-size: 0.82rem;
+}
+.contact :focus-visible {
+    outline-color: var(--ink);
 }
 
 .site-footer {
