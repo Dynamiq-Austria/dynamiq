@@ -84,12 +84,12 @@
     "team": [
         {
             "number": "01",
-            "name": "Oliver Jessner",
+            "name": "Oliver",
             "role": "Software Developer & Data Analyst",
             "disciplines": "OSINT · Data Collection · Analysis · Monitoring",
             "text": "Entwickelt Collection- und Analyse-Pipelines und verbindet Softwareentwicklung mit Datenanalyse, OSINT und Research.",
             "image": "/assets/persons/oliver.webp",
-            "imageAlt": "Oliver Jessner",
+            "imageAlt": "Oliver",
             "imagePosition": "center 28%"
         },
         {
