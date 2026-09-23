@@ -9,11 +9,11 @@
       </g>
       <g class="system-unit system-delay-1" style="--start-x: 28px; --start-y: 30px;">
         <rect class="system-node" x="35" y="42" width="52" height="34" />
-        <text class="system-label" x="61" y="63" text-anchor="middle">DATA</text>
+        <text class="system-label" x="61" y="63" text-anchor="middle">PUBLIC</text>
       </g>
       <g class="system-unit system-delay-2" style="--start-x: 6px; --start-y: -28px;">
         <circle class="system-node system-node--active" cx="260" cy="105" r="30" />
-        <text class="system-label" x="260" y="109" text-anchor="middle">CORE</text>
+        <text class="system-label" x="260" y="109" text-anchor="middle">CONNECT</text>
       </g>
       <g class="system-unit system-delay-1" style="--start-x: -18px; --start-y: 34px;">
         <rect class="system-node" x="444" y="38" width="42" height="34" />
@@ -21,11 +21,11 @@
       </g>
       <g class="system-unit system-delay-3" style="--start-x: -36px; --start-y: -18px;">
         <circle class="system-node" cx="61" cy="157" r="22" />
-        <text class="system-label" x="61" y="161" text-anchor="middle">UX</text>
+        <text class="system-label" x="61" y="161" text-anchor="middle">PRIVATE</text>
       </g>
       <g class="system-unit system-delay-2" style="--start-x: 24px; --start-y: -26px;">
         <rect class="system-node" x="444" y="140" width="42" height="34" />
-        <text class="system-label" x="465" y="161" text-anchor="middle">OPS</text>
+        <text class="system-label" x="465" y="161" text-anchor="middle">ALERT</text>
       </g>
     </svg>
   {% elseif service.visual == "agent" %}
@@ -39,19 +39,19 @@
       <path class="system-path system-path--draw system-delay-3" pathLength="1" d="M341 161 C383 161 375 105 421 105" />
 
       <rect class="system-node" x="25" y="87" width="66" height="36" />
-      <text class="system-label" x="58" y="109" text-anchor="middle">TASK</text>
+      <text class="system-label" x="58" y="109" text-anchor="middle">QUERY</text>
       <circle class="system-node system-node--active system-agent" cx="190" cy="105" r="22" />
-      <text class="system-label" x="190" y="109" text-anchor="middle">AGENT</text>
+      <text class="system-label" x="190" y="109" text-anchor="middle">OSINT</text>
       <g class="system-tools system-delay-2">
         <rect class="system-node" x="299" y="35" width="42" height="28" />
         <rect class="system-node" x="299" y="91" width="42" height="28" />
         <rect class="system-node" x="299" y="147" width="42" height="28" />
-        <text class="system-label" x="320" y="53" text-anchor="middle">API</text>
-        <text class="system-label" x="320" y="109" text-anchor="middle">DB</text>
-        <text class="system-label" x="320" y="165" text-anchor="middle">TOOL</text>
+        <text class="system-label" x="320" y="53" text-anchor="middle">WEB</text>
+        <text class="system-label" x="320" y="109" text-anchor="middle">DOC</text>
+        <text class="system-label" x="320" y="165" text-anchor="middle">MEDIA</text>
       </g>
       <rect class="system-node system-node--result" x="421" y="84" width="74" height="42" />
-      <text class="system-label" x="458" y="109" text-anchor="middle">RESULT</text>
+      <text class="system-label" x="458" y="109" text-anchor="middle">ANSWER</text>
       <circle class="system-signal" cx="91" cy="105" r="4" />
     </svg>
   {% elseif service.visual == "ux" %}
@@ -59,9 +59,9 @@
       <path class="system-path system-path--friction" pathLength="1" d="M55 105 C105 35 145 177 198 105 S290 35 338 105 S413 180 470 105" />
       <path class="system-path system-path--direct system-delay-2" pathLength="1" d="M55 105 C165 105 352 105 470 105" />
       <circle class="system-node" cx="55" cy="105" r="18" />
-      <text class="system-label" x="55" y="109" text-anchor="middle">IN</text>
+      <text class="system-label" x="55" y="109" text-anchor="middle">RAW</text>
       <circle class="system-node system-node--active" cx="470" cy="105" r="18" />
-      <text class="system-label" x="470" y="109" text-anchor="middle">OUT</text>
+      <text class="system-label" x="470" y="109" text-anchor="middle">READY</text>
       <g class="system-friction-node system-friction-node--one">
         <rect class="system-node" x="148" y="74" width="28" height="28" />
       </g>
@@ -71,8 +71,8 @@
       <g class="system-friction-node system-friction-node--three">
         <rect class="system-node" x="357" y="69" width="30" height="30" />
       </g>
-      <text class="system-caption system-caption--friction" x="190" y="31">FRICTION / DETOURS</text>
-      <text class="system-caption system-caption--flow" x="210" y="91">CLEAR USER FLOW</text>
+      <text class="system-caption system-caption--friction" x="190" y="31">RAW / FRAGMENTED</text>
+      <text class="system-caption system-caption--flow" x="210" y="91">NORMALIZED / CONNECTED</text>
     </svg>
   {% else %}
     <svg viewBox="0 0 520 210" focusable="false" aria-hidden="true">
@@ -95,8 +95,8 @@
         <circle class="system-node system-signal-node" cx="405" cy="143" r="10" />
         <text class="system-label system-insight-label" x="333" y="117" text-anchor="middle">SIGNAL</text>
       </g>
-      <text class="system-caption system-caption--noise" x="28" y="198">PLATFORM NOISE</text>
-      <text class="system-caption system-caption--insight" x="365" y="198">INSIGHT</text>
+      <text class="system-caption system-caption--noise" x="28" y="198">SOURCE CHANGES</text>
+      <text class="system-caption system-caption--insight" x="365" y="198">ALERT / INSIGHT</text>
     </svg>
   {% endif %}
 </div>

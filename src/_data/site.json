@@ -1,17 +1,17 @@
 {
     "name": "Dynamiq",
-    "email": "hello@dynamiq.agency",
+    "email": "oliver@dynamiq.agency",
     "location": "Salzburg",
     "areaServed": "DACH-Raum und remote",
-    "description": "Dynamiq ist ein Senior-Team für SaaS und digitale Produkte – mit UX, Agentic AI und Engineering aus einer Hand.",
+    "description": "Dynamiq sammelt, verbindet, analysiert und überwacht öffentliche und interne Daten – für konkrete Antworten und laufende Intelligence.",
     "primaryCta": {
-        "label": "Projekt besprechen",
+        "label": "Analyse besprechen",
         "href": "#kontakt"
     },
     "navigation": [
-        { "label": "How we build", "href": "#how-we-build" },
+        { "label": "Arbeitsweise", "href": "#how-we-build" },
         { "label": "Leistungen", "href": "#leistungen" },
-        { "label": "Über Dynamiq", "href": "#team" },
+        { "label": "Betriebsmodelle", "href": "#team" },
         { "label": "Kontakt", "href": "#kontakt" }
     ]
 }

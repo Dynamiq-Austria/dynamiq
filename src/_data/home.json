@@ -1,99 +1,99 @@
 {
     "services": [
         {
-            "label": "Strategie",
-            "title": "Positionierung und Inhalte"
+            "label": "Analyse",
+            "title": "Data Intelligence"
         },
         {
-            "label": "UX & Design",
-            "title": "Conversion UX"
+            "label": "Research",
+            "title": "OSINT & Investigations"
         },
         {
-            "label": "Entwicklung",
-            "title": "Websites, die skalieren"
+            "label": "Monitoring",
+            "title": "Continuous Intelligence"
         }
     ],
     "buildProcess": [
         {
             "number": "01",
-            "label": "Human UX",
-            "title": "Design the experience.",
-            "flow": "Understand → Design → Validate",
-            "text": "Wir verstehen zuerst Nutzer, Prozesse und Probleme und entwickeln daraus User Flows, Informationsarchitektur, Wireframes und Interaktionen.",
-            "tags": ["Research", "User Flows", "Wireframes", "Prototyping", "UI"]
+            "label": "Source & Collection",
+            "title": "Find the right data.",
+            "flow": "Question → Sources → Collection",
+            "text": "Wir übersetzen die Fragestellung in eine Datenstrategie, identifizieren relevante Quellen und erfassen die benötigten Daten.",
+            "tags": ["Source Discovery", "OSINT", "Data Collection", "APIs"]
         },
         {
             "number": "02",
-            "label": "AI-accelerated build",
-            "title": "Build it faster.",
-            "flow": "Develop → Automate → Integrate",
-            "text": "Sobald die Produkterfahrung definiert ist, nutzen wir AI gezielt, um Entwicklung, Prototyping, Automatisierung und Integrationen zu beschleunigen.",
-            "tags": ["AI Coding", "Agents", "Automation", "Integrations", "APIs"]
+            "label": "Structure & Connect",
+            "title": "Make data usable.",
+            "flow": "Normalize → Enrich → Connect",
+            "text": "Wir strukturieren fragmentierte Daten, extrahieren relevante Entitäten und verbinden öffentliche, interne und externe Datensätze.",
+            "tags": ["Normalization", "Entity Extraction", "Enrichment", "Data Integration"]
         },
         {
             "number": "03",
-            "label": "Real users",
-            "title": "Learn and improve.",
-            "flow": "Measure → Learn → Improve",
-            "text": "Nach dem Launch endet Produktentwicklung nicht. Reale Nutzung und Feedback fließen zurück in UX und Produkt.",
-            "tags": ["Analytics", "Feedback", "Testing", "Iteration", "Optimization"]
+            "label": "Analysis & Monitoring",
+            "title": "Turn data into intelligence.",
+            "flow": "Analyze → Verify → Monitor",
+            "text": "Wir analysieren Muster und Veränderungen, verifizieren Ergebnisse und überführen relevante Signale bei Bedarf in dauerhaftes Monitoring.",
+            "tags": ["Data Analysis", "Human Verification", "Alerts", "Reporting"]
         }
     ],
     "capabilities": [
         {
             "number": "01",
             "visual": "saas",
-            "label": "SaaS & Product Development",
-            "title": "Neue SaaS-Produkte bauen.",
-            "text": "Product Strategy, UX, Architektur und Engineering für neue SaaS- und B2B-Produkte.",
-            "tags": ["Product Strategy", "UX", "Architecture", "Engineering"]
+            "label": "Data Intelligence",
+            "title": "Komplexe Daten in klare Signale übersetzen.",
+            "text": "Wir sammeln, verbinden und analysieren komplexe Datensätze, um konkrete Fragen zu beantworten und Signale in fragmentierten Quellen sichtbar zu machen.",
+            "tags": ["Quantitative Analysis", "Qualitative Analysis", "Entity Extraction", "Connected Data"]
         },
         {
             "number": "02",
             "visual": "agent",
-            "label": "Agentic AI Integration",
-            "title": "Agentic AI integrieren.",
-            "text": "Bestehende Produkte und Prozesse um Agents, AI-Workflows und intelligente Automatisierung erweitern.",
-            "tags": ["AI Agents", "LLM Integration", "Automation", "Workflows"]
+            "label": "OSINT & Research",
+            "title": "Quellen erschließen. Zusammenhänge verifizieren.",
+            "text": "Wir untersuchen rechtmäßig zugängliche Websites, Plattformen, Dokumente und Medien und überprüfen relevante Zusammenhänge durch menschliche Analyse.",
+            "tags": ["OSINT", "Market Intelligence", "Competitive Intelligence", "Narrative Analysis"]
         },
         {
             "number": "03",
             "visual": "ux",
-            "label": "Product & UX Optimization",
-            "title": "Bestehende Produkte verbessern.",
-            "text": "Research, Informationsarchitektur, User Flows und Prototyping für digitale Produkte, die bereits existieren, aber besser funktionieren müssen.",
-            "tags": ["UX Research", "User Flows", "Information Architecture", "Prototyping"]
+            "label": "Data Collection & Engineering",
+            "title": "Daten sammeln. Strukturen bauen.",
+            "text": "Wenn Daten noch nicht strukturiert vorliegen, entwickeln wir individuelle Sammler, Schnittstellen und Pipelines. Bestehende Kundendaten verbinden wir mit öffentlichen und externen Quellen.",
+            "tags": ["Source Discovery", "Data Collection", "Normalization", "APIs"]
         },
         {
             "number": "04",
             "visual": "signals",
-            "label": "Platform Intelligence",
-            "title": "Plattformen verstehen und optimieren.",
-            "text": "Daten, Plattformmechaniken und Nutzerverhalten analysieren, um Produkt, Distribution und Performance systematisch zu verbessern.",
-            "tags": ["Data Analysis", "Platform Signals", "Optimization", "Strategy"]
+            "label": "Continuous Monitoring",
+            "title": "Veränderungen erkennen. Dauerhaft.",
+            "text": "Wir erfassen Quellen regelmäßig, erkennen Veränderungen und stellen Signale als Alerts, Reports, Dashboards oder APIs bereit. Das System betreiben wir managed, intern bei euch oder hybrid.",
+            "tags": ["Managed Monitoring", "Internal Monitoring", "Hybrid Monitoring", "Alerts & Reports"]
         }
     ],
     "team": [
         {
             "number": "01",
-            "name": "Oliver Jessner",
-            "disciplines": "Engineering · Product · Strategy",
-            "proof": "15+ YEARS",
-            "text": "15+ Jahre Softwareentwicklung, exFounder und exCTO. 6+ Jahre Erfahrung in Platform Intelligence. Verantwortet Product Strategy, Engineering und technische Architektur."
+            "name": "Managed Monitoring",
+            "disciplines": "Collection · Analysis · Operations",
+            "proof": "MANAGED",
+            "text": "Dynamiq betreibt Datensammlung, Infrastruktur und Analyse dauerhaft und liefert die vereinbarten Alerts, Reports, Dashboards oder APIs."
         },
         {
             "number": "02",
-            "name": "UX Designerin",
-            "disciplines": "Research · UX · Product",
-            "proof": "UX PATENT",
-            "text": "Patentinhaberin im Bereich UX. Erfahrung aus Start-ups und Konzernprojekten. Verantwortet Nutzerführung, Informationsarchitektur, Wireframes und Prototyping."
+            "name": "Internal Monitoring",
+            "disciplines": "Customer Infrastructure · Enablement",
+            "proof": "INTERNAL",
+            "text": "Wir entwickeln und implementieren das System in eurer Infrastruktur und befähigen euer Team, Sammlung, Analyse und Betrieb intern zu übernehmen."
         },
         {
             "number": "03",
-            "name": "Partner:innen",
-            "disciplines": "Development · SEO · Ops",
-            "proof": "TRUSTED NETWORK",
-            "text": "Je nach Projekt ergänzen langjährige, ausgewählte Partner:innen unser Kernteam mit spezialisierter Expertise und klar definierten Aufgaben."
+            "name": "Hybrid Monitoring",
+            "disciplines": "Shared Data · Analysis · Operations",
+            "proof": "HYBRID",
+            "text": "Datenerhebung, Infrastruktur und Analyse werden sinnvoll zwischen eurem Team und Dynamiq aufgeteilt – passend zu Datenzugang, Sicherheit und internen Ressourcen."
         }
     ]
 }
