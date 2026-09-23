@@ -1,5 +1,5 @@
 <div class="system-playground system-playground--{{ service.visual }}" aria-hidden="true">
-  {% if service.visual == "saas" %}
+  {% if service.visual == "collection" %}
     <svg viewBox="0 0 520 210" focusable="false" aria-hidden="true">
       <g class="system-connections">
         <path class="system-path system-path--draw system-delay-1" pathLength="1" d="M87 59 L205 59 L260 105" />
@@ -28,7 +28,7 @@
         <text class="system-label" x="465" y="161" text-anchor="middle">ALERT</text>
       </g>
     </svg>
-  {% elseif service.visual == "agent" %}
+  {% elseif service.visual == "social" %}
     <svg viewBox="0 0 520 210" focusable="false" aria-hidden="true">
       <path class="system-path system-path--draw system-delay-1" pathLength="1" d="M91 105 H168" />
       <path class="system-path system-path--draw system-delay-2" pathLength="1" d="M212 105 C250 105 252 49 299 49" />
@@ -54,7 +54,7 @@
       <text class="system-label" x="458" y="109" text-anchor="middle">ANSWER</text>
       <circle class="system-signal" cx="91" cy="105" r="4" />
     </svg>
-  {% elseif service.visual == "ux" %}
+  {% elseif service.visual == "analysis" %}
     <svg viewBox="0 0 520 210" focusable="false" aria-hidden="true">
       <path class="system-path system-path--friction" pathLength="1" d="M55 105 C105 35 145 177 198 105 S290 35 338 105 S413 180 470 105" />
       <path class="system-path system-path--direct system-delay-2" pathLength="1" d="M55 105 C165 105 352 105 470 105" />

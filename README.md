@@ -25,7 +25,7 @@ Der Build leert zuerst `_site/` und erzeugt anschließend eine vollständige, de
 
 - `src/index.njk` – Aufbau der Startseite
 - `src/_data/site.json` – globale Navigation, Kontaktdaten und Markenangaben
-- `src/_data/home.json` – Leistungen, Prozesse, Team, FAQ und weitere Startseiteninhalte
+- `src/_data/home.json` – Leistungen, Prozess, Referenzen und Team der Startseite
 - `src/_includes/layouts/base.njk` – gemeinsames HTML-Grundlayout und Metadaten
 - `src/_includes/components/` – wiederverwendbare Header-, Footer- und CTA-Komponenten
 - `src/danke.njk` – Danke-Seite für das Kontaktformular
@@ -66,5 +66,6 @@ Das Formular `projektanfrage` wird durch `data-netlify="true"` erkannt, verwende
 2. Netlify Forms und E-Mail-Benachrichtigungen im Netlify-Projekt aktiv prüfen.
 3. Mailbox und Zustellung für `oliver@dynamiq.agency` beim E-Mail-Anbieter einrichten und testen.
 4. Finale Domain und Social-Media-Vorschau im produktiven Deployment kontrollieren.
-5. Referenzen, Kundenstimmen und reale Case Studies ergänzen, sobald belastbares Material vorliegt.
-6. Aussagen zu Erfahrung, Kompetenzen und Leistungsumfang vor Veröffentlichung final freigeben.
+5. Zahlen, Formulierungen und Freigaben der drei Referenzen vor Veröffentlichung final prüfen.
+6. Foto für Cornelia unter `assets/persons/cornelia.webp` ergänzen und die vorbereitete Team-Referenz aktivieren.
+7. Aussagen zu Erfahrung, Kompetenzen und Leistungsumfang vor Veröffentlichung final freigeben.

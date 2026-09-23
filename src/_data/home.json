@@ -1,99 +1,114 @@
 {
-    "services": [
-        {
-            "label": "Analyse",
-            "title": "Data Intelligence"
-        },
-        {
-            "label": "Research",
-            "title": "OSINT & Investigations"
-        },
-        {
-            "label": "Monitoring",
-            "title": "Continuous Intelligence"
-        }
-    ],
     "buildProcess": [
         {
             "number": "01",
-            "label": "Source & Collection",
-            "title": "Find the right data.",
-            "flow": "Question → Sources → Collection",
-            "text": "Wir übersetzen die Fragestellung in eine Datenstrategie, identifizieren relevante Quellen und erfassen die benötigten Daten.",
-            "tags": ["Source Discovery", "OSINT", "Data Collection", "APIs"]
+            "label": "Collect & Archive",
+            "title": "Relevante Quellen erschließen.",
+            "flow": "Question → Sources → Collect → Archive",
+            "text": "Wir identifizieren öffentlich zugängliche und technisch erfassbare Quellen – von Social Media, Foren und öffentlichen Channels bis zu Websites, Dokumenten und internen Daten.",
+            "tags": ["Source Discovery", "Custom Collection", "OSINT", "Archiving"]
         },
         {
             "number": "02",
-            "label": "Structure & Connect",
-            "title": "Make data usable.",
-            "flow": "Normalize → Enrich → Connect",
-            "text": "Wir strukturieren fragmentierte Daten, extrahieren relevante Entitäten und verbinden öffentliche, interne und externe Datensätze.",
-            "tags": ["Normalization", "Entity Extraction", "Enrichment", "Data Integration"]
+            "label": "Transcribe & Structure",
+            "title": "Unstrukturierte Inhalte nutzbar machen.",
+            "flow": "Video / Audio → Transcript → Normalize",
+            "text": "Wir nutzen Captions oder transkribieren Sprache, erfassen Metadaten und Kommentare und verwandeln audiovisuelle Inhalte in strukturierte, durchsuchbare Datensätze.",
+            "tags": ["Transcription", "Captions", "Metadata", "Entity Extraction"]
         },
         {
             "number": "03",
-            "label": "Analysis & Monitoring",
-            "title": "Turn data into intelligence.",
-            "flow": "Analyze → Verify → Monitor",
-            "text": "Wir analysieren Muster und Veränderungen, verifizieren Ergebnisse und überführen relevante Signale bei Bedarf in dauerhaftes Monitoring.",
-            "tags": ["Data Analysis", "Human Verification", "Alerts", "Reporting"]
+            "label": "Connect & Analyze",
+            "title": "Beziehungen und Veränderungen verstehen.",
+            "flow": "Connect → Analyze → Verify → Monitor",
+            "text": "Wir untersuchen Beziehungen zwischen Accounts, Communities, Domains, URLs, Posts, Videos und Narrativen, prüfen die Evidenz und überführen relevante Signale bei Bedarf in kontinuierliches Monitoring.",
+            "tags": ["Network Analysis", "Narrative Mapping", "Human Verification", "Monitoring"]
         }
     ],
     "capabilities": [
         {
             "number": "01",
-            "visual": "saas",
-            "label": "Data Intelligence",
-            "title": "Komplexe Daten in klare Signale übersetzen.",
-            "text": "Wir sammeln, verbinden und analysieren komplexe Datensätze, um konkrete Fragen zu beantworten und Signale in fragmentierten Quellen sichtbar zu machen.",
-            "tags": ["Quantitative Analysis", "Qualitative Analysis", "Entity Extraction", "Connected Data"]
+            "visual": "collection",
+            "title": "Data Collection & OSINT",
+            "text": "Websites, Dokumente, Plattformen und öffentliche Online-Communities werden zu strukturierten Datensätzen, die wir gezielt für eure Fragestellung aufbauen.",
+            "tags": ["Web Data", "OSINT", "Documents", "Custom Collection"]
         },
         {
             "number": "02",
-            "visual": "agent",
-            "label": "OSINT & Research",
-            "title": "Quellen erschließen. Zusammenhänge verifizieren.",
-            "text": "Wir untersuchen rechtmäßig zugängliche Websites, Plattformen, Dokumente und Medien und überprüfen relevante Zusammenhänge durch menschliche Analyse.",
-            "tags": ["OSINT", "Market Intelligence", "Competitive Intelligence", "Narrative Analysis"]
+            "visual": "social",
+            "title": "Social & Platform Intelligence",
+            "text": "Wir analysieren Posts, Kommentare, Videos, Accounts, Communities und Narrative – von großen Social-Plattformen bis zu Nischen- und Fringe-Communities im öffentlichen Web.",
+            "tags": ["Social Media", "Communities", "Narratives", "Networks"]
         },
         {
             "number": "03",
-            "visual": "ux",
-            "label": "Data Collection & Engineering",
-            "title": "Daten sammeln. Strukturen bauen.",
-            "text": "Wenn Daten noch nicht strukturiert vorliegen, entwickeln wir individuelle Sammler, Schnittstellen und Pipelines. Bestehende Kundendaten verbinden wir mit öffentlichen und externen Quellen.",
-            "tags": ["Source Discovery", "Data Collection", "Normalization", "APIs"]
+            "visual": "analysis",
+            "title": "Data Analysis & Monitoring",
+            "text": "Wir verbinden Datensätze, erkennen Muster und machen aus einer einmaligen Untersuchung ein dauerhaftes System für regelmäßige Collection, Archivierung, Klassifikation, Alerts und Reports.",
+            "tags": ["Analysis", "Monitoring", "Signals", "Alerts"]
         },
         {
             "number": "04",
-            "visual": "signals",
-            "label": "Continuous Monitoring",
-            "title": "Veränderungen erkennen. Dauerhaft.",
-            "text": "Wir erfassen Quellen regelmäßig, erkennen Veränderungen und stellen Signale als Alerts, Reports, Dashboards oder APIs bereit. Das System betreiben wir managed, intern bei euch oder hybrid.",
-            "tags": ["Managed Monitoring", "Internal Monitoring", "Hybrid Monitoring", "Alerts & Reports"]
+            "visual": "systems",
+            "title": "Custom Intelligence Systems",
+            "text": "Wir entwickeln die Software, die eure Organisation benötigt, um relevante Daten zu sammeln, zu durchsuchen, zu analysieren und dauerhaft zu beobachten.",
+            "tags": ["Data Pipelines", "Search", "Dashboards", "APIs"]
+        }
+    ],
+    "references": [
+        {
+            "number": "01",
+            "source": "Documents",
+            "metric": "KNAPP 5.000 PDFs",
+            "title": "Document Intelligence",
+            "text": "Knapp 5.000 Behörden-PDFs wurden automatisiert analysiert; auffällige Dokumente wurden anschließend manuell geprüft.",
+            "tags": ["Documents", "Extraction", "Automation", "Verification"]
+        },
+        {
+            "number": "02",
+            "source": "Social Video",
+            "metric": "357 VIDEOS",
+            "title": "Platform Intelligence",
+            "text": "357 TikTok-Videos wurden systematisch untersucht – mit Transkription, Klassifikation und Analyse der darin sichtbaren Narrative.",
+            "tags": ["Video", "Social Data", "Transcription", "Narrative Analysis"]
+        },
+        {
+            "number": "03",
+            "source": "Market Data",
+            "metric": "400+ STREAMS",
+            "title": "Market Signal Analysis",
+            "text": "Mehr als 400 öffentliche Streams und rund 4.500 Unternehmensnennungen wurden mit Marktdaten verbunden und zeitlich analysiert.",
+            "tags": ["Video", "Entity Extraction", "Time Series", "Market Data"]
         }
     ],
     "team": [
         {
             "number": "01",
-            "name": "Managed Monitoring",
-            "disciplines": "Collection · Analysis · Operations",
-            "proof": "MANAGED",
-            "text": "Dynamiq betreibt Datensammlung, Infrastruktur und Analyse dauerhaft und liefert die vereinbarten Alerts, Reports, Dashboards oder APIs."
+            "name": "Oliver Jessner",
+            "role": "Software Developer & Data Analyst",
+            "disciplines": "OSINT · Data Collection · Analysis · Monitoring",
+            "text": "Entwickelt Collection- und Analyse-Pipelines und verbindet Softwareentwicklung mit Datenanalyse, OSINT und Research.",
+            "image": "/assets/persons/oliver.webp",
+            "imageAlt": "Oliver Jessner",
+            "imagePosition": "center 28%"
         },
         {
             "number": "02",
-            "name": "Internal Monitoring",
-            "disciplines": "Customer Infrastructure · Enablement",
-            "proof": "INTERNAL",
-            "text": "Wir entwickeln und implementieren das System in eurer Infrastruktur und befähigen euer Team, Sammlung, Analyse und Betrieb intern zu übernehmen."
+            "name": "Cornelia",
+            "role": "UX & Product Design",
+            "disciplines": "Data Interfaces · Research Tools · UX",
+            "text": "Gestaltet Software und Interfaces für Recherche, Monitoring und komplexe Datenprodukte.",
+            "placeholder": "C",
+            "imageTarget": "/assets/persons/cornelia.webp"
         },
         {
             "number": "03",
-            "name": "Hybrid Monitoring",
-            "disciplines": "Shared Data · Analysis · Operations",
-            "proof": "HYBRID",
-            "text": "Datenerhebung, Infrastruktur und Analyse werden sinnvoll zwischen eurem Team und Dynamiq aufgeteilt – passend zu Datenzugang, Sicherheit und internen Ressourcen."
+            "name": "Dev",
+            "role": "Software Developer & Data Analyst",
+            "status": "TBA",
+            "disciplines": "Data Engineering · Collection · Analysis",
+            "text": "Softwareentwicklung und Datenanalyse für Collection-, Processing- und Monitoring-Systeme.",
+            "placeholder": "TBA"
         }
     ]
 }

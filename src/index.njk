@@ -1,8 +1,8 @@
 ---
 layout: layouts/base.njk
 title: "Dynamiq – Data Intelligence, OSINT & Monitoring"
-description: "Dynamiq findet, verbindet und analysiert öffentliche, interne und externe Daten für konkrete Antworten und kontinuierliches Monitoring."
-ogDescription: "Data Intelligence, OSINT, Data Analysis und Monitoring: Dynamiq erschließt Quellen, verbindet Datensätze und macht relevante Veränderungen sichtbar."
+description: "Data Intelligence, OSINT and continuous monitoring across web, social media, documents, video and internal data."
+ogDescription: "Dynamiq collects, structures and connects data across social platforms, the public web, documents, video, audio and internal systems."
 ogImage: /assets/og-image-data-intelligence.png
 isHome: true
 showNavigation: true
@@ -13,7 +13,7 @@ showNavigation: true
     <canvas class="poster-hero__draw-canvas" data-draw-canvas></canvas>
     <span class="poster-hero__draw-hint" data-draw-hint>Make your mark.</span>
   </div>
-  <p class="poster-hero__eyebrow" data-hero-reveal>OSINT · DATA ANALYSIS · MONITORING</p>
+  <p class="poster-hero__eyebrow" data-hero-reveal>SOCIAL · WEB · VIDEO · DATA</p>
 
   <h1 class="poster-title" id="poster-title" aria-label="FROM DATA TO CLEAR SIGNALS. BETTER DECISIONS.">
     <span class="poster-title__group poster-title__group--complex" data-hero-reveal data-depth="0.35">
@@ -30,26 +30,26 @@ showNavigation: true
     </span>
   </h1>
 
-  <div class="poster-objects" aria-label="Wie Dynamiq aus Daten Intelligence macht">
+  <div class="poster-objects" aria-label="Wie Dynamiq aus unstrukturierten Quellen Intelligence macht">
     <div class="poster-object poster-object--positioning" data-poster-object data-depth="0.9" data-hero-reveal>
       <div class="poster-object__face">
         <span class="poster-object__index">01</span>
-        <strong data-sticker-text>FIND THE DATA</strong>
-        <span class="poster-object__note">THAT MATTERS</span>
+        <strong data-sticker-text>COLLECT THE DATA</strong>
+        <span class="poster-object__note">SOCIAL + PUBLIC WEB</span>
       </div>
     </div>
     <div class="poster-object poster-object--story" data-poster-object data-depth="1.15" data-hero-reveal>
       <div class="poster-object__face">
         <span class="poster-object__index">02</span>
-        <strong data-sticker-text>TURN COMPLEX DATA</strong>
-        <span class="poster-object__note">INTO CLEAR SIGNALS</span>
+        <strong data-sticker-text>VIDEO BECOMES DATA</strong>
+        <span class="poster-object__note">TRANSCRIBE + STRUCTURE</span>
       </div>
     </div>
     <div class="poster-object poster-object--growth" data-poster-object data-depth="0.75" data-hero-reveal>
       <div class="poster-object__face">
         <span class="poster-object__index">03</span>
-        <strong data-sticker-text>MONITOR</strong>
-        <span class="poster-object__note">WHAT CHANGES</span>
+        <strong data-sticker-text>CONNECT NETWORKS</strong>
+        <span class="poster-object__note">ANALYZE + MONITOR</span>
       </div>
     </div>
   </div>
@@ -62,31 +62,49 @@ showNavigation: true
 
 <section class="build-services section-shell" id="how-we-build" aria-labelledby="services-title">
   <header class="build-services__intro">
-    <p class="section-kicker">[ Von der Frage zur Intelligence ]</p>
-    <h2 id="services-title"><span>Ihr sagt uns, was ihr wissen müsst.</span><span>Wir finden und analysieren die Daten dafür.</span></h2>
-    <p>Die Fragestellung bestimmt die Datenstrategie. Wir identifizieren relevante Quellen, erschließen und strukturieren die Daten, verbinden öffentliche Informationen mit internen oder externen Datensätzen und verifizieren die Ergebnisse durch menschliche Analyse.</p>
+    <p class="section-kicker">[ Wie wir arbeiten ]</p>
+    <h2 id="services-title"><span>Die Frage kommt zuerst.</span><span>Dann die Daten.</span></h2>
+    <p>Wir beginnen nicht mit einem bestehenden Tool, Dashboard oder einer vordefinierten Datenquelle. Wir definieren die Fragestellung, identifizieren relevante Quellen und bauen die Collection- und Analyse-Pipeline, die dafür notwendig ist.</p>
   </header>
 
   <div class="ux-stat">
     <div class="ux-stat__core">
-      <strong class="ux-stat__number"><span class="sr-only">Zwei Arbeitsmodelle</span><span class="ux-stat__visual" aria-hidden="true"><span>0</span><span>2</span></span></strong>
+      <strong class="ux-stat__number"><span class="sr-only">Acht Schritte zur Intelligence</span><span class="ux-stat__visual" aria-hidden="true"><span>0</span><span>8</span></span></strong>
       <div class="ux-stat__copy">
-        <p>Eine konkrete Frage braucht eine fokussierte Analyse. Relevante Veränderungen brauchen kontinuierliches Monitoring.</p>
-        <p class="ux-stat__source">One-off Analysis · Continuous Monitoring</p>
+        <p>Wenn die analysierbare Datengrundlage noch nicht existiert, bauen wir sie – quellenübergreifend und passend zur Frage.</p>
+        <p class="ux-stat__source">Collect → Archive → Transcribe → Extract → Normalize → Enrich → Connect → Analyze &amp; Monitor</p>
       </div>
     </div>
-    <div class="ux-first">
-      <h3>Von der <span>Quelle</span> zur Intelligence.</h3>
-      <ul aria-label="Unsere Arbeitsweise"><li>Collect &amp; normalize.</li><li>Connect &amp; analyze.</li><li>Verify &amp; monitor.</li></ul>
+    <div class="ux-first source-formats">
+      <h3>Data is <span>not one format.</span></h3>
+      <ul aria-label="Datenquellen"><li>TikTok · YouTube · Instagram</li><li>Reddit · X · LinkedIn</li><li>Forums · Imageboards · Public Channels</li><li>Video · Audio · Comments</li><li>Websites · Documents · Internal Data</li></ul>
     </div>
+  </div>
+
+  <div class="build-process">
+    <header class="build-services__subhead">
+      <p class="section-kicker">[ Intelligence Pipeline ]</p>
+      <h3>From raw content to structured intelligence.</h3>
+    </header>
+    <ol class="build-process__steps">
+      {% for step in home.buildProcess %}
+        <li>
+          <div class="build-process__meta"><span>{{ step.number }}</span><strong>{{ step.label }}</strong></div>
+          <h4>{{ step.title }}</h4>
+          <p class="build-process__flow">{{ step.flow }}</p>
+          <p class="build-process__text">{{ step.text }}</p>
+          <ul class="build-tag-list" aria-label="Arbeitsschritte">{% for tag in step.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+        </li>
+      {% endfor %}
+    </ol>
   </div>
 </section>
 
 <section class="service-offer section-shell" id="leistungen" aria-labelledby="offer-title" data-system-playgrounds>
   <header class="service-offer__intro">
     <p class="section-kicker">[ Leistungen ]</p>
-    <h2 id="offer-title"><span>Find.</span><span>Analyze.</span><span>Monitor.</span></h2>
-    <p>Data Intelligence, OSINT und Data Engineering – von einmaligen Analysen und Investigations bis zu dauerhaft betriebenen Monitoring-Systemen.</p>
+    <h2 id="offer-title"><span>Find.</span><span>Connect.</span><span>Monitor.</span></h2>
+    <p>Platform-independent intelligence across social media and the wider public web – verbunden mit Dokumenten, Marktdaten und internen Systemen.</p>
   </header>
 
   <ol class="capability-list">
@@ -106,37 +124,80 @@ showNavigation: true
       </li>
     {% endfor %}
   </ol>
+
+  <div class="ux-first monitoring-models">
+    <h3>Managed. <span>Internal.</span> Hybrid.</h3>
+    <ul aria-label="Betriebsmodelle"><li>Managed by Dynamiq</li><li>Run internally</li><li>Shared operation</li></ul>
+  </div>
 </section>
 
-<section class="about-team section-shell" id="team" aria-labelledby="team-title">
-  <header class="about-team__intro">
-    <p class="section-kicker">[ Betriebsmodelle ]</p>
-    <h2 id="team-title"><span>Managed. Internal.</span><span>Oder hybrid.</span></h2>
-    <p>Dynamiq ist Analysepartner und technischer Umsetzungspartner.<br>Wir betreiben Monitoring vollständig, implementieren es in eurer Infrastruktur oder teilen Datenerhebung, Analyse und Betrieb.</p>
+<section class="references section-shell" id="referenzen" aria-labelledby="references-title">
+  <header class="references__intro">
+    <p class="section-kicker">[ Referenzen ]</p>
+    <h2 id="references-title"><span>Die Quelle ändert sich.</span><span>Die Pipeline bleibt.</span></h2>
+    <p>Dokumente, Social Video und Marktdaten brauchen unterschiedliche Collection-Methoden – aber dieselbe Sorgfalt beim Strukturieren, Verbinden, Analysieren und Verifizieren.</p>
   </header>
-  <ol class="about-team__profiles">
-    {% for person in home.team %}
-      <li class="about-profile">
-        <span class="about-profile__number" aria-hidden="true">{{ person.number }}</span>
-        <header class="about-profile__identity">
-          <h3>{{ person.name }}</h3>
-          <p>{{ person.disciplines }}</p>
-        </header>
-        <strong class="about-profile__proof">{{ person.proof }}</strong>
-        <p class="about-profile__description">{{ person.text }}</p>
+  <ol class="reference-list">
+    {% for reference in home.references %}
+      <li class="reference-row">
+        <span class="reference-row__number" aria-hidden="true">{{ reference.number }}</span>
+        <div class="reference-row__source">
+          <p>{{ reference.source }}</p>
+          <strong>{{ reference.metric }}</strong>
+        </div>
+        <div class="reference-row__body">
+          <h3>{{ reference.title }}</h3>
+          <p>{{ reference.text }}</p>
+          <ul class="build-tag-list" aria-label="Eingesetzte Fähigkeiten">{% for tag in reference.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+        </div>
       </li>
     {% endfor %}
   </ol>
 </section>
 
+<section class="about-team section-shell" id="team" aria-labelledby="team-title">
+  <header class="about-team__intro">
+    <p class="section-kicker">[ Team ]</p>
+    <h2 id="team-title"><span>Menschen hinter</span><span>den Daten.</span></h2>
+    <p>Ein kleines Team aus Softwareentwicklung, Datenanalyse und UX. Direkt in Collection, Research, Analyse und der Entwicklung belastbarer Intelligence-Systeme.</p>
+  </header>
+  <ol class="team-grid">
+    {% for person in home.team %}
+      <li class="team-card">
+        <div class="team-card__media">
+          {% if person.image %}
+            <img src="{{ person.image }}" alt="{{ person.imageAlt }}" width="1016" height="1568" loading="lazy" style="object-position: {{ person.imagePosition }};">
+          {% else %}
+            <div class="team-card__placeholder" role="img" aria-label="Neutraler Platzhalter für {{ person.name }}">
+              <strong>{{ person.placeholder }}</strong>
+              <span>Portrait folgt</span>
+            </div>
+          {% endif %}
+        </div>
+        <div class="team-card__content">
+          <div class="team-card__meta"><span aria-hidden="true">[ {{ person.number }} ]</span>{% if person.status %}<strong>{{ person.status }}</strong>{% endif %}</div>
+          <h3>{{ person.name }}</h3>
+          <p class="team-card__role">{{ person.role }}</p>
+          <p class="team-card__focus">{{ person.disciplines }}</p>
+          <p class="team-card__description">{{ person.text }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+  <div class="team-combination">
+    <h3>Software Engineering <span>+</span> Data Analysis <span>+</span> UX</h3>
+    <p>Wir liefern nicht nur Research-Ergebnisse. Wir entwickeln auch die Interfaces, Pipelines und Monitoring-Systeme, mit denen Intelligence dauerhaft entsteht.</p>
+  </div>
+</section>
+
 <section class="contact section-shell" id="kontakt" aria-labelledby="contact-title">
   <header class="contact-intro">
     <p class="section-kicker">[ Kontakt ]</p>
-    <h2 id="contact-title"><span>Was müsst ihr wissen,</span><span>verstehen oder überwachen?</span></h2>
+    <h2 id="contact-title"><span>Was möchtet ihr</span><span>herausfinden?</span></h2>
   </header>
   <div class="contact-body">
     <div class="contact-summary">
-      <p>Nennt uns die Frage. Wir klären, welche Daten dafür nötig sind und wie daraus belastbare Antworten oder laufende Intelligence entstehen.</p>
+      <p>Beschreibt uns die Frage, die Datenquelle oder das Signal, das ihr verstehen oder dauerhaft beobachten möchtet.</p>
       <p>Im ersten Gespräch klären wir Ziel, Quellen, vorhandene Daten und den passenden Scope.</p>
       <div class="contact-meta">
         <p class="contact-direct"><span>Lieber direkt per E-Mail?</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
@@ -151,26 +212,20 @@ showNavigation: true
       <div class="form-grid">
         <div class="field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="email">E-Mail <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="unternehmen">Unternehmen</label><input id="unternehmen" name="unternehmen" type="text" autocomplete="organization"></div>
-        <div class="field"><label for="website">Relevante Datenquelle / System (URL)</label><input id="website" name="website" type="url" autocomplete="url" inputmode="url"></div>
+        <div class="field field-full"><label for="unternehmen">Unternehmen</label><input id="unternehmen" name="unternehmen" type="text" autocomplete="organization"></div>
         <div class="field field-full">
           <label for="leistung">Welche Unterstützung sucht ihr? <span aria-hidden="true">*</span></label>
           <select id="leistung" name="leistung" required>
             <option value="">Bitte auswählen</option>
-            <option value="One-off Analysis">One-off Analysis / Investigation</option>
-            <option value="Continuous Monitoring">Continuous Monitoring</option>
-            <option value="Data Collection &amp; Pipeline">Data Collection &amp; Pipeline</option>
-            <option value="Data Integration &amp; Analysis">Data Integration &amp; Analysis</option>
-            <option value="Internal Monitoring">Monitoring-System im Unternehmen</option>
+            <option value="Data Collection &amp; OSINT">Data Collection &amp; OSINT</option>
+            <option value="Social &amp; Platform Intelligence">Social &amp; Platform Intelligence</option>
+            <option value="Data Analysis &amp; Monitoring">Data Analysis &amp; Monitoring</option>
+            <option value="Custom Intelligence Systems">Custom Intelligence Systems</option>
             <option value="Noch nicht sicher">Noch nicht sicher</option>
           </select>
         </div>
         <div class="field field-full"><label for="projekt">Worum geht es? <span aria-hidden="true">*</span></label><textarea id="projekt" name="projekt" rows="6" required aria-describedby="projekt-hilfe"></textarea><span class="form-help" id="projekt-hilfe">Fragestellung, vorhandene Daten, relevante Quellen und gewünschtes Ergebnis genügen für den Anfang.</span></div>
-        <div class="field">
-          <label for="start">Wann möchtet ihr starten?</label>
-          <select id="start" name="start"><option value="">Bitte auswählen</option><option>So bald wie sinnvoll</option><option>In 1–3 Monaten</option><option>In 3–6 Monaten</option><option>Später oder noch offen</option></select>
-        </div>
-        <div class="field">
+        <div class="field field-full">
           <label for="budget">Budgetrahmen (optional)</label>
           <select id="budget" name="budget">
           <option value="">Keine Angabe</option>

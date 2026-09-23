@@ -3,7 +3,7 @@
     "email": "oliver@dynamiq.agency",
     "location": "Salzburg",
     "areaServed": "DACH-Raum und remote",
-    "description": "Dynamiq sammelt, verbindet, analysiert und überwacht öffentliche und interne Daten – für konkrete Antworten und laufende Intelligence.",
+    "description": "Data Intelligence, OSINT and Monitoring from Salzburg – across web, social media, documents, video and internal data.",
     "primaryCta": {
         "label": "Analyse besprechen",
         "href": "#kontakt"
@@ -11,7 +11,8 @@
     "navigation": [
         { "label": "Arbeitsweise", "href": "#how-we-build" },
         { "label": "Leistungen", "href": "#leistungen" },
-        { "label": "Betriebsmodelle", "href": "#team" },
+        { "label": "Referenzen", "href": "#referenzen" },
+        { "label": "Team", "href": "#team" },
         { "label": "Kontakt", "href": "#kontakt" }
     ]
 }
