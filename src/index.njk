@@ -148,7 +148,9 @@ showNavigation: true
         <div class="reference-row__body">
           <h3>{{ reference.title }}</h3>
           <p>{{ reference.text }}</p>
+          {% if reference.detail %}<p class="reference-row__detail">{{ reference.detail }}</p>{% endif %}
           <ul class="build-tag-list" aria-label="Eingesetzte Fähigkeiten">{% for tag in reference.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+          <a class="reference-row__link" href="{{ reference.url }}" target="_blank" rel="noopener noreferrer">Golem-Artikel lesen <span aria-hidden="true">↗</span></a>
         </div>
       </li>
     {% endfor %}
@@ -166,7 +168,7 @@ showNavigation: true
       <li class="team-card">
         <div class="team-card__media">
           {% if person.image %}
-            <img src="{{ person.image }}" alt="{{ person.imageAlt }}" width="1016" height="1568" loading="lazy" style="object-position: {{ person.imagePosition }};">
+            <img src="{{ person.image }}" alt="{{ person.imageAlt }}" width="500" height="500" loading="lazy" style="object-position: {{ person.imagePosition }};">
           {% else %}
             <div class="team-card__placeholder" role="img" aria-label="Neutraler Platzhalter für {{ person.name }}">
               <strong>{{ person.placeholder }}</strong>
@@ -213,7 +215,7 @@ showNavigation: true
         <div class="field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="email">E-Mail <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
         <div class="field field-full"><label for="unternehmen">Unternehmen</label><input id="unternehmen" name="unternehmen" type="text" autocomplete="organization"></div>
-        <div class="field field-full">
+        <div class="field">
           <label for="leistung">Welche Unterstützung sucht ihr? <span aria-hidden="true">*</span></label>
           <select id="leistung" name="leistung" required>
             <option value="">Bitte auswählen</option>
@@ -224,8 +226,7 @@ showNavigation: true
             <option value="Noch nicht sicher">Noch nicht sicher</option>
           </select>
         </div>
-        <div class="field field-full"><label for="projekt">Worum geht es? <span aria-hidden="true">*</span></label><textarea id="projekt" name="projekt" rows="6" required aria-describedby="projekt-hilfe"></textarea><span class="form-help" id="projekt-hilfe">Fragestellung, vorhandene Daten, relevante Quellen und gewünschtes Ergebnis genügen für den Anfang.</span></div>
-        <div class="field field-full">
+        <div class="field">
           <label for="budget">Budgetrahmen (optional)</label>
           <select id="budget" name="budget">
           <option value="">Keine Angabe</option>
@@ -234,6 +235,7 @@ showNavigation: true
           <option>40.000–75.000 €</option>
           <option>75.000 € oder mehr</option></select>
         </div>
+        <div class="field field-full"><label for="projekt">Worum geht es? <span aria-hidden="true">*</span></label><textarea id="projekt" name="projekt" rows="6" required aria-describedby="projekt-hilfe"></textarea><span class="form-help" id="projekt-hilfe">Fragestellung, vorhandene Daten, relevante Quellen und gewünschtes Ergebnis genügen für den Anfang.</span></div>
       </div>
 
       <div class="consent-field">

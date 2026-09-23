@@ -62,7 +62,8 @@
             "metric": "KNAPP 5.000 PDFs",
             "title": "Document Intelligence",
             "text": "Knapp 5.000 Behörden-PDFs wurden automatisiert analysiert; auffällige Dokumente wurden anschließend manuell geprüft.",
-            "tags": ["Documents", "Extraction", "Automation", "Verification"]
+            "tags": ["Documents", "Extraction", "Automation", "Verification"],
+            "url": "https://www.golem.de/news/behoerden-pdfs-vertrauliche-daten-trotz-schwaerzung-rekonstruierbar-2609-212878.html"
         },
         {
             "number": "02",
@@ -70,7 +71,8 @@
             "metric": "357 VIDEOS",
             "title": "Platform Intelligence",
             "text": "357 TikTok-Videos wurden systematisch untersucht – mit Transkription, Klassifikation und Analyse der darin sichtbaren Narrative.",
-            "tags": ["Video", "Social Data", "Transcription", "Narrative Analysis"]
+            "tags": ["Video", "Social Data", "Transcription", "Narrative Analysis"],
+            "url": "https://www.golem.de/news/ki-propaganda-auf-tiktok-so-inszenieren-afd-supporter-den-niedergang-deutschlands-2608-211999.html"
         },
         {
             "number": "03",
@@ -78,7 +80,9 @@
             "metric": "400+ STREAMS",
             "title": "Market Signal Analysis",
             "text": "Mehr als 400 öffentliche Streams und rund 4.500 Unternehmensnennungen wurden mit Marktdaten verbunden und zeitlich analysiert.",
-            "tags": ["Video", "Entity Extraction", "Time Series", "Market Data"]
+            "detail": "Laufzeit der transkribierten Videos: 14 Tage und 21 Stunden",
+            "tags": ["Video", "Entity Extraction", "Time Series", "Market Data"],
+            "url": "https://www.golem.de/news/aktienmarkt-und-politik-wie-rhetorik-aus-dem-weissen-haus-boersenkurse-beeinflusst-2608-211218.html"
         }
     ],
     "team": [
@@ -88,9 +92,9 @@
             "role": "Software Developer & Data Analyst",
             "disciplines": "OSINT · Data Collection · Analysis · Monitoring",
             "text": "Entwickelt Collection- und Analyse-Pipelines und verbindet Softwareentwicklung mit Datenanalyse, OSINT und Research.",
-            "image": "/assets/persons/oliver.webp",
+            "image": "/assets/persons/oliverjessner.png",
             "imageAlt": "Oliver",
-            "imagePosition": "center 28%"
+            "imagePosition": "center"
         },
         {
             "number": "02",
