@@ -25,62 +25,6 @@
             "outputs": ["Integrationen", "Interne Tools", "Management-Systeme"]
         }
     ],
-    "buildProcess": [
-        {
-            "number": "01",
-            "label": "Collect & Archive",
-            "title": "Relevante Quellen erschließen.",
-            "flow": "Question → Sources → Collect → Archive",
-            "text": "Wir identifizieren öffentlich zugängliche und technisch erfassbare Quellen – von Social Media, Foren und öffentlichen Channels bis zu Websites, Dokumenten und internen Daten.",
-            "tags": ["Source Discovery", "Custom Collection", "OSINT", "Archiving"]
-        },
-        {
-            "number": "02",
-            "label": "Transcribe & Structure",
-            "title": "Unstrukturierte Inhalte nutzbar machen.",
-            "flow": "Video / Audio → Transcript → Normalize",
-            "text": "Wir nutzen Captions oder transkribieren Sprache, erfassen Metadaten und Kommentare und verwandeln audiovisuelle Inhalte in strukturierte, durchsuchbare Datensätze.",
-            "tags": ["Transcription", "Captions", "Metadata", "Entity Extraction"]
-        },
-        {
-            "number": "03",
-            "label": "Connect & Analyze",
-            "title": "Beziehungen und Veränderungen verstehen.",
-            "flow": "Connect → Analyze → Verify → Monitor",
-            "text": "Wir untersuchen Beziehungen zwischen Accounts, Communities, Domains, URLs, Posts, Videos und Narrativen, prüfen die Evidenz und überführen relevante Signale bei Bedarf in kontinuierliches Monitoring.",
-            "tags": ["Network Analysis", "Narrative Mapping", "Human Verification", "Monitoring"]
-        }
-    ],
-    "capabilities": [
-        {
-            "number": "01",
-            "visual": "collection",
-            "title": "Source Access & Collection",
-            "text": "Wir erschließen auch Quellen, für die keine passende API oder Standardsoftware existiert, und bauen reproduzierbare, quellenbezogene Collection-Prozesse.",
-            "tags": ["Source Discovery", "Web Data", "OSINT", "Archiving"]
-        },
-        {
-            "number": "02",
-            "visual": "social",
-            "title": "Multimodal Processing",
-            "text": "Text, Video, Audio, Bilder, Kommentare und Metadaten werden gemeinsam verarbeitet, normalisiert und für Suche und Analyse miteinander verknüpft.",
-            "tags": ["Transcription", "Metadata", "Extraction", "Normalization"]
-        },
-        {
-            "number": "03",
-            "visual": "analysis",
-            "title": "Evidence & Network Analysis",
-            "text": "Aussagen, Akteure und Verbindungen bleiben bis zur Quelle nachvollziehbar. Automatisierte Mustererkennung wird durch gezielte menschliche Prüfung ergänzt.",
-            "tags": ["Provenance", "Networks", "Verification", "Narratives"]
-        },
-        {
-            "number": "04",
-            "visual": "systems",
-            "title": "Operational Infrastructure",
-            "text": "Pipelines und Interfaces werden auf Datenvolumen, Aktualität, Zugriffsmodelle und bestehende interne Systeme der Organisation abgestimmt.",
-            "tags": ["Automation", "Search", "Access", "Integration"]
-        }
-    ],
     "references": [
         {
             "number": "01",

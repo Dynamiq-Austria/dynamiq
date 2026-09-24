@@ -100,53 +100,6 @@ showNavigation: true
   </div>
 </section>
 
-<section class="pipeline section-shell" aria-labelledby="pipeline-title">
-  <div class="build-process">
-    <header class="build-services__subhead">
-      <p class="section-kicker">[ Intelligence Pipeline ]</p>
-      <h3 id="pipeline-title">From raw content to structured intelligence.</h3>
-    </header>
-    <ol class="build-process__steps">
-      {% for step in home.buildProcess %}
-        <li>
-          <div class="build-process__meta"><span>{{ step.number }}</span><strong>{{ step.label }}</strong></div>
-          <h4>{{ step.title }}</h4>
-          <p class="build-process__flow">{{ step.flow }}</p>
-          <p class="build-process__text">{{ step.text }}</p>
-          <ul class="build-tag-list" aria-label="Arbeitsschritte">{% for tag in step.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
-        </li>
-      {% endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="service-offer section-shell" aria-labelledby="offer-title" data-system-playgrounds>
-  <header class="service-offer__intro">
-    <p class="section-kicker">[ Technische Spezialisierung ]</p>
-    <h2 id="offer-title"><span>Built for</span><span>difficult data.</span></h2>
-    <p>Die technische Ebene hinter den Ergebnissen: belastbare Erfassung, multimodale Verarbeitung, prüfbare Analyse und Systeme für den laufenden Betrieb.</p>
-  </header>
-
-  <ol class="capability-list">
-    {% for service in home.capabilities %}
-      <li class="capability-row" data-system-row>
-        <span class="capability-row__number" aria-hidden="true">{{ service.number }}</span>
-        <div class="capability-row__title">
-          <h3>{{ service.title }}</h3>
-        </div>
-        <div class="capability-row__body">
-          <p>{{ service.text }}</p>
-          <ul class="build-tag-list" aria-label="Leistungsbausteine">
-            {% for tag in service.tags %}<li>{{ tag }}</li>{% endfor %}
-          </ul>
-          {% include "components/system-playground.njk" %}
-        </div>
-      </li>
-    {% endfor %}
-  </ol>
-
-</section>
-
 <section class="references" id="referenzen" aria-labelledby="references-title">
   <div class="references__inner section-shell">
     <header class="references__intro">
@@ -204,10 +157,6 @@ showNavigation: true
       </li>
     {% endfor %}
   </ol>
-  <div class="team-combination">
-    <h3>Software Engineering <span>+</span> Data Analysis <span>+</span> UX</h3>
-    <p>Wir liefern nicht nur Research-Ergebnisse. Wir entwickeln auch die Interfaces, Pipelines und Monitoring-Systeme, mit denen Intelligence dauerhaft entsteht.</p>
-  </div>
 </section>
 
 <section class="contact" id="kontakt" aria-labelledby="contact-title">

@@ -39,22 +39,6 @@
     header?.classList.toggle('is-scrolled', window.scrollY > 12);
   }, { passive: true });
 
-  const playgroundSection = document.querySelector('[data-system-playgrounds]');
-  if (playgroundSection) {
-    const systemRows = [...playgroundSection.querySelectorAll('[data-system-row]')];
-
-    const playSystem = (row) => {
-      row.classList.remove('is-system-active');
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => row.classList.add('is-system-active'));
-      });
-    };
-
-    systemRows.forEach((row) => {
-      row.addEventListener('pointerenter', () => playSystem(row));
-    });
-  }
-
   const posterHero = document.querySelector('[data-poster-hero]');
   if (!posterHero) return;
   posterHero.classList.add('is-enhanced');

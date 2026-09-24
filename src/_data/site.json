@@ -9,7 +9,8 @@
         "href": "#kontakt"
     },
     "navigation": [
-        { "label": "Leistungen", "href": "#leistungen" },
+        { "label": "Was wir liefern", "href": "#leistungen" },
+        { "label": "Datenquellen", "href": "#datenquellen" },
         { "label": "Referenzen", "href": "#referenzen" },
         { "label": "Team", "href": "#team" },
         { "label": "Kontakt", "href": "#kontakt" }
