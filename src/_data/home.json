@@ -76,33 +76,24 @@
                 "LinkedIn",
                 "Facebook",
                 "Threads",
-                "Alle weitere Plattformen"
+                "Alle weitere Sozialen Netzwerke"
             ]
         },
         {
             "number": "02",
-            "title": "Communities & Nischennetzwerke",
+            "title": "Communities",
             "examples": [
                 "Foren",
                 "Imageboards",
                 "Öffentliche Telegram-Kanäle",
                 "Öffentliche Discord-Communities",
-                "Nischenplattformen",
-                "Fringe Networks"
+                "Nischenplattformen"
             ]
         },
         {
             "number": "03",
             "title": "Web & Dark Web",
-            "examples": [
-                "Websites",
-                "Blogs",
-                "News-Seiten",
-                "Öffentliche Datenbanken",
-                "Web-Archive",
-                "Onion Services",
-                "Öffentlich zugängliche Dark-Web-Quellen"
-            ]
+            "examples": ["Websites", "Blogs", "Öffentliche Datenbanken", "Web-Archive", "Dark-Web-Quellen"]
         },
         {
             "number": "04",

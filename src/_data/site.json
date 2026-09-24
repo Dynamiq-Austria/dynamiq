@@ -10,8 +10,8 @@
     },
     "navigation": [
         { "label": "Was wir liefern", "href": "#leistungen" },
-        { "label": "Datenquellen", "href": "#datenquellen" },
         { "label": "Referenzen", "href": "#referenzen" },
+        { "label": "Datenquellen", "href": "#datenquellen" },
         { "label": "Team", "href": "#team" },
         { "label": "Kontakt", "href": "#kontakt" }
     ]

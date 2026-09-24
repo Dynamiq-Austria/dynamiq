@@ -39,6 +39,121 @@
     header?.classList.toggle('is-scrolled', window.scrollY > 12);
   }, { passive: true });
 
+  const navLinks = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
+  const navSections = navLinks
+    .map((link) => {
+      const id = decodeURIComponent(link.hash.slice(1));
+      const section = id ? document.getElementById(id) : null;
+      return section ? { id, link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (navSections.length && 'IntersectionObserver' in window) {
+    const sectionsById = new Map(navSections.map((item) => [item.id, item]));
+    const intersectingSections = new Set();
+    let activeSectionId = '';
+    let pendingSectionId = '';
+    let pendingTimer = 0;
+    let observer = null;
+    let resizeFrame = 0;
+
+    const lockSection = (id) => {
+      pendingSectionId = id;
+      window.clearTimeout(pendingTimer);
+      pendingTimer = window.setTimeout(() => {
+        pendingSectionId = '';
+        selectActiveSection();
+      }, 1200);
+    };
+
+    const setActiveSection = (id, { syncHash = true } = {}) => {
+      if (!sectionsById.has(id) || activeSectionId === id) return;
+
+      activeSectionId = id;
+      navSections.forEach((item) => {
+        const isActive = item.id === id;
+        item.link.classList.toggle('is-active', isActive);
+        if (isActive) item.link.setAttribute('aria-current', 'location');
+        else item.link.removeAttribute('aria-current');
+      });
+
+      if (syncHash && window.location.hash !== `#${id}`) {
+        window.history.replaceState(window.history.state, '', `#${id}`);
+      }
+    };
+
+    const selectActiveSection = () => {
+      if (pendingSectionId) {
+        if (intersectingSections.has(pendingSectionId)) {
+          window.clearTimeout(pendingTimer);
+          pendingSectionId = '';
+        } else {
+          return;
+        }
+      }
+
+      const headerHeight = header?.getBoundingClientRect().height || 0;
+      const candidates = [...intersectingSections]
+        .map((id) => sectionsById.get(id))
+        .filter(Boolean)
+        .map((item) => ({ ...item, top: item.section.getBoundingClientRect().top }));
+
+      if (!candidates.length) return;
+
+      const entering = candidates
+        .filter((item) => item.top >= headerHeight - 1)
+        .sort((a, b) => a.top - b.top);
+      const current = entering[0] || candidates.sort((a, b) => b.top - a.top)[0];
+      setActiveSection(current.id);
+    };
+
+    const createScrollSpy = () => {
+      observer?.disconnect();
+      intersectingSections.clear();
+
+      const headerHeight = Math.ceil(header?.getBoundingClientRect().height || 0);
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) intersectingSections.add(entry.target.id);
+          else intersectingSections.delete(entry.target.id);
+        });
+        selectActiveSection();
+      }, {
+        rootMargin: `-${headerHeight}px 0px -70% 0px`,
+        threshold: [0, 0.01],
+      });
+
+      navSections.forEach((item) => observer.observe(item.section));
+    };
+
+    navSections.forEach((item) => {
+      item.link.addEventListener('click', () => {
+        lockSection(item.id);
+        setActiveSection(item.id, { syncHash: false });
+      });
+    });
+
+    window.addEventListener('hashchange', () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (sectionsById.has(id)) {
+        lockSection(id);
+        setActiveSection(id, { syncHash: false });
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (resizeFrame) cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(() => {
+        resizeFrame = 0;
+        createScrollSpy();
+      });
+    });
+
+    const initialId = decodeURIComponent(window.location.hash.slice(1));
+    if (sectionsById.has(initialId)) setActiveSection(initialId, { syncHash: false });
+    createScrollSpy();
+  }
+
   const posterHero = document.querySelector('[data-poster-hero]');
   if (!posterHero) return;
   posterHero.classList.add('is-enhanced');

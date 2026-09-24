@@ -27,28 +27,221 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
 
+  {% if isHome %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Dynamiq",
-    "url": "{{ siteUrl }}",
-    "description": "{{ site.description }}",
-    "email": "mailto:{{ site.email }}",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "{{ site.location }}",
-      "addressCountry": "AT"
-    },
-    "areaServed": "{{ site.areaServed }}",
-    "founder": {
-      "@type": "Person",
-      "name": "Oliver Jessner",
-      "jobTitle": "Software Developer & Data Analyst"
-    },
-    "knowsAbout": ["Data Intelligence", "OSINT", "Social Media Intelligence", "Video Transcription", "Network Analysis", "Community Detection", "Data Collection", "Data Engineering", "Continuous Monitoring"]
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dynamiq.agency/#organization",
+        "name": "Dynamiq",
+        "legalName": "Ing. Oliver Jessner, MBA",
+        "url": "https://dynamiq.agency/",
+        "description": "Data Intelligence, OSINT and Monitoring – across web, social media, documents, video and internal data.",
+        "email": "oliver@dynamiq.agency",
+        "iso6523Code": "0088:9110014959469",
+        "logo": {
+          "@id": "https://dynamiq.agency/#logo"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Schlosstraße 13",
+          "postalCode": "5020",
+          "addressLocality": "Salzburg",
+          "addressCountry": "AT"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "oliver@dynamiq.agency",
+          "areaServed": ["AT", "DE", "CH"]
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Austria"
+          },
+          {
+            "@type": "Country",
+            "name": "Germany"
+          },
+          {
+            "@type": "Country",
+            "name": "Switzerland"
+          }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Ing. Oliver Jessner, MBA",
+          "jobTitle": "Software Developer & Data Analyst"
+        },
+        "knowsAbout": [
+          "Data Intelligence",
+          "Open Source Intelligence (OSINT)",
+          "Data Collection",
+          "Social Media Monitoring",
+          "Platform Intelligence",
+          "Web Monitoring",
+          "Document Intelligence",
+          "Data Analysis",
+          "Network Analysis",
+          "Narrative Analysis",
+          "Video Transcription",
+          "Custom Intelligence Systems"
+        ],
+        "hasOfferCatalog": {
+          "@id": "https://dynamiq.agency/#services"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://dynamiq.agency/#logo",
+        "url": "https://dynamiq.agency/assets/favicon.png",
+        "contentUrl": "https://dynamiq.agency/assets/favicon.png",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dynamiq.agency/#website",
+        "url": "https://dynamiq.agency/",
+        "name": "Dynamiq",
+        "publisher": {
+          "@id": "https://dynamiq.agency/#organization"
+        }
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://dynamiq.agency/#services",
+        "name": "Data Intelligence Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://dynamiq.agency/#service-data-collection"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://dynamiq.agency/#service-analysis"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://dynamiq.agency/#service-monitoring"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://dynamiq.agency/#service-intelligence-systems"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://dynamiq.agency/#service-data-collection",
+        "name": "Rohdaten",
+        "serviceType": "Data Collection",
+        "description": "Sammlung und Strukturierung von Daten aus Social Media, Websites, Dokumenten, Video, Audio, Foren, Communities und weiteren relevanten Quellen.",
+        "provider": {
+          "@id": "https://dynamiq.agency/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Austria"
+          },
+          {
+            "@type": "Country",
+            "name": "Germany"
+          },
+          {
+            "@type": "Country",
+            "name": "Switzerland"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://dynamiq.agency/#service-analysis",
+        "name": "Analyse",
+        "serviceType": "Data Intelligence Analysis",
+        "description": "Analyse von Mustern, Akteuren, Netzwerken, Narrativen, Entwicklungen und Zusammenhängen.",
+        "provider": {
+          "@id": "https://dynamiq.agency/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Austria"
+          },
+          {
+            "@type": "Country",
+            "name": "Germany"
+          },
+          {
+            "@type": "Country",
+            "name": "Switzerland"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://dynamiq.agency/#service-monitoring",
+        "name": "Monitoring",
+        "serviceType": "Intelligence Monitoring",
+        "description": "Kontinuierliche Erfassung und Analyse relevanter Quellen sowie Erkennung definierter Signale und Veränderungen.",
+        "provider": {
+          "@id": "https://dynamiq.agency/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Austria"
+          },
+          {
+            "@type": "Country",
+            "name": "Germany"
+          },
+          {
+            "@type": "Country",
+            "name": "Switzerland"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://dynamiq.agency/#service-intelligence-systems",
+        "name": "Intelligence-Systeme",
+        "serviceType": "Custom Intelligence Systems",
+        "description": "Entwicklung individueller Collection-, Search-, Analyse- und Monitoring-Systeme.",
+        "provider": {
+          "@id": "https://dynamiq.agency/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Austria"
+          },
+          {
+            "@type": "Country",
+            "name": "Germany"
+          },
+          {
+            "@type": "Country",
+            "name": "Switzerland"
+          }
+        ]
+      }
+    ]
   }
   </script>
+  {% endif %}
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
