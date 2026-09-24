@@ -68,14 +68,14 @@
             "title": "Social Media",
             "featured": true,
             "examples": [
-                "TikTok",
-                "Instagram",
-                "YouTube",
-                "X",
-                "Reddit",
-                "LinkedIn",
-                "Facebook",
-                "Threads",
+                { "name": "TikTok", "capability": "Trend Detection" },
+                { "name": "Instagram", "capability": "Visual Recognition" },
+                { "name": "YouTube", "capability": "Transkription" },
+                { "name": "X", "capability": "Narrative Tracking" },
+                { "name": "Reddit", "capability": "Discussion Analysis" },
+                { "name": "LinkedIn", "capability": "Company Signals" },
+                { "name": "Facebook", "capability": "Community Monitoring" },
+                { "name": "Threads", "capability": "Conversation Tracking" },
                 "Alle weitere Sozialen Netzwerke"
             ]
         },

@@ -154,6 +154,116 @@
     createScrollSpy();
   }
 
+  const reportModal = document.querySelector('[data-report-modal]');
+  const reportDialog = reportModal?.querySelector('[data-report-dialog]');
+  const reportForm = reportModal?.querySelector('[data-report-form]');
+  const reportFormState = reportModal?.querySelector('[data-report-form-state]');
+  const reportSuccess = reportModal?.querySelector('[data-report-success]');
+  const reportSuccessTitle = reportModal?.querySelector('[data-report-success-title]');
+  const reportError = reportModal?.querySelector('[data-report-error]');
+  const reportSubmit = reportModal?.querySelector('[data-report-submit]');
+  let reportTrigger = null;
+
+  const reportFocusableElements = () => reportDialog
+    ? [...reportDialog.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+      .filter((element) => !element.closest('[hidden]'))
+    : [];
+
+  const closeReportModal = () => {
+    if (!reportModal || reportModal.hidden) return;
+    reportModal.hidden = true;
+    document.body.classList.remove('report-modal-open');
+    reportTrigger?.focus();
+    reportTrigger = null;
+  };
+
+  const openReportModal = (trigger) => {
+    if (!reportModal || !reportDialog) return;
+    reportTrigger = trigger;
+    reportModal.hidden = false;
+    document.body.classList.add('report-modal-open');
+    requestAnimationFrame(() => {
+      const initialFocus = reportFormState?.hidden
+        ? reportSuccessTitle
+        : reportForm?.querySelector('input[type="email"]');
+      (initialFocus || reportDialog).focus();
+    });
+  };
+
+  document.querySelectorAll('[data-report-open]').forEach((trigger) => {
+    trigger.addEventListener('click', () => openReportModal(trigger));
+  });
+
+  reportModal?.querySelectorAll('[data-report-close]').forEach((button) => {
+    button.addEventListener('click', closeReportModal);
+  });
+  reportModal?.querySelector('[data-report-backdrop]')?.addEventListener('click', closeReportModal);
+
+  document.addEventListener('keydown', (event) => {
+    if (!reportModal || reportModal.hidden) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeReportModal();
+      return;
+    }
+    if (event.key !== 'Tab') return;
+
+    const focusable = reportFocusableElements();
+    if (!focusable.length) {
+      event.preventDefault();
+      reportDialog?.focus();
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  reportForm?.addEventListener('input', () => {
+    if (reportError) reportError.hidden = true;
+  });
+
+  reportForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!reportForm.reportValidity() || !reportSubmit) return;
+
+    const defaultLabel = reportSubmit.textContent;
+    reportSubmit.disabled = true;
+    reportSubmit.textContent = 'Report wird vorbereitet …';
+    reportForm.setAttribute('aria-busy', 'true');
+    if (reportError) reportError.hidden = true;
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(reportForm)).toString(),
+      });
+
+      if (!response.ok) throw new Error(`Form submission failed with status ${response.status}`);
+
+      reportFormState.hidden = true;
+      reportSuccess.hidden = false;
+      reportDialog?.setAttribute('aria-labelledby', 'report-success-title');
+      reportDialog?.setAttribute('aria-describedby', 'report-success-description');
+      reportSuccessTitle?.focus();
+    } catch (_) {
+      if (reportError) reportError.hidden = false;
+      reportError?.focus?.();
+    } finally {
+      reportSubmit.disabled = false;
+      reportSubmit.textContent = defaultLabel;
+      reportForm.removeAttribute('aria-busy');
+    }
+  });
+
   const posterHero = document.querySelector('[data-poster-hero]');
   if (!posterHero) return;
   posterHero.classList.add('is-enhanced');

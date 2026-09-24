@@ -93,7 +93,8 @@ showNavigation: true
   <div class="references__inner section-shell">
     <header class="references__intro">
       <p class="section-kicker">[ Referenzen ]</p>
-      <h2 id="references-title"><span>Die Quelle ändert sich.</span><span>Die Pipeline bleibt.</span></h2>
+
+      <h2 id="references-title"><span>So sieht Data Intelligence </span><span>in der Praxis aus.</span></h2>
     </header>
     <ol class="reference-list">
       {% for reference in home.references %}
@@ -107,14 +108,102 @@ showNavigation: true
             <h3>{{ reference.title }}</h3>
             <p>{{ reference.text }}</p>
             {% if reference.detail %}<p class="reference-row__detail">{{ reference.detail }}</p>{% endif %}
-            <ul class="build-tag-list" aria-label="Eingesetzte Fähigkeiten">{% for tag in reference.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
-            <a class="reference-row__link" href="{{ reference.url }}" target="_blank" rel="noopener noreferrer">Golem-Artikel lesen <span aria-hidden="true">↗</span></a>
+            {% if reference.tags %}<ul class="build-tag-list" aria-label="Eingesetzte Fähigkeiten">{% for tag in reference.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+            <div class="reference-row__actions">
+              {% if reference.report %}<button class="button button-dark reference-row__report" type="button" data-report-open aria-haspopup="dialog">Report herunterladen</button>{% endif %}
+              {% if reference.url %}<a class="reference-row__link" href="{{ reference.url }}" target="_blank" rel="noopener noreferrer">Golem-Artikel lesen <span aria-hidden="true">↗</span></a>{% endif %}
+            </div>
           </div>
         </li>
       {% endfor %}
     </ol>
   </div>
 </section>
+
+<section class="report-feature" aria-labelledby="report-feature-title">
+  <div class="report-feature__inner section-shell">
+    <p class="section-kicker">[ Market Signal Report ]</p>
+
+    <div class="report-feature__layout">
+      <div class="report-feature__signal" aria-label="7.966 analysierte Nachrichten">
+        <span>Brand Visibility</span>
+        <strong>7.966</strong>
+        <p>analysierte Nachrichten</p>
+      </div>
+
+      <div class="report-feature__copy">
+        <h2 id="report-feature-title"><span>WhatsApp Channel</span><span>Insights.</span></h2>
+        <p class="report-feature__lead">Was öffentliche Kanäle über Marken, Trends und Konsum verraten.</p>
+        <p>Für unseren Report haben wir öffentliche WhatsApp-Kanäle über 14 Tage ausgewertet und untersucht, wie Marken visuell sichtbar werden, welche Produkte dominieren und in welchen Alltagskontexten sie auftauchen.</p>
+        <button class="button button-light report-feature__button" type="button" data-report-open aria-haspopup="dialog">Report herunterladen</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="report-modal" data-report-modal hidden>
+  <div class="report-modal__backdrop" data-report-backdrop aria-hidden="true"></div>
+  <section
+    class="report-modal__dialog"
+    data-report-dialog
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="report-modal-title"
+    aria-describedby="report-modal-description"
+    tabindex="-1"
+  >
+    <button class="report-modal__close" type="button" data-report-close aria-label="Dialog schließen">
+      <span aria-hidden="true">×</span>
+    </button>
+
+    <div class="report-modal__accent" aria-hidden="true">[ 03 ]</div>
+
+    <div class="report-modal__content" data-report-form-state>
+      <p class="report-modal__eyebrow">Market Signal Report</p>
+      <h2 id="report-modal-title">Report herunterladen</h2>
+      <p id="report-modal-description" class="report-modal__description">Erhalten Sie unseren vollständigen Report zu Brand Visibility in öffentlichen WhatsApp-Kanälen als PDF.</p>
+
+      <form
+        class="report-form"
+        name="market-signal-report"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        data-report-form
+      >
+        <input type="hidden" name="form-name" value="market-signal-report">
+        <p class="form-honeypot" hidden>
+          <label>Nicht ausfüllen: <input name="bot-field" type="text"></label>
+        </p>
+        <input type="hidden" name="report" value="market_signal_report">
+
+        <div class="field">
+          <label for="report-email">E-Mail-Adresse <span aria-hidden="true">*</span></label>
+          <input id="report-email" name="email" type="email" placeholder="name@company.com" autocomplete="email" required>
+        </div>
+
+        <div class="consent-field report-form__consent">
+          <input id="report-consent" name="consent" type="checkbox" value="yes" required>
+          <label for="report-consent">Ich stimme zu, dass Dynamiq meine E-Mail-Adresse zur Bereitstellung des Market Signal Reports speichert und verarbeitet. Weitere Informationen finden Sie in unserer <a href="/datenschutz/">Datenschutzerklärung</a>. <span aria-hidden="true">*</span></label>
+        </div>
+
+        <p class="report-form__privacy">Kein Newsletter. Kein Spam.</p>
+        <p class="report-form__error" data-report-error role="alert" tabindex="-1" hidden>Die Übermittlung ist fehlgeschlagen. Bitte versuchen Sie es erneut.</p>
+        <button class="button button-dark report-form__submit" type="submit" data-report-submit>Report herunterladen</button>
+      </form>
+    </div>
+
+    <div class="report-success" data-report-success hidden>
+      <p class="report-modal__eyebrow">Market Signal Report</p>
+      <h2 id="report-success-title" tabindex="-1" data-report-success-title>Danke.</h2>
+      <p id="report-success-description">Der Market Signal Report steht jetzt zum Download bereit.</p>
+      <div class="report-success__actions">
+        <a class="button button-dark" href="/assets/pdfs/market_signal_report.pdf" target="_blank" rel="noopener noreferrer">PDF herunterladen</a>
+        <button class="report-success__close" type="button" data-report-close>Schließen</button>
+      </div>
+    </div>
+  </section>
+</div>
 
 
 <section class="data-sources" id="datenquellen" aria-labelledby="data-sources-title">
@@ -134,7 +223,16 @@ showNavigation: true
             <h3>{{ source.title }}</h3>
           </header>
           <ul class="source-space__examples" aria-label="Beispiele für {{ source.title }}">
-            {% for example in source.examples %}<li>{{ example }}</li>{% endfor %}
+            {% for example in source.examples %}
+              {% if example.capability %}
+                <li class="source-space__example--interactive" tabindex="0" aria-label="{{ example.name }}: {{ example.capability }}">
+                  <span class="source-space__platform">{{ example.name }}</span>
+                  <span class="source-space__capability" aria-hidden="true">{{ example.capability }}</span>
+                </li>
+              {% else %}
+                <li>{{ example }}</li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </article>
       {% endfor %}
@@ -187,7 +285,7 @@ showNavigation: true
         <p>Im ersten Gespräch klären wir Ziel, Quellen, vorhandene Daten und den passenden Scope.</p>
         <div class="contact-meta">
           <p class="contact-direct"><span>Lieber direkt per E-Mail?</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-          <span class="contact-note">Aus {{ site.location }}. Zusammenarbeit im {{ site.areaServed }}.</span>
+          <span class="contact-note">Zusammenarbeit im {{ site.areaServed }}.</span>
         </div>
       </div>
 
