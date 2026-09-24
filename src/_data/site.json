@@ -9,7 +9,6 @@
         "href": "#kontakt"
     },
     "navigation": [
-        { "label": "Arbeitsweise", "href": "#how-we-build" },
         { "label": "Leistungen", "href": "#leistungen" },
         { "label": "Referenzen", "href": "#referenzen" },
         { "label": "Team", "href": "#team" },

@@ -56,28 +56,42 @@ showNavigation: true
 
   <div class="poster-hero__footer" data-hero-reveal>
     <a class="poster-hero__cta" href="#kontakt">Analyse besprechen <span aria-hidden="true">↗</span></a>
-    <a class="poster-hero__scroll" href="#how-we-build">Scroll zur Arbeitsweise <span aria-hidden="true">↓</span></a>
+    <a class="poster-hero__scroll" href="#datenquellen">Scroll zu den Datenquellen <span aria-hidden="true">↓</span></a>
   </div>
 </section>
 
-<section class="build-services section-shell" id="how-we-build" aria-labelledby="services-title">
-  <header class="build-services__intro">
-    <p class="section-kicker">[ Wie wir arbeiten ]</p>
-    <h2 id="services-title"><span>Die Frage kommt zuerst.</span><span>Dann die Daten.</span></h2>
-    <p>Wir beginnen nicht mit einem bestehenden Tool, Dashboard oder einer vordefinierten Datenquelle. Wir definieren die Fragestellung, identifizieren relevante Quellen und bauen die Collection- und Analyse-Pipeline, die dafür notwendig ist.</p>
-  </header>
+<section class="deliverables" id="leistungen" aria-labelledby="deliverables-title">
+  <div class="deliverables__inner section-shell">
+    <header class="deliverables__intro">
+      <p class="section-kicker">[ Was wir liefern ]</p>
+      <div class="deliverables__heading">
+        <h2 id="deliverables-title">Egal ob Rohdaten oder <span>Intelligence-System.</span></h2>
+      </div>
+    </header>
+
+    <ol class="deliverables__grid" aria-label="Rohdaten, Analyse, Monitoring und Systeme">
+      {% for deliverable in home.deliverables %}
+        <li class="deliverable">
+          <header class="deliverable__header">
+            <span class="deliverable__number" aria-hidden="true">{{ deliverable.number }}</span>
+            <p class="deliverable__label">{{ deliverable.label }}</p>
+          </header>
+          <p class="deliverable__text">{{ deliverable.text }}</p>
+          <div class="deliverable__outputs">
+            <p class="deliverable__outputs-title">Outputs</p>
+            <ul>
+              {% for output in deliverable.outputs %}<li>{{ output }}</li>{% endfor %}
+            </ul>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
 </section>
 
-<section class="data-sources" aria-labelledby="data-sources-title">
+<section class="data-sources" id="datenquellen" aria-labelledby="data-sources-title">
   <div class="data-sources__inner section-shell">
     <div class="ux-stat">
-      <div class="ux-stat__core">
-        <strong class="ux-stat__number"><span class="sr-only">Acht Schritte zur Intelligence</span><span class="ux-stat__visual" aria-hidden="true"><span>0</span><span>8</span></span></strong>
-        <div class="ux-stat__copy">
-          <p>Wenn die analysierbare Datengrundlage noch nicht existiert, bauen wir sie – quellenübergreifend und passend zur Frage.</p>
-          <p class="ux-stat__source">Collect → Archive → Transcribe → Extract → Normalize → Enrich → Connect → Analyze &amp; Monitor</p>
-        </div>
-      </div>
       <div class="ux-first source-formats">
         <h3 id="data-sources-title">Data is <span>not one format.</span></h3>
         <ul aria-label="Datenquellen"><li>TikTok · YouTube · Instagram</li><li>Reddit · X · LinkedIn</li><li>Forums · Imageboards · Public Channels</li><li>Video · Audio · Comments</li><li>Websites · Documents · Internal Data</li></ul>
@@ -106,11 +120,11 @@ showNavigation: true
   </div>
 </section>
 
-<section class="service-offer section-shell" id="leistungen" aria-labelledby="offer-title" data-system-playgrounds>
+<section class="service-offer section-shell" aria-labelledby="offer-title" data-system-playgrounds>
   <header class="service-offer__intro">
-    <p class="section-kicker">[ Leistungen ]</p>
-    <h2 id="offer-title"><span>Find.</span><span>Connect.</span><span>Monitor.</span></h2>
-    <p>Platform-independent intelligence across social media and the wider public web – verbunden mit Dokumenten, Marktdaten und internen Systemen.</p>
+    <p class="section-kicker">[ Technische Spezialisierung ]</p>
+    <h2 id="offer-title"><span>Built for</span><span>difficult data.</span></h2>
+    <p>Die technische Ebene hinter den Ergebnissen: belastbare Erfassung, multimodale Verarbeitung, prüfbare Analyse und Systeme für den laufenden Betrieb.</p>
   </header>
 
   <ol class="capability-list">
@@ -158,13 +172,6 @@ showNavigation: true
         </li>
       {% endfor %}
     </ol>
-  </div>
-</section>
-
-<section class="operating-models section-shell" aria-labelledby="operating-models-title">
-  <div class="ux-first monitoring-models">
-    <h3 id="operating-models-title">Managed. <span>Internal.</span> Hybrid.</h3>
-    <ul aria-label="Betriebsmodelle"><li>Managed by Dynamiq</li><li>Run internally</li><li>Shared operation</li></ul>
   </div>
 </section>
 
@@ -231,10 +238,10 @@ showNavigation: true
             <label for="leistung">Welche Unterstützung sucht ihr? <span aria-hidden="true">*</span></label>
             <select id="leistung" name="leistung" required>
               <option value="">Bitte auswählen</option>
-              <option value="Data Collection &amp; OSINT">Data Collection &amp; OSINT</option>
-              <option value="Social &amp; Platform Intelligence">Social &amp; Platform Intelligence</option>
-              <option value="Data Analysis &amp; Monitoring">Data Analysis &amp; Monitoring</option>
-              <option value="Custom Intelligence Systems">Custom Intelligence Systems</option>
+              <option value="Rohdaten &amp; Data Collection">Rohdaten &amp; Data Collection</option>
+              <option value="Analyse">Analyse</option>
+              <option value="Monitoring">Monitoring</option>
+              <option value="Individuelle Systeme">Individuelle Systeme</option>
               <option value="Noch nicht sicher">Noch nicht sicher</option>
             </select>
           </div>

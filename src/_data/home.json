@@ -1,4 +1,30 @@
 {
+    "deliverables": [
+        {
+            "number": "01",
+            "label": "Rohdaten",
+            "text": "Wir sammeln Daten aus Social Media, Websites, Dokumenten, Videos, Audio, Foren, öffentlichen Communities und weiteren relevanten Quellen und überführen sie in strukturierte Datensätze.",
+            "outputs": ["CSV", "TSV", "Excel", "JSON", "XML", "Datenbanken"]
+        },
+        {
+            "number": "02",
+            "label": "Analyse",
+            "text": "Wir untersuchen Muster, Akteure, Netzwerke, Narrative, Entwicklungen und Zusammenhänge und beantworten damit konkrete strategische, investigative oder operative Fragestellungen.",
+            "outputs": ["Analysen", "Reports", "Visualisierungen", "Netzwerke", "Datenmodelle", "Nachvollziehbare Evidenz"]
+        },
+        {
+            "number": "03",
+            "label": "Monitoring",
+            "text": "Aus einer einmaligen Untersuchung wird ein laufender Prozess. Relevante Quellen werden regelmäßig erfasst, verarbeitet und auf Veränderungen, neue Akteure, Narrative oder andere definierte Signale geprüft.",
+            "outputs": ["Dashboards", "SaaS", "Interaktive Suchen", "APIs"]
+        },
+        {
+            "number": "04",
+            "label": "Systeme",
+            "text": "Wenn Standardsoftware nicht ausreicht, entwickeln wir individuelle Collection-, Search-, Analyse- und Monitoring-Systeme für Organisationen.",
+            "outputs": ["Integrationen", "Interne Tools", "Management-Systeme"]
+        }
+    ],
     "buildProcess": [
         {
             "number": "01",
@@ -29,30 +55,30 @@
         {
             "number": "01",
             "visual": "collection",
-            "title": "Data Collection & OSINT",
-            "text": "Websites, Dokumente, Plattformen und öffentliche Online-Communities werden zu strukturierten Datensätzen, die wir gezielt für eure Fragestellung aufbauen.",
-            "tags": ["Web Data", "OSINT", "Documents", "Custom Collection"]
+            "title": "Source Access & Collection",
+            "text": "Wir erschließen auch Quellen, für die keine passende API oder Standardsoftware existiert, und bauen reproduzierbare, quellenbezogene Collection-Prozesse.",
+            "tags": ["Source Discovery", "Web Data", "OSINT", "Archiving"]
         },
         {
             "number": "02",
             "visual": "social",
-            "title": "Social & Platform Intelligence",
-            "text": "Wir analysieren Posts, Kommentare, Videos, Accounts, Communities und Narrative – von großen Social-Plattformen bis zu Nischen- und Fringe-Communities im öffentlichen Web.",
-            "tags": ["Social Media", "Communities", "Narratives", "Networks"]
+            "title": "Multimodal Processing",
+            "text": "Text, Video, Audio, Bilder, Kommentare und Metadaten werden gemeinsam verarbeitet, normalisiert und für Suche und Analyse miteinander verknüpft.",
+            "tags": ["Transcription", "Metadata", "Extraction", "Normalization"]
         },
         {
             "number": "03",
             "visual": "analysis",
-            "title": "Data Analysis & Monitoring",
-            "text": "Wir verbinden Datensätze, erkennen Muster und machen aus einer einmaligen Untersuchung ein dauerhaftes System für regelmäßige Collection, Archivierung, Klassifikation, Alerts und Reports.",
-            "tags": ["Analysis", "Monitoring", "Signals", "Alerts"]
+            "title": "Evidence & Network Analysis",
+            "text": "Aussagen, Akteure und Verbindungen bleiben bis zur Quelle nachvollziehbar. Automatisierte Mustererkennung wird durch gezielte menschliche Prüfung ergänzt.",
+            "tags": ["Provenance", "Networks", "Verification", "Narratives"]
         },
         {
             "number": "04",
             "visual": "systems",
-            "title": "Custom Intelligence Systems",
-            "text": "Wir entwickeln die Software, die eure Organisation benötigt, um relevante Daten zu sammeln, zu durchsuchen, zu analysieren und dauerhaft zu beobachten.",
-            "tags": ["Data Pipelines", "Search", "Dashboards", "APIs"]
+            "title": "Operational Infrastructure",
+            "text": "Pipelines und Interfaces werden auf Datenvolumen, Aktualität, Zugriffsmodelle und bestehende interne Systeme der Organisation abgestimmt.",
+            "tags": ["Automation", "Search", "Access", "Integration"]
         }
     ],
     "references": [
