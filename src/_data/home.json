@@ -10,7 +10,14 @@
             "number": "02",
             "label": "Analyse",
             "text": "Wir untersuchen Muster, Akteure, Netzwerke, Narrative, Entwicklungen und Zusammenhänge und beantworten damit konkrete strategische, investigative oder operative Fragestellungen.",
-            "outputs": ["Analysen", "Reports", "Visualisierungen", "Netzwerke", "Datenmodelle", "Nachvollziehbare Evidenz"]
+            "outputs": [
+                "Analysen",
+                "Reports",
+                "Visualisierungen",
+                "Netzwerke",
+                "Datenmodelle",
+                "Nachvollziehbare Evidenz"
+            ]
         },
         {
             "number": "03",
@@ -53,6 +60,63 @@
             "detail": "Laufzeit der transkribierten Videos: 14 Tage und 21 Stunden",
             "tags": ["Video", "Entity Extraction", "Time Series", "Market Data"],
             "url": "https://www.golem.de/news/aktienmarkt-und-politik-wie-rhetorik-aus-dem-weissen-haus-boersenkurse-beeinflusst-2608-211218.html"
+        }
+    ],
+    "sourceGroups": [
+        {
+            "number": "01",
+            "title": "Social Media",
+            "featured": true,
+            "examples": [
+                "TikTok",
+                "Instagram",
+                "YouTube",
+                "X",
+                "Reddit",
+                "LinkedIn",
+                "Facebook",
+                "Threads",
+                "Alle weitere Plattformen"
+            ]
+        },
+        {
+            "number": "02",
+            "title": "Communities & Nischennetzwerke",
+            "examples": [
+                "Foren",
+                "Imageboards",
+                "Öffentliche Telegram-Kanäle",
+                "Öffentliche Discord-Communities",
+                "Nischenplattformen",
+                "Fringe Networks"
+            ]
+        },
+        {
+            "number": "03",
+            "title": "Web & Dark Web",
+            "examples": [
+                "Websites",
+                "Blogs",
+                "News-Seiten",
+                "Öffentliche Datenbanken",
+                "Web-Archive",
+                "Onion Services",
+                "Öffentlich zugängliche Dark-Web-Quellen"
+            ]
+        },
+        {
+            "number": "04",
+            "title": "Video, Audio & Dokumente",
+            "examples": [
+                "Videos",
+                "Livestreams",
+                "Podcasts",
+                "PDFs",
+                "Reports",
+                "Präsentationen",
+                "Tabellen",
+                "Interne Daten"
+            ]
         }
     ],
     "team": [

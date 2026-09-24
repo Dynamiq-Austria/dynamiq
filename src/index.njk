@@ -89,17 +89,6 @@ showNavigation: true
   </div>
 </section>
 
-<section class="data-sources" id="datenquellen" aria-labelledby="data-sources-title">
-  <div class="data-sources__inner section-shell">
-    <div class="ux-stat">
-      <div class="ux-first source-formats">
-        <h3 id="data-sources-title">Data is <span>not one format.</span></h3>
-        <ul aria-label="Datenquellen"><li>TikTok · YouTube · Instagram</li><li>Reddit · X · LinkedIn</li><li>Forums · Imageboards · Public Channels</li><li>Video · Audio · Comments</li><li>Websites · Documents · Internal Data</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="references" id="referenzen" aria-labelledby="references-title">
   <div class="references__inner section-shell">
     <header class="references__intro">
@@ -125,6 +114,35 @@ showNavigation: true
         </li>
       {% endfor %}
     </ol>
+  </div>
+</section>
+
+
+<section class="data-sources" id="datenquellen" aria-labelledby="data-sources-title">
+  <div class="data-sources__inner section-shell">
+    <header class="data-sources__intro">
+      <p class="section-kicker">[ Quellen ]</p>
+      <div class="data-sources__heading">
+        <h2 id="data-sources-title">Relevante Signale können <span>überall entstehen.</span></h2>
+        <p>Wir erschließen Daten dort, wo sie entstehen – auf großen Social-Media-Plattformen, in Communities und Nischen-Netzwerken, im offenen Web und in öffentlich zugänglichen Bereichen des Dark Web.</p>
+      </div>
+    </header>
+
+    <div class="source-landscape" aria-label="Erschließbare Quellen und Informationsräume">
+      {% for source in home.sourceGroups %}
+        <article class="source-space{% if source.featured %} source-space--featured{% endif %}">
+          <header class="source-space__header">
+            <span class="source-space__number" aria-hidden="true">{{ source.number }}</span>
+            <h3>{{ source.title }}</h3>
+          </header>
+          <ul class="source-space__examples" aria-label="Beispiele für {{ source.title }}">
+            {% for example in source.examples %}<li>{{ example }}</li>{% endfor %}
+          </ul>
+        </article>
+      {% endfor %}
+    </div>
+
+    <p class="data-sources__connection"><span>Quellenübergreifend kombinierbar.</span> Social Media, Communities, Websites, Archive, Video und Dokumente lassen sich in einer Untersuchung oder einem gemeinsamen Datensatz zusammenführen.</p>
   </div>
 </section>
 
