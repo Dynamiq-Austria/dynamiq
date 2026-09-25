@@ -129,8 +129,9 @@
             "role": "UX & Product Design",
             "disciplines": "Data Interfaces · Research Tools · UX",
             "text": "Gestaltet Software und Interfaces für Recherche, Monitoring und komplexe Datenprodukte.",
-            "placeholder": "C",
-            "imageTarget": "/assets/persons/cornelia.webp"
+            "imageAlt": "Cornelia",
+            "image": "/assets/persons/cornelia.png",
+            "imagePosition": "center"
         },
         {
             "number": "03",
