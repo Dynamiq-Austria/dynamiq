@@ -158,6 +158,34 @@ select {
     color: var(--purple-deep);
     font-weight: 800;
 }
+.language-switcher {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 0.35rem;
+    margin-left: 0.25rem;
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--line);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+.main-nav .language-switcher a,
+.main-nav .language-switcher span {
+    min-height: auto;
+    font-size: inherit;
+    letter-spacing: inherit;
+}
+.main-nav .language-switcher a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+.main-nav .language-switcher a::after {
+    content: none;
+}
+.language-switcher [aria-current='true'] {
+    color: var(--purple-deep);
+}
 @media (hover: hover) {
     .main-nav a:not(.is-active):not([aria-current='location']):hover {
         color: var(--purple-deep);
@@ -2671,6 +2699,16 @@ select {
     .main-nav a {
         font-size: clamp(2rem, 7vw, 4rem);
         letter-spacing: -0.05em;
+    }
+    .language-switcher {
+        margin-top: 1rem;
+        margin-left: 0;
+        padding-top: 1.25rem;
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
     }
     .menu-toggle {
         display: grid;

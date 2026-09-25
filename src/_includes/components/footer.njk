@@ -1,10 +1,10 @@
 <footer class="site-footer">
-  <a class="brand brand-footer" href="/">dynamiq<span>.</span></a>
-  <p>{{ site.description }}</p>
-  <a class="button button-light footer-cta" href="{% if isHome %}#kontakt{% else %}/#kontakt{% endif %}">{{ site.primaryCta.label }}</a>
-  <nav aria-label="Rechtliche Navigation">
-    <a href="/impressum/">Impressum</a>
-    <a href="/datenschutz/">Datenschutz</a>
+  <a class="brand brand-footer" href="{{ ui.homePath }}">dynamiq<span>.</span></a>
+  <p>{{ ui.footerDescription }}</p>
+  <a class="button button-light footer-cta" href="{% if isHome %}#kontakt{% else %}{{ ui.homePath }}#kontakt{% endif %}">{{ ui.primaryCta }}</a>
+  <nav aria-label="{{ ui.legalNavLabel }}">
+    <a href="{{ ui.legalNoticePath }}">{{ ui.legalNotice }}</a>
+    <a href="{{ ui.privacyPath }}">{{ ui.privacy }}</a>
   </nav>
   <p>© {{ buildYear }} Dynamiq</p>
 </footer>

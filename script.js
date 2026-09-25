@@ -3,11 +3,13 @@
   const nav = document.querySelector('[data-nav]');
   const header = document.querySelector('[data-header]');
   const menuLabel = document.querySelector('[data-menu-label]');
+  const menuOpenLabel = menuToggle?.dataset.openLabel || 'Menü öffnen';
+  const menuCloseLabel = menuToggle?.dataset.closeLabel || 'Menü schließen';
 
   const closeMenu = ({ returnFocus = false } = {}) => {
     if (!menuToggle || !nav) return;
     menuToggle.setAttribute('aria-expanded', 'false');
-    if (menuLabel) menuLabel.textContent = 'Menü öffnen';
+    if (menuLabel) menuLabel.textContent = menuOpenLabel;
     nav.classList.remove('is-open');
     document.body.classList.remove('menu-open');
     if (returnFocus) menuToggle.focus();
@@ -16,7 +18,7 @@
   menuToggle?.addEventListener('click', () => {
     const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
     menuToggle.setAttribute('aria-expanded', String(!isOpen));
-    if (menuLabel) menuLabel.textContent = isOpen ? 'Menü öffnen' : 'Menü schließen';
+    if (menuLabel) menuLabel.textContent = isOpen ? menuOpenLabel : menuCloseLabel;
     nav?.classList.toggle('is-open', !isOpen);
     document.body.classList.toggle('menu-open', !isOpen);
 
@@ -236,7 +238,7 @@
 
     const defaultLabel = reportSubmit.textContent;
     reportSubmit.disabled = true;
-    reportSubmit.textContent = 'Report wird vorbereitet …';
+    reportSubmit.textContent = reportSubmit.dataset.loadingLabel || 'Report wird vorbereitet …';
     reportForm.setAttribute('aria-busy', 'true');
     if (reportError) reportError.hidden = true;
 

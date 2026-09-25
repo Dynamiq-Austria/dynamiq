@@ -1,12 +1,23 @@
 ---
 layout: layouts/base.njk
 title: "Dynamiq – Data Intelligence, OSINT & Monitoring"
-description: "Data Intelligence, OSINT and continuous monitoring across web, social media, documents, video and internal data."
-ogDescription: "Dynamiq collects, structures and connects data across social platforms, the public web, documents, video, audio and internal systems."
+pagination:
+  data: homePages
+  size: 1
+  alias: localized
+permalink: "{{ localized.permalink }}"
+eleventyComputed:
+  description: "{{ localized.description }}"
+  ogDescription: "{{ localized.ogDescription }}"
+  pageLang: "{{ localized.lang }}"
+  alternatePage: "{{ localized.alternatePage }}"
 ogImage: /assets/og-image-data-intelligence.png
 isHome: true
 showNavigation: true
 ---
+{% set home = localized.home %}
+{% set ui = i18n[localized.lang] %}
+{% set copy = ui.home %}
 <section class="poster-hero" id="top" data-poster-hero aria-labelledby="poster-title">
   <div class="poster-hero__grid" aria-hidden="true"></div>
   <div class="poster-hero__draw-surface" data-draw-surface aria-hidden="true">
@@ -30,7 +41,7 @@ showNavigation: true
     </span>
   </h1>
 
-  <div class="poster-objects" aria-label="Wie Dynamiq aus unstrukturierten Quellen Intelligence macht">
+  <div class="poster-objects" aria-label="{{ copy.posterObjectsAria }}">
     <div class="poster-object poster-object--positioning" data-poster-object data-depth="0.9" data-hero-reveal>
       <div class="poster-object__face">
         <span class="poster-object__index">01</span>
@@ -55,21 +66,21 @@ showNavigation: true
   </div>
 
   <div class="poster-hero__footer" data-hero-reveal>
-    <a class="poster-hero__cta" href="#kontakt">Analyse besprechen <span aria-hidden="true">↗</span></a>
-    <a class="poster-hero__scroll" href="#datenquellen">Scroll zu den Datenquellen <span aria-hidden="true">↓</span></a>
+    <a class="poster-hero__cta" href="#kontakt">{{ copy.heroCta }} <span aria-hidden="true">↗</span></a>
+    <a class="poster-hero__scroll" href="#datenquellen">{{ copy.heroScroll }} <span aria-hidden="true">↓</span></a>
   </div>
 </section>
 
 <section class="deliverables" id="leistungen" aria-labelledby="deliverables-title">
   <div class="deliverables__inner section-shell">
     <header class="deliverables__intro">
-      <p class="section-kicker">[ Was wir liefern ]</p>
+      <p class="section-kicker">[ {{ copy.deliverablesKicker }} ]</p>
       <div class="deliverables__heading">
-        <h2 id="deliverables-title">Egal ob Rohdaten oder <span>Intelligence-System.</span></h2>
+        <h2 id="deliverables-title">{{ copy.deliverablesHeadingStart }} <span>{{ copy.deliverablesHeadingAccent }}</span></h2>
       </div>
     </header>
 
-    <ol class="deliverables__grid" aria-label="Rohdaten, Analyse, Monitoring und Systeme">
+    <ol class="deliverables__grid" aria-label="{{ copy.deliverablesAria }}">
       {% for deliverable in home.deliverables %}
         <li class="deliverable">
           <header class="deliverable__header">
@@ -78,7 +89,7 @@ showNavigation: true
           </header>
           <p class="deliverable__text">{{ deliverable.text }}</p>
           <div class="deliverable__outputs">
-            <p class="deliverable__outputs-title">Outputs</p>
+            <p class="deliverable__outputs-title">{{ copy.outputs }}</p>
             <ul>
               {% for output in deliverable.outputs %}<li>{{ output }}</li>{% endfor %}
             </ul>
@@ -92,9 +103,9 @@ showNavigation: true
 <section class="references" id="referenzen" aria-labelledby="references-title">
   <div class="references__inner section-shell">
     <header class="references__intro">
-      <p class="section-kicker">[ Referenzen ]</p>
+      <p class="section-kicker">[ {{ copy.referencesKicker }} ]</p>
 
-      <h2 id="references-title"><span>So sieht Data Intelligence </span><span>in der Praxis aus.</span></h2>
+      <h2 id="references-title"><span>{{ copy.referencesHeadingStart }} </span><span>{{ copy.referencesHeadingAccent }}</span></h2>
     </header>
     <ol class="reference-list">
       {% for reference in home.references %}
@@ -108,10 +119,10 @@ showNavigation: true
             <h3>{{ reference.title }}</h3>
             <p>{{ reference.text }}</p>
             {% if reference.detail %}<p class="reference-row__detail">{{ reference.detail }}</p>{% endif %}
-            {% if reference.tags %}<ul class="build-tag-list" aria-label="Eingesetzte Fähigkeiten">{% for tag in reference.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+            {% if reference.tags %}<ul class="build-tag-list" aria-label="{{ copy.skillsAria }}">{% for tag in reference.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
             <div class="reference-row__actions">
-              {% if reference.report %}<button class="button button-dark reference-row__report" type="button" data-report-open aria-haspopup="dialog">Report herunterladen</button>{% endif %}
-              {% if reference.url %}<a class="reference-row__link" href="{{ reference.url }}" target="_blank" rel="noopener noreferrer">Golem-Artikel lesen <span aria-hidden="true">↗</span></a>{% endif %}
+              {% if reference.report %}<button class="button button-dark reference-row__report" type="button" data-report-open aria-haspopup="dialog">{{ copy.reportCta }}</button>{% endif %}
+              {% if reference.url %}<a class="reference-row__link" href="{{ reference.url }}" target="_blank" rel="noopener noreferrer">{{ copy.articleLink }} <span aria-hidden="true">↗</span></a>{% endif %}
             </div>
           </div>
         </li>
@@ -122,20 +133,20 @@ showNavigation: true
 
 <section class="report-feature" aria-labelledby="report-feature-title">
   <div class="report-feature__inner section-shell">
-    <p class="section-kicker">[ Market Signal Report ]</p>
+    <p class="section-kicker">[ {{ copy.reportKicker }} ]</p>
 
     <div class="report-feature__layout">
-      <div class="report-feature__signal" aria-label="7.966 analysierte Nachrichten">
-        <span>Brand Visibility</span>
-        <strong>7.966</strong>
-        <p>analysierte Nachrichten</p>
+      <div class="report-feature__signal" aria-label="{{ copy.reportSignalAria }}">
+        <span>{{ copy.reportSignalLabel }}</span>
+        <strong>{{ copy.reportSignalValue }}</strong>
+        <p>{{ copy.reportSignalUnit }}</p>
       </div>
 
       <div class="report-feature__copy">
-        <h2 id="report-feature-title"><span>WhatsApp Channel</span><span>Insights.</span></h2>
-        <p class="report-feature__lead">Was öffentliche Kanäle über Marken, Trends und Konsum verraten.</p>
-        <p>Für unseren Report haben wir öffentliche WhatsApp-Kanäle über 14 Tage ausgewertet und untersucht, wie Marken visuell sichtbar werden, welche Produkte dominieren und in welchen Alltagskontexten sie auftauchen.</p>
-        <button class="button button-light report-feature__button" type="button" data-report-open aria-haspopup="dialog">Report herunterladen</button>
+        <h2 id="report-feature-title"><span>{{ copy.reportTitleStart }}</span><span>{{ copy.reportTitleAccent }}</span></h2>
+        <p class="report-feature__lead">{{ copy.reportLead }}</p>
+        <p>{{ copy.reportText }}</p>
+        <button class="button button-light report-feature__button" type="button" data-report-open aria-haspopup="dialog">{{ copy.reportCta }}</button>
       </div>
     </div>
   </div>
@@ -152,16 +163,16 @@ showNavigation: true
     aria-describedby="report-modal-description"
     tabindex="-1"
   >
-    <button class="report-modal__close" type="button" data-report-close aria-label="Dialog schließen">
+    <button class="report-modal__close" type="button" data-report-close aria-label="{{ copy.modalClose }}">
       <span aria-hidden="true">×</span>
     </button>
 
     <div class="report-modal__accent" aria-hidden="true">[ 03 ]</div>
 
     <div class="report-modal__content" data-report-form-state>
-      <p class="report-modal__eyebrow">Market Signal Report</p>
-      <h2 id="report-modal-title">Report herunterladen</h2>
-      <p id="report-modal-description" class="report-modal__description">Erhalten Sie unseren vollständigen Report zu Brand Visibility in öffentlichen WhatsApp-Kanälen als PDF.</p>
+      <p class="report-modal__eyebrow">{{ copy.reportKicker }}</p>
+      <h2 id="report-modal-title">{{ copy.modalTitle }}</h2>
+      <p id="report-modal-description" class="report-modal__description">{{ copy.modalDescription }}</p>
 
       <form
         class="report-form"
@@ -173,33 +184,33 @@ showNavigation: true
       >
         <input type="hidden" name="form-name" value="market-signal-report">
         <p class="form-honeypot" hidden>
-          <label>Nicht ausfüllen: <input name="bot-field" type="text"></label>
+          <label>{{ copy.honeypot }} <input name="bot-field" type="text"></label>
         </p>
         <input type="hidden" name="report" value="market_signal_report">
 
         <div class="field">
-          <label for="report-email">E-Mail-Adresse <span aria-hidden="true">*</span></label>
+          <label for="report-email">{{ copy.emailLabel }} <span aria-hidden="true">*</span></label>
           <input id="report-email" name="email" type="email" placeholder="name@company.com" autocomplete="email" required>
         </div>
 
         <div class="consent-field report-form__consent">
           <input id="report-consent" name="consent" type="checkbox" value="yes" required>
-          <label for="report-consent">Ich stimme zu, dass Dynamiq meine E-Mail-Adresse zur Bereitstellung des Market Signal Reports speichert und verarbeitet. Weitere Informationen finden Sie in unserer <a href="/datenschutz/">Datenschutzerklärung</a>. <span aria-hidden="true">*</span></label>
+          <label for="report-consent">{{ copy.consentPrefix }} <a href="{{ ui.privacyPath }}">{{ copy.privacyLink }}</a>. <span aria-hidden="true">*</span></label>
         </div>
 
-        <p class="report-form__privacy">Kein Newsletter. Kein Spam.</p>
-        <p class="report-form__error" data-report-error role="alert" tabindex="-1" hidden>Die Übermittlung ist fehlgeschlagen. Bitte versuchen Sie es erneut.</p>
-        <button class="button button-dark report-form__submit" type="submit" data-report-submit>Report herunterladen</button>
+        <p class="report-form__privacy">{{ copy.noSpam }}</p>
+        <p class="report-form__error" data-report-error role="alert" tabindex="-1" hidden>{{ copy.reportError }}</p>
+        <button class="button button-dark report-form__submit" type="submit" data-report-submit data-loading-label="{{ copy.reportLoading }}">{{ copy.reportCta }}</button>
       </form>
     </div>
 
     <div class="report-success" data-report-success hidden>
-      <p class="report-modal__eyebrow">Market Signal Report</p>
-      <h2 id="report-success-title" tabindex="-1" data-report-success-title>Danke.</h2>
-      <p id="report-success-description">Der Market Signal Report steht jetzt zum Download bereit.</p>
+      <p class="report-modal__eyebrow">{{ copy.reportKicker }}</p>
+      <h2 id="report-success-title" tabindex="-1" data-report-success-title>{{ copy.successTitle }}</h2>
+      <p id="report-success-description">{{ copy.successText }}</p>
       <div class="report-success__actions">
-        <a class="button button-dark" href="/assets/pdfs/market_signal_report.pdf" target="_blank" rel="noopener noreferrer">PDF herunterladen</a>
-        <button class="report-success__close" type="button" data-report-close>Schließen</button>
+        <a class="button button-dark" href="/assets/pdfs/market_signal_report.pdf" target="_blank" rel="noopener noreferrer">{{ copy.pdfCta }}</a>
+        <button class="report-success__close" type="button" data-report-close>{{ copy.close }}</button>
       </div>
     </div>
   </section>
@@ -209,20 +220,20 @@ showNavigation: true
 <section class="data-sources" id="datenquellen" aria-labelledby="data-sources-title">
   <div class="data-sources__inner section-shell">
     <header class="data-sources__intro">
-      <p class="section-kicker">[ Quellen ]</p>
+      <p class="section-kicker">[ {{ copy.sourcesKicker }} ]</p>
       <div class="data-sources__heading">
-        <h2 id="data-sources-title">Relevante Signale können <span>überall entstehen.</span></h2>
+        <h2 id="data-sources-title">{{ copy.sourcesHeadingStart }} <span>{{ copy.sourcesHeadingAccent }}</span></h2>
       </div>
     </header>
 
-    <div class="source-landscape" aria-label="Erschließbare Quellen und Informationsräume">
+    <div class="source-landscape" aria-label="{{ copy.sourcesAria }}">
       {% for source in home.sourceGroups %}
         <article class="source-space{% if source.featured %} source-space--featured{% endif %}">
           <header class="source-space__header">
             <span class="source-space__number" aria-hidden="true">{{ source.number }}</span>
             <h3>{{ source.title }}</h3>
           </header>
-          <ul class="source-space__examples" aria-label="Beispiele für {{ source.title }}">
+          <ul class="source-space__examples" aria-label="{{ copy.examplesFor }} {{ source.title }}">
             {% for example in source.examples %}
               {% if example.capability %}
                 <li class="source-space__example--interactive" tabindex="0" aria-label="{{ example.name }}: {{ example.capability }}">
@@ -238,15 +249,15 @@ showNavigation: true
       {% endfor %}
     </div>
 
-    <p class="data-sources__connection"><span>Quellenübergreifend kombinierbar.</span> Social Media, Communities, Websites, Archive, Video und Dokumente lassen sich in einer Untersuchung oder einem gemeinsamen Datensatz zusammenführen.</p>
+    <p class="data-sources__connection"><span>{{ copy.sourceConnectionLead }}</span> {{ copy.sourceConnectionText }}</p>
   </div>
 </section>
 
 <section class="about-team section-shell" id="team" aria-labelledby="team-title">
   <header class="about-team__intro">
-    <p class="section-kicker">[ Team ]</p>
-    <h2 id="team-title"><span>Menschen hinter</span><span>den Daten.</span></h2>
-    <p>Ein Team aus Softwareentwicklung, Datenanalyse und UX. Direkt in Collection, Research, Analyse und der Entwicklung belastbarer Intelligence-Systeme.</p>
+    <p class="section-kicker">[ {{ copy.teamKicker }} ]</p>
+    <h2 id="team-title"><span>{{ copy.teamHeadingStart }}</span><span>{{ copy.teamHeadingAccent }}</span></h2>
+    <p>{{ copy.teamIntro }}</p>
   </header>
   <ol class="team-grid">
     {% for person in home.team %}
@@ -255,14 +266,14 @@ showNavigation: true
           {% if person.image %}
             <img src="{{ person.image }}" alt="{{ person.imageAlt }}" width="500" height="500" loading="lazy" style="object-position: {{ person.imagePosition }};">
           {% else %}
-            <div class="team-card__placeholder" role="img" aria-label="Neutraler Platzhalter für {{ person.name }}">
+            <div class="team-card__placeholder" role="img" aria-label="{{ copy.placeholderFor }} {{ person.name }}">
               <strong>{{ person.placeholder }}</strong>
-              <span>Portrait folgt</span>
+              <span>{{ copy.portraitFollows }}</span>
             </div>
           {% endif %}
         </div>
         <div class="team-card__content">
-          <div class="team-card__meta"><span aria-hidden="true">[ {{ person.number }} ]</span>{% if person.status %}<strong>{{ person.status }}</strong>{% endif %}</div>
+          <div class="team-card__meta"><span aria-hidden="true">[ {{ person.number }} ]</span>{% if person.badge or person.status %}<strong>{{ person.badge or person.status }}</strong>{% endif %}</div>
           <h3>{{ person.name }}</h3>
           <p class="team-card__role">{{ person.role }}</p>
           <p class="team-card__focus">{{ person.disciplines }}</p>
@@ -276,55 +287,48 @@ showNavigation: true
 <section class="contact" id="kontakt" aria-labelledby="contact-title">
   <div class="contact__inner section-shell">
     <header class="contact-intro">
-      <p class="section-kicker">[ Kontakt ]</p>
-      <h2 id="contact-title"><span>Was möchtet ihr</span><span>herausfinden?</span></h2>
+      <p class="section-kicker">[ {{ copy.contactKicker }} ]</p>
+      <h2 id="contact-title"><span>{{ copy.contactHeadingStart }}</span><span>{{ copy.contactHeadingAccent }}</span></h2>
     </header>
     <div class="contact-body">
       <div class="contact-summary">
-        <p>Beschreibt uns die Frage, die Datenquelle oder das Signal, das ihr verstehen oder dauerhaft beobachten möchtet.</p>
-        <p>Im ersten Gespräch klären wir Ziel, Quellen, vorhandene Daten und den passenden Scope.</p>
+        <p>{{ copy.contactIntroOne }}</p>
+        <p>{{ copy.contactIntroTwo }}</p>
         <div class="contact-meta">
-          <p class="contact-direct"><span>Lieber direkt per E-Mail?</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+          <p class="contact-direct"><span>{{ copy.directEmail }}</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
         </div>
       </div>
 
-      <form class="contact-form" name="projektanfrage" method="post" action="/danke/" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="contact-form" name="projektanfrage" method="post" action="{{ copy.contactSuccessPath }}" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="projektanfrage">
-        <p class="form-honeypot" hidden><label>Nicht ausfüllen: <input name="bot-field" type="text"></label></p>
+        <p class="form-honeypot" hidden><label>{{ copy.honeypot }} <input name="bot-field" type="text"></label></p>
 
         <div class="form-grid">
-          <div class="field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="email">E-Mail <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
-          <div class="field field-full"><label for="unternehmen">Unternehmen</label><input id="unternehmen" name="unternehmen" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="name">{{ copy.name }} <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="email">{{ copy.email }} <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field field-full"><label for="unternehmen">{{ copy.company }}</label><input id="unternehmen" name="unternehmen" type="text" autocomplete="organization"></div>
           <div class="field">
-            <label for="leistung">Welche Unterstützung sucht ihr? <span aria-hidden="true">*</span></label>
+            <label for="leistung">{{ copy.serviceLabel }} <span aria-hidden="true">*</span></label>
             <select id="leistung" name="leistung" required>
-              <option value="">Bitte auswählen</option>
-              <option value="Rohdaten &amp; Data Collection">Rohdaten &amp; Data Collection</option>
-              <option value="Analyse">Analyse</option>
-              <option value="Monitoring">Monitoring</option>
-              <option value="Individuelle Systeme">Individuelle Systeme</option>
-              <option value="Noch nicht sicher">Noch nicht sicher</option>
+              <option value="">{{ copy.selectPrompt }}</option>
+              {% for option in copy.serviceOptions %}<option value="{{ option.value }}">{{ option.label }}</option>{% endfor %}
             </select>
           </div>
           <div class="field">
-            <label for="budget">Budgetrahmen (optional)</label>
+            <label for="budget">{{ copy.budgetLabel }}</label>
             <select id="budget" name="budget">
-            <option value="">Keine Angabe</option>
-            <option>10.000–20.000 €</option>
-            <option>20.000–40.000 €</option>
-            <option>40.000–75.000 €</option>
-            <option>75.000 € oder mehr</option></select>
+            <option value="">{{ copy.noAnswer }}</option>
+            {% for option in copy.budgetOptions %}<option>{{ option }}</option>{% endfor %}</select>
           </div>
-          <div class="field field-full"><label for="projekt">Worum geht es? <span aria-hidden="true">*</span></label><textarea id="projekt" name="projekt" rows="6" required aria-describedby="projekt-hilfe"></textarea><span class="form-help" id="projekt-hilfe">Fragestellung, vorhandene Daten, relevante Quellen und gewünschtes Ergebnis genügen für den Anfang.</span></div>
+          <div class="field field-full"><label for="projekt">{{ copy.projectLabel }} <span aria-hidden="true">*</span></label><textarea id="projekt" name="projekt" rows="6" required aria-describedby="projekt-hilfe"></textarea><span class="form-help" id="projekt-hilfe">{{ copy.projectHelp }}</span></div>
         </div>
 
         <div class="consent-field">
           <input id="datenschutz-zustimmung" name="datenschutz-zustimmung" type="checkbox" value="zugestimmt" required>
-          <label for="datenschutz-zustimmung">Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Weitere Informationen stehen in der <a href="/datenschutz/">Datenschutzerklärung</a>. <span aria-hidden="true">*</span></label>
+          <label for="datenschutz-zustimmung">{{ copy.contactConsentPrefix }} <a href="{{ ui.privacyPath }}">{{ copy.privacyLink }}</a>. <span aria-hidden="true">*</span></label>
         </div>
-        <p class="required-note"><span aria-hidden="true">*</span> Pflichtfeld</p>
-        <button class="button button-dark" type="submit">Analyse besprechen</button>
+        <p class="required-note"><span aria-hidden="true">*</span> {{ copy.required }}</p>
+        <button class="button button-dark" type="submit">{{ copy.contactSubmit }}</button>
       </form>
     </div>
   </div>

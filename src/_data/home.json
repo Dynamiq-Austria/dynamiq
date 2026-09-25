@@ -114,6 +114,7 @@
         {
             "number": "01",
             "name": "Oliver",
+            "badge": "Gründer",
             "role": "Software Developer & Data Analyst",
             "disciplines": "OSINT · Data Collection · Analysis · Monitoring",
             "text": "Entwickelt Collection- und Analyse-Pipelines und verbindet Softwareentwicklung mit Datenanalyse, OSINT und Research.",
@@ -124,9 +125,10 @@
         {
             "number": "02",
             "name": "Cornelia",
+            "badge": "Patentinhaberin",
             "role": "UX & Product Design",
             "disciplines": "Data Interfaces · Research Tools · UX",
-            "text": "Gestaltet Software und Interfaces für Recherche, Monitoring und komplexe Datenprodukte. Patentinhaberin im Bereich UX.",
+            "text": "Gestaltet Software und Interfaces für Recherche, Monitoring und komplexe Datenprodukte.",
             "placeholder": "C",
             "imageTarget": "/assets/persons/cornelia.webp"
         },

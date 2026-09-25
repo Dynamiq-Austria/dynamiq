@@ -1,0 +1,123 @@
+{
+  "deliverables": [
+    {
+      "number": "01",
+      "label": "Raw Data",
+      "text": "We collect data from social media, websites, documents, video, audio, forums, public communities and other relevant sources, then turn it into structured datasets.",
+      "outputs": ["CSV", "TSV", "Excel", "JSON", "XML", "Databases"]
+    },
+    {
+      "number": "02",
+      "label": "Analysis",
+      "text": "We investigate patterns, actors, networks, narratives, developments and relationships to answer specific strategic, investigative or operational questions.",
+      "outputs": ["Analyses", "Reports", "Visualisations", "Networks", "Data Models", "Traceable Evidence"]
+    },
+    {
+      "number": "03",
+      "label": "Monitoring",
+      "text": "A one-off investigation becomes a continuous process. Relevant sources are collected regularly and checked for changes, new actors, narratives and other defined signals.",
+      "outputs": ["Dashboards", "SaaS", "Interactive Search", "APIs"]
+    },
+    {
+      "number": "04",
+      "label": "Systems",
+      "text": "When standard software is not enough, we build custom collection, search, analysis and monitoring systems for organisations.",
+      "outputs": ["Integrations", "Internal Tools", "Management Systems"]
+    }
+  ],
+  "references": [
+    {
+      "number": "01",
+      "source": "Documents",
+      "metric": "NEARLY 5,000 PDFs",
+      "title": "Document Intelligence",
+      "text": "Nearly 5,000 government PDFs were analysed automatically, with suspicious documents subsequently verified by hand.",
+      "tags": ["Documents", "Extraction", "Automation", "Verification"],
+      "url": "https://www.golem.de/news/behoerden-pdfs-vertrauliche-daten-trotz-schwaerzung-rekonstruierbar-2609-212878.html"
+    },
+    {
+      "number": "02",
+      "source": "Social Video",
+      "metric": "357 VIDEOS",
+      "title": "Platform Intelligence",
+      "text": "We systematically investigated 357 TikTok videos using transcription, classification and analysis of the narratives they contained.",
+      "tags": ["Video", "Social Data", "Transcription", "Narrative Analysis"],
+      "url": "https://www.golem.de/news/ki-propaganda-auf-tiktok-so-inszenieren-afd-supporter-den-niedergang-deutschlands-2608-211999.html"
+    },
+    {
+      "number": "03",
+      "source": "Market Data",
+      "metric": "400+ STREAMS",
+      "title": "Market Signal Analysis",
+      "text": "More than 400 public streams and around 4,500 company mentions were connected with market data and analysed over time.",
+      "detail": "Transcribed video runtime: 14 days and 21 hours",
+      "tags": ["Video", "Entity Extraction", "Time Series", "Market Data"],
+      "url": "https://www.golem.de/news/aktienmarkt-und-politik-wie-rhetorik-aus-dem-weissen-haus-boersenkurse-beeinflusst-2608-211218.html"
+    }
+  ],
+  "sourceGroups": [
+    {
+      "number": "01",
+      "title": "Social Media",
+      "featured": true,
+      "examples": [
+        { "name": "TikTok", "capability": "Trend Detection" },
+        { "name": "Instagram", "capability": "Visual Recognition" },
+        { "name": "YouTube", "capability": "Transcription" },
+        { "name": "X", "capability": "Narrative Tracking" },
+        { "name": "Reddit", "capability": "Discussion Analysis" },
+        { "name": "LinkedIn", "capability": "Company Signals" },
+        { "name": "Facebook", "capability": "Community Monitoring" },
+        { "name": "Threads", "capability": "Conversation Tracking" },
+        "All other social networks"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Communities",
+      "examples": ["Forums", "Imageboards", "Public Telegram Channels", "Public Discord Communities", "Niche Platforms"]
+    },
+    {
+      "number": "03",
+      "title": "Web & Dark Web",
+      "examples": ["Websites", "Blogs", "Public Databases", "Web Archives", "Dark Web Sources"]
+    },
+    {
+      "number": "04",
+      "title": "Video, Audio & Documents",
+      "examples": ["Videos", "Livestreams", "Podcasts", "PDFs", "Reports", "Presentations", "Spreadsheets", "Internal Data"]
+    }
+  ],
+  "team": [
+    {
+      "number": "01",
+      "name": "Oliver",
+      "badge": "Founder",
+      "role": "Software Developer & Data Analyst",
+      "disciplines": "OSINT · Data Collection · Analysis · Monitoring",
+      "text": "Builds collection and analysis pipelines, combining software development with data analysis, OSINT and research.",
+      "image": "/assets/persons/oliverjessner.png",
+      "imageAlt": "Oliver",
+      "imagePosition": "center"
+    },
+    {
+      "number": "02",
+      "name": "Cornelia",
+      "badge": "Patent holder",
+      "role": "UX & Product Design",
+      "disciplines": "Data Interfaces · Research Tools · UX",
+      "text": "Designs software and interfaces for research, monitoring and complex data products.",
+      "placeholder": "C",
+      "imageTarget": "/assets/persons/cornelia.webp"
+    },
+    {
+      "number": "03",
+      "name": "Dev",
+      "role": "Software Developer & Data Analyst",
+      "status": "TBA",
+      "disciplines": "Data Engineering · Collection · Analysis",
+      "text": "Software development and data analysis for collection, processing and monitoring systems.",
+      "placeholder": "TBA"
+    }
+  ]
+}

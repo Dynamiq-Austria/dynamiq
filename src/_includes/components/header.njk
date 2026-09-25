@@ -1,18 +1,29 @@
 <header class="site-header"{% if showNavigation %} data-header{% endif %}>
-  <a class="brand" href="/" aria-label="Dynamiq Startseite">dynamiq<span>.</span></a>
+  <a class="brand" href="{{ ui.homePath }}" aria-label="{{ ui.brandLabel }}">dynamiq<span>.</span></a>
 
   {% if showNavigation %}
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
-      <span class="sr-only" data-menu-label>Menü öffnen</span>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle data-open-label="{{ ui.menuOpen }}" data-close-label="{{ ui.menuClose }}">
+      <span class="sr-only" data-menu-label>{{ ui.menuOpen }}</span>
       <span></span><span></span>
     </button>
 
-    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation" data-nav>
-      {% for item in site.navigation %}
-        <a href="{% if isHome %}{{ item.href }}{% else %}/{{ item.href }}{% endif %}">{{ item.label }}</a>
+    <nav class="main-nav" id="main-nav" aria-label="{{ ui.navLabel }}" data-nav>
+      {% for item in ui.navigation %}
+        <a href="{% if isHome %}{{ item.href }}{% else %}{{ ui.homePath }}{{ item.href }}{% endif %}">{{ item.label }}</a>
       {% endfor %}
+      <div class="language-switcher" role="group" aria-label="{{ ui.languageLabel }}">
+        {% if ui.lang == "en" %}
+          <a href="{{ alternatePage or '/' }}" hreflang="de" lang="de" aria-label="{{ ui.switchToGerman }}">DE</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="true">EN</span>
+        {% else %}
+          <span aria-current="true">DE</span>
+          <span aria-hidden="true">/</span>
+          <a href="{{ alternatePage or '/en/' }}" hreflang="en" lang="en" aria-label="{{ ui.switchToEnglish }}">EN</a>
+        {% endif %}
+      </div>
     </nav>
 
-    <a class="header-cta" href="{% if isHome %}#kontakt{% else %}/#kontakt{% endif %}">{{ site.primaryCta.label }}</a>
+    <a class="header-cta" href="{% if isHome %}#kontakt{% else %}{{ ui.homePath }}#kontakt{% endif %}">{{ ui.primaryCta }}</a>
   {% endif %}
 </header>
