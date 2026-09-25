@@ -25,6 +25,58 @@
             "outputs": ["Integrations", "Internal Tools", "Management Systems"]
         }
     ],
+    "buyerFit": {
+        "kicker": "Strategic questions",
+        "heading": "When data becomes the basis for decisions.",
+        "intro": "Dynamiq supports teams that need to understand what is changing across markets, platforms and public data sources.",
+        "questionsLabel": "Typical questions",
+        "areasLabel": "Teams and their strategic questions",
+        "areas": [
+            {
+                "number": "01",
+                "category": "Strategy & Competitive Intelligence",
+                "question": "What is changing in our market?",
+                "questions": [
+                    "Which competitors are gaining visibility?",
+                    "Which new offerings and categories are emerging?",
+                    "How are positioning and pricing changing?"
+                ]
+            },
+            {
+                "number": "02",
+                "category": "Brand & Communications",
+                "question": "How are brands and issues actually being discussed?",
+                "questions": [
+                    "In which contexts does our brand appear?",
+                    "Which actors are driving issues and discussions?",
+                    "Which visual and textual patterns recur?"
+                ]
+            },
+            {
+                "number": "03",
+                "category": "Market & Consumer Intelligence",
+                "question": "What can public data reveal about behaviour and trends?",
+                "questions": [
+                    "Which products and brands are gaining attention?",
+                    "Which trends are emerging now?",
+                    "Which changes can be measured over time?"
+                ]
+            },
+            {
+                "number": "04",
+                "category": "Research & Investigations",
+                "question": "How does unstructured material become a robust dataset?",
+                "questions": [
+                    "Which networks and connections exist?",
+                    "Which content or narratives recur?",
+                    "How can an investigation be documented reproducibly?"
+                ]
+            }
+        ],
+        "ctaHeading": "Do you have a different question?",
+        "ctaText": "If the data is publicly accessible, we can usually find a way to analyse it in a structured manner.",
+        "ctaLabel": "Discuss an analysis"
+    },
     "references": [
         {
             "number": "01",

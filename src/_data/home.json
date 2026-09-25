@@ -32,6 +32,58 @@
             "outputs": ["Integrationen", "Interne Tools", "Management-Systeme"]
         }
     ],
+    "buyerFit": {
+        "kicker": "Strategische Fragen",
+        "heading": "Wenn Daten zur Entscheidungsgrundlage werden.",
+        "intro": "Dynamiq unterstützt Teams, die verstehen müssen, was sich in Märkten, Plattformen und öffentlichen Datenquellen verändert.",
+        "questionsLabel": "Typische Fragen",
+        "areasLabel": "Teams und ihre strategischen Fragestellungen",
+        "areas": [
+            {
+                "number": "01",
+                "category": "Strategy & Competitive Intelligence",
+                "question": "Was verändert sich in unserem Markt?",
+                "questions": [
+                    "Welche Wettbewerber gewinnen an Sichtbarkeit?",
+                    "Welche neuen Angebote und Kategorien entstehen?",
+                    "Wie verändern sich Positionierung und Pricing?"
+                ]
+            },
+            {
+                "number": "02",
+                "category": "Brand & Communications",
+                "question": "Wie wird über Marken und Themen tatsächlich gesprochen?",
+                "questions": [
+                    "In welchem Kontext taucht unsere Marke auf?",
+                    "Welche Akteure treiben Themen und Diskussionen?",
+                    "Welche visuellen und textlichen Muster wiederholen sich?"
+                ]
+            },
+            {
+                "number": "03",
+                "category": "Market & Consumer Intelligence",
+                "question": "Was verraten öffentliche Daten über Verhalten und Trends?",
+                "questions": [
+                    "Welche Produkte und Marken gewinnen Aufmerksamkeit?",
+                    "Welche Trends entstehen gerade?",
+                    "Welche Veränderungen lassen sich über Zeit messen?"
+                ]
+            },
+            {
+                "number": "04",
+                "category": "Research & Investigations",
+                "question": "Wie wird aus unstrukturiertem Material ein belastbarer Datensatz?",
+                "questions": [
+                    "Welche Netzwerke und Verbindungen existieren?",
+                    "Welche Inhalte oder Narrative wiederholen sich?",
+                    "Wie lässt sich eine Untersuchung reproduzierbar dokumentieren?"
+                ]
+            }
+        ],
+        "ctaHeading": "Ihr habt eine andere Frage?",
+        "ctaText": "Wenn die Daten öffentlich zugänglich sind, können wir meistens einen Weg finden, sie strukturiert auszuwerten.",
+        "ctaLabel": "Analyse besprechen"
+    },
     "references": [
         {
             "number": "01",

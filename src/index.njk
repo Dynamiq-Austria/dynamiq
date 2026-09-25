@@ -100,6 +100,42 @@ showNavigation: true
   </div>
 </section>
 
+<section class="buyer-fit" id="einsatzfelder" aria-labelledby="buyer-fit-title">
+  <div class="buyer-fit__inner section-shell">
+    <header class="buyer-fit__intro">
+      <p class="section-kicker">[ {{ home.buyerFit.kicker }} ]</p>
+      <h2 id="buyer-fit-title">{{ home.buyerFit.heading }}</h2>
+      <p>{{ home.buyerFit.intro }}</p>
+    </header>
+
+    <ol class="buyer-fit__grid" aria-label="{{ home.buyerFit.areasLabel }}">
+      {% for area in home.buyerFit.areas %}
+        <li class="buyer-fit-card">
+          <header class="buyer-fit-card__header">
+            <span aria-hidden="true">[ {{ area.number }} ]</span>
+            <p>{{ area.category }}</p>
+          </header>
+          <h3>{{ area.question }}</h3>
+          <div class="buyer-fit-card__questions">
+            <p>{{ home.buyerFit.questionsLabel }}</p>
+            <ul>
+              {% for question in area.questions %}<li>{{ question }}</li>{% endfor %}
+            </ul>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+
+    <aside class="buyer-fit__cta" aria-labelledby="buyer-fit-cta-title">
+      <div>
+        <h3 id="buyer-fit-cta-title">{{ home.buyerFit.ctaHeading }}</h3>
+        <p>{{ home.buyerFit.ctaText }}</p>
+      </div>
+      <a class="button button-light" href="#kontakt">{{ home.buyerFit.ctaLabel }} <span aria-hidden="true">↗</span></a>
+    </aside>
+  </div>
+</section>
+
 <section class="references" id="referenzen" aria-labelledby="references-title">
   <div class="references__inner section-shell">
     <header class="references__intro">

@@ -10,6 +10,7 @@
     "navLabel": "Hauptnavigation",
     "navigation": [
       { "label": "Was wir liefern", "href": "#leistungen" },
+      { "label": "Strategische Fragen", "href": "#einsatzfelder" },
       { "label": "Referenzen", "href": "#referenzen" },
       { "label": "Datenquellen", "href": "#datenquellen" },
       { "label": "Team", "href": "#team" },
@@ -116,6 +117,7 @@
     "navLabel": "Main navigation",
     "navigation": [
       { "label": "What we deliver", "href": "#leistungen" },
+      { "label": "Strategic questions", "href": "#einsatzfelder" },
       { "label": "References", "href": "#referenzen" },
       { "label": "Data sources", "href": "#datenquellen" },
       { "label": "Team", "href": "#team" },
