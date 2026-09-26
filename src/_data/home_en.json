@@ -185,7 +185,9 @@
             "status": "TBA",
             "disciplines": "Data Engineering · Collection · Analysis",
             "text": "Software development and data analysis for collection, processing and monitoring systems.",
-            "placeholder": "TBA"
+            "imageAlt": "Dev",
+            "image": "/assets/persons/dev.webp",
+            "imagePosition": "center"
         }
     ]
 }

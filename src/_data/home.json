@@ -192,7 +192,9 @@
             "status": "TBA",
             "disciplines": "Data Engineering · Collection · Analysis",
             "text": "Softwareentwicklung und Datenanalyse für Collection-, Processing- und Monitoring-Systeme.",
-            "placeholder": "TBA"
+            "imageAlt": "Dev",
+            "image": "/assets/persons/dev.webp",
+            "imagePosition": "center"
         }
     ]
 }
