@@ -1,5 +1,7 @@
 <footer class="site-footer">
-  <a class="brand brand-footer" href="{{ ui.homePath }}">dynamiq<span>.</span></a>
+  <a class="brand brand-footer" href="{{ ui.homePath }}" aria-label="{{ ui.brandLabel }}">
+    <img src="/assets/logo-mark.png" alt="" width="512" height="512">
+  </a>
   <p>{{ ui.footerDescription }}</p>
   <a class="button button-light footer-cta" href="{% if isHome %}#kontakt{% else %}{{ ui.homePath }}#kontakt{% endif %}">{{ ui.primaryCta }}</a>
   <nav aria-label="{{ ui.legalNavLabel }}">

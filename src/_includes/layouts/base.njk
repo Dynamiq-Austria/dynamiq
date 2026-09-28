@@ -30,7 +30,9 @@
   <meta name="twitter:image" content="{{ siteUrl }}{{ socialImage }}">
 
   <title>{{ title }}</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="/styles.css">
 
   {% if isHome %}
@@ -103,10 +105,10 @@
       {
         "@type": "ImageObject",
         "@id": "https://dynamiq.agency/#logo",
-        "url": "https://dynamiq.agency/assets/favicon.png",
-        "contentUrl": "https://dynamiq.agency/assets/favicon.png",
-        "width": 256,
-        "height": 256
+        "url": "https://dynamiq.agency/assets/logo-mark.png",
+        "contentUrl": "https://dynamiq.agency/assets/logo-mark.png",
+        "width": 512,
+        "height": 512
       },
       {
         "@type": "WebSite",

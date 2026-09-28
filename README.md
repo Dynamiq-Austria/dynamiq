@@ -1,4 +1,4 @@
-# Dynamiq Website
+# dynamiq. Website
 
 Statische, responsive Website mit [Eleventy](https://www.11ty.dev/) und Netlify Forms. Die fertige Seite landet in `_site/` und kann direkt von Netlify veröffentlicht werden.
 

@@ -1,5 +1,7 @@
 <header class="site-header"{% if showNavigation %} data-header{% endif %}>
-  <a class="brand" href="{{ ui.homePath }}" aria-label="{{ ui.brandLabel }}">dynamiq<span>.</span></a>
+  <a class="brand" href="{{ ui.homePath }}" aria-label="{{ ui.brandLabel }}">
+    <img src="/assets/logo-mark.png" alt="" width="512" height="512">
+  </a>
 
   {% if showNavigation %}
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle data-open-label="{{ ui.menuOpen }}" data-close-label="{{ ui.menuClose }}">

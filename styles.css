@@ -108,14 +108,17 @@ select {
     background: rgba(244, 240, 233, 0.96);
 }
 .brand {
-    width: max-content;
+    width: 3.25rem;
+    height: 3.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    font-size: 1.65rem;
-    font-weight: 700;
-    letter-spacing: -0.07em;
 }
-.brand span {
-    color: var(--purple-deep);
+.brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .main-nav {
     display: flex;
@@ -2696,6 +2699,8 @@ select {
     background: var(--ink);
 }
 .brand-footer {
+    width: 4rem;
+    height: 4rem;
     color: var(--white);
 }
 .site-footer nav {
