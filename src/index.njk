@@ -157,7 +157,7 @@ showNavigation: true
             {% if reference.detail %}<p class="reference-row__detail">{{ reference.detail }}</p>{% endif %}
             {% if reference.tags %}<ul class="build-tag-list" aria-label="{{ copy.skillsAria }}">{% for tag in reference.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
             <div class="reference-row__actions">
-              {% if reference.report %}<button class="button button-dark reference-row__report" type="button" data-report-open aria-haspopup="dialog">{{ copy.reportCta }}</button>{% endif %}
+              {% if reference.report %}<a class="button button-dark reference-row__report" href="#report-download" data-report-open aria-haspopup="dialog">{{ copy.reportCta }}</a>{% endif %}
               {% if reference.url %}<a class="reference-row__link" href="{{ reference.url }}" target="_blank" rel="noopener noreferrer">{{ copy.articleLink }} <span aria-hidden="true">↗</span></a>{% endif %}
             </div>
           </div>
@@ -182,13 +182,13 @@ showNavigation: true
         <h2 id="report-feature-title"><span>{{ copy.reportTitleStart }}</span><span>{{ copy.reportTitleAccent }}</span></h2>
         <p class="report-feature__lead">{{ copy.reportLead }}</p>
         <p>{{ copy.reportText }}</p>
-        <button class="button button-light report-feature__button" type="button" data-report-open aria-haspopup="dialog">{{ copy.reportCta }}</button>
+        <a class="button button-light report-feature__button" href="#report-download" data-report-open aria-haspopup="dialog">{{ copy.reportCta }}</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="report-modal" data-report-modal hidden>
+<div class="report-modal" id="report-download" data-report-modal hidden>
   <div class="report-modal__backdrop" data-report-backdrop aria-hidden="true"></div>
   <section
     class="report-modal__dialog"

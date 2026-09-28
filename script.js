@@ -79,7 +79,7 @@
         else item.link.removeAttribute('aria-current');
       });
 
-      if (syncHash && window.location.hash !== `#${id}`) {
+      if (syncHash && !document.body.classList.contains('report-modal-open') && window.location.hash !== `#${id}`) {
         window.history.replaceState(window.history.state, '', `#${id}`);
       }
     };
@@ -164,24 +164,50 @@
   const reportSuccessTitle = reportModal?.querySelector('[data-report-success-title]');
   const reportError = reportModal?.querySelector('[data-report-error]');
   const reportSubmit = reportModal?.querySelector('[data-report-submit]');
+  const reportModalHash = '#report-download';
   let reportTrigger = null;
+  let reportHasHistoryEntry = false;
+
+  const isReportModalHash = () => window.location.hash === reportModalHash;
 
   const reportFocusableElements = () => reportDialog
     ? [...reportDialog.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])')]
       .filter((element) => !element.closest('[hidden]'))
     : [];
 
-  const closeReportModal = () => {
+  const closeReportModal = ({ syncHash = true, returnFocus = true } = {}) => {
     if (!reportModal || reportModal.hidden) return;
     reportModal.hidden = true;
     document.body.classList.remove('report-modal-open');
-    reportTrigger?.focus();
+
+    if (syncHash && isReportModalHash()) {
+      if (reportHasHistoryEntry && window.history.state?.reportModal) {
+        window.history.back();
+      } else {
+        window.history.replaceState(window.history.state, '', `${window.location.pathname}${window.location.search}`);
+      }
+    }
+
+    if (returnFocus) reportTrigger?.focus();
     reportTrigger = null;
+    reportHasHistoryEntry = false;
   };
 
-  const openReportModal = (trigger) => {
+  const openReportModal = (trigger, { syncHash = true } = {}) => {
     if (!reportModal || !reportDialog) return;
-    reportTrigger = trigger;
+    if (trigger) reportTrigger = trigger;
+
+    if (syncHash && !isReportModalHash()) {
+      window.history.pushState(
+        { ...(window.history.state || {}), reportModal: true },
+        '',
+        reportModalHash,
+      );
+      reportHasHistoryEntry = true;
+    } else if (!syncHash) {
+      reportHasHistoryEntry = Boolean(window.history.state?.reportModal);
+    }
+
     reportModal.hidden = false;
     document.body.classList.add('report-modal-open');
     requestAnimationFrame(() => {
@@ -193,13 +219,26 @@
   };
 
   document.querySelectorAll('[data-report-open]').forEach((trigger) => {
-    trigger.addEventListener('click', () => openReportModal(trigger));
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      openReportModal(trigger);
+    });
   });
 
   reportModal?.querySelectorAll('[data-report-close]').forEach((button) => {
     button.addEventListener('click', closeReportModal);
   });
   reportModal?.querySelector('[data-report-backdrop]')?.addEventListener('click', closeReportModal);
+
+  window.addEventListener('hashchange', () => {
+    if (isReportModalHash()) {
+      openReportModal(null, { syncHash: false });
+    } else {
+      closeReportModal({ syncHash: false });
+    }
+  });
+
+  if (isReportModalHash()) openReportModal(null, { syncHash: false });
 
   document.addEventListener('keydown', (event) => {
     if (!reportModal || reportModal.hidden) return;
