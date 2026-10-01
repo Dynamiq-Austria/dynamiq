@@ -33,7 +33,8 @@
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="/styles.css?v=impact-metrics-v2">
 
   {% if isHome %}
   <script type="application/ld+json">
@@ -260,6 +261,6 @@
   </main>
 
   {% if showFooter != false %}{% include "components/footer.njk" %}{% endif %}
-  {% if showNavigation %}<script src="/script.js?v=interactive-hero-letters" defer></script>{% endif %}
+  {% if showNavigation %}<script src="/script.js?v=impact-metrics-v2" defer></script>{% endif %}
 </body>
 </html>

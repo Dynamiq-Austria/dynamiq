@@ -692,6 +692,88 @@ select {
     margin: 0 auto;
     padding: clamp(5rem, 9vw, 10rem) var(--pad);
 }
+.impact-metrics {
+    color: var(--ink);
+    background: var(--paper);
+    border-bottom: 1px solid var(--ink);
+}
+.impact-metrics__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+}
+.impact-metrics__item {
+    display: flex;
+    min-width: 0;
+    min-height: clamp(18rem, 28vw, 29rem);
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(3.5rem, 7vw, 7rem) clamp(1rem, 3vw, 3.5rem);
+}
+.impact-metrics__item:not(:last-child) {
+    border-right: 1px solid var(--ink);
+}
+.impact-metrics__item:first-child {
+    padding-left: 0;
+}
+.impact-metrics__item:last-child {
+    padding-right: 0;
+}
+.impact-metrics__item dt {
+    max-width: 28ch;
+    margin-top: 1rem;
+    font-size: clamp(0.72rem, 1vw, 0.9rem);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+.impact-metrics__item dd {
+    order: -1;
+    margin: 0;
+    color: var(--purple-deep);
+    font-size: clamp(4rem, 6.8vw, 7.25rem);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.085em;
+    line-height: 0.78;
+}
+.impact-metrics__value {
+    display: inline-flex;
+    align-items: flex-start;
+    white-space: nowrap;
+}
+.js .impact-metrics__value {
+    visibility: hidden;
+}
+.js .impact-metrics__value.is-ready {
+    visibility: visible;
+}
+.impact-metrics__digits {
+    display: inline-grid;
+}
+.impact-metrics__reserve,
+.impact-metrics__number {
+    grid-area: 1 / 1;
+}
+.impact-metrics__reserve {
+    visibility: hidden;
+}
+.impact-metrics__number {
+    text-align: right;
+}
+.impact-metrics__plus {
+    margin: -0.02em 0 0 0.08em;
+    color: var(--purple);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.47em;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1;
+}
 .deliverables {
     color: var(--paper);
     background: var(--ink);
@@ -3080,6 +3162,20 @@ select {
         min-width: 7.5rem;
         min-height: 7rem;
         box-shadow: 5px 6px 0 var(--lilac);
+    }
+    .impact-metrics__list {
+        grid-template-columns: 1fr;
+    }
+    .impact-metrics__item {
+        min-height: 0;
+        padding: 3.75rem 0;
+    }
+    .impact-metrics__item:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid var(--ink);
+    }
+    .impact-metrics__item dd {
+        font-size: clamp(4.5rem, 24vw, 7.5rem);
     }
     .poster-object--growth {
         top: 69%;

@@ -305,11 +305,79 @@
     }
   });
 
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const metricNumbers = [...document.querySelectorAll('.impact-metrics__number[data-count-target]')];
+  const runningMetrics = new Map();
+  const metricFormatter = new Intl.NumberFormat(document.documentElement.lang || 'de');
+  const canAnimateMetrics = metricNumbers.length
+    && 'IntersectionObserver' in window
+    && !motionPreference.matches;
+
+  metricNumbers.forEach((number) => {
+    if (canAnimateMetrics) number.textContent = `0${number.dataset.countSuffix || ''}`;
+    number.closest('.impact-metrics__value')?.classList.add('is-ready');
+  });
+
+  const finishMetric = (number) => {
+    cancelAnimationFrame(runningMetrics.get(number));
+    runningMetrics.delete(number);
+    number.textContent = `${metricFormatter.format(Number(number.dataset.countTarget))}${number.dataset.countSuffix || ''}`;
+  };
+
+  const countMetric = (number, delay) => {
+    const target = Number(number?.dataset.countTarget);
+    if (!number || !Number.isSafeInteger(target) || target <= 0) return;
+
+    const duration = 1800;
+    const start = performance.now() + delay;
+    number.textContent = `0${number.dataset.countSuffix || ''}`;
+
+    const frame = (now) => {
+      if (motionPreference.matches) {
+        finishMetric(number);
+        return;
+      }
+
+      const progress = Math.min(1, Math.max(0, (now - start) / duration));
+      if (progress === 1) {
+        finishMetric(number);
+        return;
+      }
+
+      const eased = 1 - ((1 - progress) ** 3);
+      number.textContent = `${metricFormatter.format(Math.floor(target * eased))}${number.dataset.countSuffix || ''}`;
+      runningMetrics.set(number, requestAnimationFrame(frame));
+    };
+
+    runningMetrics.set(number, requestAnimationFrame(frame));
+  };
+
+  if (canAnimateMetrics) {
+    const metricItems = metricNumbers
+      .map((number) => number.closest('.impact-metrics__item'))
+      .filter(Boolean);
+    const metricObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        metricObserver.unobserve(entry.target);
+        const number = entry.target.querySelector('[data-count-target]');
+        countMetric(number, metricItems.indexOf(entry.target) * 90);
+      });
+    }, { threshold: 0.65 });
+
+    metricItems.forEach((item) => metricObserver.observe(item));
+    motionPreference.addEventListener('change', () => {
+      if (!motionPreference.matches) return;
+      metricObserver.disconnect();
+      [...runningMetrics.keys()].forEach(finishMetric);
+    });
+  }
+
   const posterHero = document.querySelector('[data-poster-hero]');
   if (!posterHero) return;
   posterHero.classList.add('is-enhanced');
 
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const reducedMotion = motionPreference;
   const precisePointer = window.matchMedia('(pointer: fine)');
   const heroObjects = [...posterHero.querySelectorAll('[data-poster-object]')];
   const titleGroups = [...posterHero.querySelectorAll('.poster-title__group')];

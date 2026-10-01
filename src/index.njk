@@ -71,6 +71,26 @@ showNavigation: true
   </div>
 </section>
 
+<section class="impact-metrics" aria-label="{{ copy.metricsAria }}">
+  <dl class="impact-metrics__list">
+    {% for metric in home.metrics %}
+      <div class="impact-metrics__item">
+        <dt>{{ metric.label }}</dt>
+        <dd>
+          <span class="sr-only">{{ metric.display }}+</span>
+          <span class="impact-metrics__value" aria-hidden="true">
+            <span class="impact-metrics__digits">
+              <span class="impact-metrics__reserve">{{ metric.display }}</span>
+              <span class="impact-metrics__number" data-count-target="{{ metric.target }}"{% if metric.suffix %} data-count-suffix="{{ metric.suffix }}"{% endif %}>{{ metric.display }}</span>
+            </span>
+            <span class="impact-metrics__plus">+</span>
+          </span>
+        </dd>
+      </div>
+    {% endfor %}
+  </dl>
+</section>
+
 <section class="deliverables" id="leistungen" aria-labelledby="deliverables-title">
   <div class="deliverables__inner section-shell">
     <header class="deliverables__intro">
